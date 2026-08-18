@@ -781,7 +781,7 @@
     <section class="gallery" id="projects">
         <div class="container">
             <h2 class="section-title">Completed Projects</h2>
-            <div class="gallery-grid">
+            <div class="gallery-grid" id="galleryGrid">
                 <div class="gallery-item">
                     <img src="images/mutwot-drilling-rig.jpg" alt="Borehole drilling rig on site at Mutwot Comprehensive School, Simat, Eldoret">
                     <div class="gallery-caption">
@@ -796,28 +796,28 @@
                         <p>Mutwot Comprehensive School — Simat, Eldoret</p>
                     </div>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item placeholder-card">
                     <div class="gallery-placeholder">🚧</div>
                     <div class="gallery-caption">
                         <h4>Water Treatment System</h4>
                         <p>Photo coming soon</p>
                     </div>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item placeholder-card">
                     <div class="gallery-placeholder">🚧</div>
                     <div class="gallery-caption">
                         <h4>Community Water Project</h4>
                         <p>Photo coming soon</p>
                     </div>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item placeholder-card">
                     <div class="gallery-placeholder">🚧</div>
                     <div class="gallery-caption">
                         <h4>Farm Irrigation Borehole</h4>
                         <p>Photo coming soon</p>
                     </div>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item placeholder-card">
                     <div class="gallery-placeholder">🚧</div>
                     <div class="gallery-caption">
                         <h4>Commercial Borehole</h4>
@@ -998,6 +998,43 @@
                 }
             });
         });
+
+        // Load project photos uploaded via the admin page (Cloudinary)
+        (function loadCloudinaryProjects() {
+            var CLOUD_NAME = 'pm0sj0b5';
+            var TAG = 'deepcore-projects';
+            fetch('https://res.cloudinary.com/' + CLOUD_NAME + '/image/list/' + TAG + '.json')
+                .then(function(r) { if (!r.ok) throw new Error('no list'); return r.json(); })
+                .then(function(data) {
+                    if (!data.resources || !data.resources.length) return;
+                    var grid = document.getElementById('galleryGrid');
+                    // Remove "coming soon" placeholders once real photos exist
+                    grid.querySelectorAll('.placeholder-card').forEach(function(el) { el.remove(); });
+                    // Newest first
+                    data.resources.sort(function(a, b) {
+                        return new Date(b.created_at) - new Date(a.created_at);
+                    });
+                    data.resources.forEach(function(res) {
+                        var ctx = (res.context && res.context.custom) || {};
+                        var title = ctx.caption || 'Completed Project';
+                        var location = ctx.alt || '';
+                        var url = 'https://res.cloudinary.com/' + CLOUD_NAME +
+                            '/image/upload/c_fill,w_600,h_440,q_auto,f_auto/' +
+                            res.public_id + '.jpg';
+                        var item = document.createElement('div');
+                        item.className = 'gallery-item';
+                        item.innerHTML =
+                            '<img loading="lazy" alt="">' +
+                            '<div class="gallery-caption"><h4></h4><p></p></div>';
+                        item.querySelector('img').src = url;
+                        item.querySelector('img').alt = title + (location ? ' - ' + location : '');
+                        item.querySelector('h4').textContent = title;
+                        item.querySelector('p').textContent = location;
+                        grid.appendChild(item);
+                    });
+                })
+                .catch(function() { /* no uploads yet - keep static gallery */ });
+        })();
     </script>
 </body>
 </html>
