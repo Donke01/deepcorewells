@@ -1,0 +1,11 @@
+{
+  "name": "deepcorewells",
+  "version": "1.0.0",
+  "description": "Deep Core Wells - Professional water well drilling services, Kitale, Kenya",
+  "scripts": {
+    "start": "serve -l ${PORT:-3000} ."
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}
