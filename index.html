@@ -381,6 +381,63 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Gallery Section */
+        .gallery {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background: #f9f9f9;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-placeholder {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .gallery-caption {
+            padding: 1rem;
+        }
+
+        .gallery-caption h4 {
+            color: #0066cc;
+            margin-bottom: 0.3rem;
+        }
+
+        .gallery-caption p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
         /* Contact Section */
         .contact {
             padding: 5rem 2rem;
@@ -558,6 +615,7 @@
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#why-us">About</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#testimonials">Why Boreholes</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#quote" class="cta-button">Free Quote</a></li>
@@ -714,6 +772,57 @@
                     <div class="step-number">4</div>
                     <h3>Installation & Testing</h3>
                     <p>Complete pump installation and comprehensive water testing to ensure quality and safety.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Completed Projects Gallery -->
+    <section class="gallery" id="projects">
+        <div class="container">
+            <h2 class="section-title">Completed Projects</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">🚧</div>
+                    <div class="gallery-caption">
+                        <h4>Borehole Drilling</h4>
+                        <p>Photo coming soon</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">🚧</div>
+                    <div class="gallery-caption">
+                        <h4>Pump Installation</h4>
+                        <p>Photo coming soon</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">🚧</div>
+                    <div class="gallery-caption">
+                        <h4>Water Treatment System</h4>
+                        <p>Photo coming soon</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">🚧</div>
+                    <div class="gallery-caption">
+                        <h4>Community Water Project</h4>
+                        <p>Photo coming soon</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">🚧</div>
+                    <div class="gallery-caption">
+                        <h4>Farm Irrigation Borehole</h4>
+                        <p>Photo coming soon</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">🚧</div>
+                    <div class="gallery-caption">
+                        <h4>Commercial Borehole</h4>
+                        <p>Photo coming soon</p>
+                    </div>
                 </div>
             </div>
         </div>
