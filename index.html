@@ -1,1040 +1,770 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional water well drilling services. Expert drilling, pump installation, and water treatment. Licensed, bonded, and insured. Free quotes available.">
-    <meta name="keywords" content="water well drilling, well drilling services, pump installation, water treatment, deep core wells">
-    <title>Deep Core Wells | Professional Water Well Drilling Services</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        /* Header & Navigation */
-        header {
-            background: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #0066cc;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #0066cc;
-        }
-
-        .cta-button {
-            background: #0066cc;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .cta-button:hover {
-            background: #0052a3;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
-            color: white;
-            padding: 6rem 2rem;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .primary-btn {
-            background: #ff6b35;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: background 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .primary-btn:hover {
-            background: #e55a2b;
-        }
-
-        .secondary-btn {
-            background: white;
-            color: #0066cc;
-            padding: 1rem 2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: background 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .secondary-btn:hover {
-            background: #f0f0f0;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 5rem 2rem;
-            background: #f9f9f9;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 3rem;
-            color: #0066cc;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-card h3 {
-            color: #0066cc;
-            margin-bottom: 1rem;
-        }
-
-        .service-card p {
-            color: #666;
-            line-height: 1.8;
-        }
-
-        /* Why Choose Us */
-        .why-us {
-            padding: 5rem 2rem;
-            background: white;
-        }
-
-        .why-us-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .why-us-text h2 {
-            color: #0066cc;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .why-us-list {
-            list-style: none;
-        }
-
-        .why-us-list li {
-            padding: 0.8rem 0;
-            padding-left: 2rem;
-            position: relative;
-            color: #333;
-        }
-
-        .why-us-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #ff6b35;
-            font-weight: bold;
-            font-size: 1.3rem;
-        }
-
-        .why-us-image {
-            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
-            height: 300px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 4rem;
-        }
-
-        /* Trust Badges */
-        .trust-section {
-            padding: 3rem 2rem;
-            background: #f9f9f9;
-            text-align: center;
-        }
-
-        .trust-badges {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .badge {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            min-width: 150px;
-        }
-
-        .badge-icon {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .badge h4 {
-            color: #0066cc;
-            margin-bottom: 0.5rem;
-        }
-
-        .badge p {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 5rem 2rem;
-            background: white;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .testimonial-card {
-            background: #f9f9f9;
-            padding: 2rem;
-            border-radius: 8px;
-            border-left: 4px solid #ff6b35;
-        }
-
-        .testimonial-text {
-            color: #333;
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            font-weight: bold;
-            color: #0066cc;
-        }
-
-        .testimonial-location {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .stars {
-            color: #ff6b35;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Stats Section */
-        .stats {
-            padding: 5rem 2rem;
-            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat-item h3 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-item p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        /* Process Section */
-        .process {
-            padding: 5rem 2rem;
-            background: #f9f9f9;
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .process-step {
-            text-align: center;
-        }
-
-        .step-number {
-            background: #0066cc;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 1rem;
-        }
-
-        .process-step h3 {
-            color: #0066cc;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Gallery Section */
-        .gallery {
-            padding: 5rem 2rem;
-            background: white;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .gallery-item {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            background: #f9f9f9;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .gallery-placeholder {
-            width: 100%;
-            height: 220px;
-            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-        }
-
-        .gallery-caption {
-            padding: 1rem;
-        }
-
-        .gallery-caption h4 {
-            color: #0066cc;
-            margin-bottom: 0.3rem;
-        }
-
-        .gallery-caption p {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 5rem 2rem;
-            background: white;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-
-        .contact-info h3 {
-            color: #0066cc;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-item strong {
-            display: block;
-            color: #0066cc;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-item p {
-            color: #666;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: inherit;
-            font-size: 1rem;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #0066cc;
-            box-shadow: 0 0 5px rgba(0, 102, 204, 0.3);
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        /* Footer */
-        footer {
-            background: #222;
-            color: #ccc;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            text-align: left;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h4 {
-            color: white;
-            margin-bottom: 1rem;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-section a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-section a:hover {
-            color: #0066cc;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #444;
-            padding-top: 2rem;
-            text-align: center;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.9rem;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .why-us-content {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 1.6rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .primary-btn,
-            .secondary-btn {
-                width: 100%;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Deep Core Wells — professional borehole drilling in Kitale, Kenya. Water well drilling, pump installation, water treatment. Licensed, insured, WRA-compliant. Free quotes.">
+<meta name="keywords" content="borehole drilling Kenya, water well drilling Kitale, pump installation, water treatment, deep core wells">
+<title>Deep Core Wells | Borehole Drilling in Kitale, Kenya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============ THE DESCENT — Deep Core Wells cinematic theme ============ */
+:root{
+  --basalt:#0D0B09; --umber:#171310; --kiln:#241C15; --strata:#3A2E22;
+  --bone:#F2EDE4; --dust:#A79B8A; --amber:#E8A33D; --murram:#B4502A;
+  --teal:#6FBFA8; --strike:#EAF3EC;
+  --font-d:'Oswald','Arial Narrow',sans-serif;
+  --font-b:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --ease:cubic-bezier(0.2,0.7,0.2,1);
+  --head-h:64px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html.reduced-motion{scroll-behavior:auto}
+body{background:var(--basalt);color:var(--bone);font-family:var(--font-b);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:inherit}
+::selection{background:var(--amber);color:#160f06}
+
+/* Ambient descent wash — 4 fixed layers, opacity scrubbed by JS (never the gradients themselves) */
+.wash{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0}
+.wash.w1{background:linear-gradient(180deg,rgba(232,163,61,.20),rgba(232,163,61,0) 70%)}
+.wash.w2{background:linear-gradient(180deg,rgba(180,80,42,.16) 0%,rgba(180,80,42,0) 75%)}
+.wash.w3{background:linear-gradient(180deg,rgba(36,28,21,.55),rgba(13,11,9,0) 80%)}
+.wash.w4{background:linear-gradient(180deg,rgba(111,191,168,.14),rgba(111,191,168,0) 70%)}
+.page{position:relative;z-index:1}
+
+/* Depth rail — desktop only */
+.depth-rail{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:40;display:none;flex-direction:column;align-items:center;gap:10px;opacity:0}
+@media(min-width:1024px){.depth-rail{display:flex}}
+.depth-rail .track{position:relative;width:2px;height:150px;background:var(--strata);border-radius:2px}
+.depth-rail .marker{position:absolute;left:50%;top:0;width:10px;height:10px;border-radius:50%;background:var(--amber);box-shadow:0 0 12px rgba(232,163,61,.8);transform:translate(-50%,-50%);will-change:transform}
+.depth-rail .readout{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:.12em;color:var(--dust)}
+.depth-rail .tick{position:absolute;right:18px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);opacity:0;white-space:nowrap;font-family:var(--font-d)}
+
+.container{max-width:1140px;margin:0 auto;padding:0 1.25rem}
+section{position:relative;padding:5rem 0}
+.kicker{display:block;font-size:.75rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--murram);margin-bottom:.9rem}
+.section-title{font-family:var(--font-d);font-weight:600;text-transform:uppercase;letter-spacing:.01em;line-height:1.08;font-size:clamp(1.9rem,5.6vw,3.1rem);color:var(--bone);max-width:16em}
+.title-rule{display:block;width:64px;height:3px;background:var(--amber);margin-top:1rem;transform-origin:left center}
+.section-sub{color:var(--dust);margin-top:1rem;max-width:38em;font-size:1.02rem}
+.center{text-align:center}.center .title-rule{margin-left:auto;margin-right:auto;transform-origin:center}.center .section-sub{margin-left:auto;margin-right:auto}
+
+/* Progressive enhancement: hidden pre-states ONLY when JS+motion is active */
+.js-motion .reveal{opacity:0;transform:translateY(24px)}
+.js-motion .reveal-l{opacity:0;transform:translateX(-30px)}
+.js-motion .reveal-r{opacity:0;transform:translateX(30px)}
+html.reduced-motion .reveal,html.reduced-motion .reveal-l,html.reduced-motion .reveal-r{opacity:1!important;transform:none!important}
+html.reduced-motion *,html.reduced-motion *::before,html.reduced-motion *::after{animation:none!important;transition:none!important}
+
+/* ============ Header ============ */
+.site-head{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(13,11,9,.55);border-bottom:1px solid transparent;transition:background .35s,border-color .35s;will-change:transform}
+.site-head.solid{background:rgba(13,11,9,.96);border-bottom-color:var(--strata)}
+.nav{max-width:1140px;margin:0 auto;padding:0 1.25rem;height:var(--head-h);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.wordmark{font-family:var(--font-d);font-weight:700;font-size:1.15rem;letter-spacing:.06em;text-transform:uppercase;color:var(--bone);text-decoration:none;display:flex;align-items:center;gap:.6rem}
+.wordmark::before{content:"";width:10px;height:10px;background:var(--amber);transform:rotate(45deg);flex:none;box-shadow:0 0 10px rgba(232,163,61,.7)}
+.nav-links{display:flex;list-style:none;gap:1.6rem;align-items:center}
+.nav-links a{color:var(--dust);text-decoration:none;font-size:.86rem;font-weight:500;letter-spacing:.04em;transition:color .25s}
+.nav-links a:hover{color:var(--bone)}
+.nav-cta{font-family:var(--font-d);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:.82rem;background:var(--amber);color:#160f06!important;padding:.6rem 1.15rem;border-radius:6px}
+.nav-cta:hover{background:#f2b45c!important;color:#160f06!important}
+.nav-toggle{display:none;background:none;border:1px solid var(--strata);border-radius:6px;padding:.5rem .65rem;cursor:pointer}
+.nav-toggle span{display:block;width:20px;height:2px;background:var(--bone);margin:4px 0;transition:transform .3s,opacity .3s}
+@media(max-width:900px){
+  .nav-links{position:fixed;top:var(--head-h);left:0;right:0;background:rgba(13,11,9,.98);border-bottom:1px solid var(--strata);flex-direction:column;align-items:stretch;padding:1rem 1.25rem 1.4rem;gap:0;display:none}
+  .nav-links.open{display:flex}
+  .nav-links li{border-bottom:1px solid var(--strata)}
+  .nav-links li:last-child{border-bottom:0}
+  .nav-links a{display:block;padding:.85rem .25rem;font-size:1rem}
+  .nav-cta{text-align:center;margin-top:.8rem}
+  .nav-toggle{display:block}
+}
+
+/* ============ Buttons ============ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:var(--font-d);font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:.95rem;padding:1rem 2.1rem;border-radius:8px;border:0;cursor:pointer;text-decoration:none;transition:transform .25s var(--ease),box-shadow .25s,background .25s;position:relative}
+.btn-amber{background:var(--amber);color:#160f06;box-shadow:0 6px 26px rgba(232,163,61,.32)}
+.btn-amber:hover{background:#f2b45c;transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--bone);border:1px solid var(--strata)}
+.btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
+.btn-block{width:100%}
+
+/* ============ Hero ============ */
+.hero{min-height:100svh;display:flex;align-items:center;padding:calc(var(--head-h) + 3rem) 0 5rem;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-2}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:saturate(.82) contrast(1.08) brightness(.92)}
+.hero-bg::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(13,11,9,.42) 0%,rgba(13,11,9,.18) 35%,rgba(13,11,9,.72) 100%),
+  radial-gradient(ellipse at center,transparent 52%,rgba(13,11,9,.5) 100%)}
+.hero-bg::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(232,163,61,.14),rgba(180,80,42,.10));mix-blend-mode:overlay;pointer-events:none}
+.hero-grain{position:absolute;inset:0;z-index:-1;opacity:.05;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")}
+#hero-canvas{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.strata{position:absolute;left:-10%;right:-10%;z-index:-1;pointer-events:none;will-change:transform}
+.strata.s1{top:18%;height:120px;background:linear-gradient(180deg,transparent,rgba(180,80,42,.10),transparent)}
+.strata.s2{top:46%;height:170px;background:linear-gradient(180deg,transparent,rgba(232,163,61,.07),transparent)}
+.strata.s3{top:72%;height:140px;background:linear-gradient(180deg,transparent,rgba(58,46,34,.35),transparent)}
+.hero-inner{position:relative;z-index:1;max-width:1140px;margin:0 auto;padding:0 1.25rem;width:100%}
+.hero-depth{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8rem;letter-spacing:.3em;color:var(--amber);margin-bottom:1.4rem;display:flex;align-items:center;gap:.7rem}
+.hero-depth::before{content:"";width:26px;height:1px;background:var(--amber)}
+.hero-kicker{display:block;font-size:.78rem;font-weight:600;letter-spacing:.24em;color:var(--murram);margin-bottom:1.1rem;text-transform:uppercase}
+.hero h1{font-family:var(--font-d);font-weight:700;text-transform:uppercase;line-height:1.02;letter-spacing:.005em;font-size:clamp(2.6rem,9vw,5.4rem);color:var(--bone);text-shadow:0 3px 30px rgba(13,11,9,.6);max-width:12em}
+.hero h1 .ww{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.08em;margin-bottom:-.08em}
+.hero h1 .w{display:inline-block;will-change:transform}
+.hero h1 .accent{color:var(--amber)}
+.hero-sub{margin-top:1.4rem;max-width:36em;color:#d9d2c4;font-size:clamp(1rem,2.6vw,1.2rem);line-height:1.7}
+.hero-ctas{display:flex;gap:1rem;margin-top:2.2rem;flex-wrap:wrap}
+.scroll-cue{position:absolute;left:50%;bottom:1.6rem;transform:translateX(-50%);z-index:1;display:flex;flex-direction:column;align-items:center;gap:.4rem;color:var(--dust);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase}
+.scroll-cue svg{width:22px;height:22px;stroke:var(--amber);fill:none;stroke-width:2}
+
+/* ============ Services ============ */
+.services{background:linear-gradient(180deg,rgba(23,19,16,0),var(--umber) 18%,var(--umber) 82%,rgba(23,19,16,0))}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.1rem;margin-top:3rem}
+.service-card{background:var(--kiln);border:1px solid var(--strata);border-radius:12px;padding:1.8rem 1.6rem;position:relative;transition:transform .3s var(--ease),border-color .3s,box-shadow .3s;overflow:hidden}
+.service-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease);opacity:.9}
+@media(hover:hover){.service-card:hover{transform:translateY(-6px);border-color:#4d3d2c;box-shadow:0 18px 40px rgba(0,0,0,.45)}.service-card:hover::before{transform:scaleX(1)}}
+.service-icon{width:46px;height:46px;border:1px solid var(--strata);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;background:rgba(232,163,61,.06)}
+.service-icon svg{width:24px;height:24px;stroke:var(--amber);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.service-card h3{font-family:var(--font-d);font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:1.12rem;margin-bottom:.6rem;color:var(--bone)}
+.service-card p{color:var(--dust);font-size:.93rem;line-height:1.7}
+
+/* ============ Why us ============ */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;margin-top:3rem}
+@media(max-width:860px){.why-grid{grid-template-columns:1fr;gap:2.2rem}}
+.why-us-list{list-style:none;margin-top:1.6rem;display:grid;gap:.15rem}
+.why-us-list li{position:relative;padding:.72rem 0 .72rem 2.2rem;color:var(--bone);font-size:1rem;border-bottom:1px solid rgba(58,46,34,.55)}
+.why-us-list li::before{content:"✓";position:absolute;left:.2rem;top:.68rem;color:var(--amber);font-weight:700;font-size:1.15rem}
+.why-us-list li .tick-pop{display:inline}
+.why-photo{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--strata);min-height:380px}
+.why-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.82) contrast(1.08) brightness(.92) sepia(.12)}
+.why-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,11,9,0) 40%,rgba(13,11,9,.55) 100%),radial-gradient(ellipse at center,transparent 55%,rgba(13,11,9,.5) 100%)}
+.why-photo figcaption{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:1rem 1.2rem;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dust);background:linear-gradient(0deg,rgba(13,11,9,.85),transparent)}
+/* ============ Credentials band (badges + stats) ============ */
+.credentials{background:var(--basalt)}
+.strip-intro{color:var(--dust);font-size:.95rem;letter-spacing:.06em;text-transform:uppercase;text-align:center;margin-bottom:2.2rem}
+.strip-intro strong{color:var(--bone);font-weight:600}
+.badges{display:flex;justify-content:center;gap:.9rem;flex-wrap:wrap;margin-bottom:3.6rem}
+.badge{border:1px solid var(--strata);border-radius:10px;padding:.95rem 1.5rem;text-align:center;background:rgba(23,19,16,.6);min-width:150px}
+.badge b{display:block;font-family:var(--font-d);font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:.92rem;color:var(--bone)}
+.badge span{display:block;color:var(--dust);font-size:.76rem;margin-top:.25rem;letter-spacing:.03em}
+.stats{position:relative;overflow:hidden}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;position:relative;z-index:2}
+@media(max-width:700px){.stats-grid{grid-template-columns:repeat(2,1fr);gap:1.8rem 1rem}}
+.stat-item{text-align:center;position:relative}
+.stat-num{font-family:var(--font-d);font-weight:700;font-size:clamp(2.4rem,7vw,3.6rem);color:var(--amber);line-height:1;display:inline-block}
+.stat-under{display:block;width:52px;height:2px;background:var(--teal);margin:.7rem auto 0;transform:scaleX(0);transform-origin:center}
+.stat-label{color:var(--dust);font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;margin-top:.55rem}
+.stat-note{grid-column:1/-1;text-align:center;color:var(--dust);font-size:.75rem;opacity:.75}
+.shockwave{position:absolute;left:50%;top:38%;width:120px;height:120px;margin:-60px 0 0 -60px;border:2px solid var(--teal);border-radius:50%;opacity:0;pointer-events:none;z-index:3}
+
+/* ============ Process — the drill string ============ */
+.process{background:linear-gradient(180deg,rgba(13,11,9,0),#0a0806 20%,#0a0806 80%,rgba(13,11,9,0))}
+.drill-line{position:relative;margin-top:3.2rem}
+.drill-line::before{content:"";position:absolute;background:linear-gradient(180deg,var(--amber),var(--murram) 55%,var(--teal));opacity:.5}
+@media(min-width:900px){
+  .drill-line{display:grid;grid-template-columns:repeat(5,1fr);gap:1.4rem}
+  .drill-line::before{left:4%;right:4%;top:34px;height:2px;transform-origin:left center}
+}
+@media(max-width:899px){
+  .drill-line::before{left:33px;top:12px;bottom:12px;width:2px;transform-origin:top center}
+  .process-step{display:grid;grid-template-columns:68px 1fr;gap:1.1rem;text-align:left;margin-bottom:2.2rem}
+}
+.process-step{position:relative;text-align:center}
+.step-ring{position:relative;width:68px;height:68px;margin:0 auto 1.1rem;flex:none}
+@media(max-width:899px){.step-ring{margin:0}}
+.step-ring svg{width:68px;height:68px;transform:rotate(-90deg)}
+.step-ring .ring-bg{fill:none;stroke:var(--strata);stroke-width:3}
+.step-ring .ring-fg{fill:none;stroke:var(--amber);stroke-width:3;stroke-linecap:round}
+.step-ring .n{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-weight:700;font-size:1.25rem;color:var(--amber)}
+.process-step.strike .ring-fg{stroke:var(--teal)}
+.process-step.strike .n{color:var(--teal)}
+.process-step h3{font-family:var(--font-d);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:1.15rem;color:var(--bone);margin-bottom:.55rem}
+.process-step .depth-tag{display:inline-block;font-family:ui-monospace,Menlo,monospace;font-size:.68rem;letter-spacing:.22em;color:var(--murram);border:1px solid var(--strata);border-radius:4px;padding:.2rem .6rem;margin-bottom:.7rem}
+.process-step.strike .depth-tag{color:var(--teal);border-color:rgba(111,191,168,.4)}
+.process-step p{color:var(--dust);font-size:.92rem;line-height:1.7}
+@media(min-width:900px){.process-step p{max-width:15em;margin:0 auto}}
+
+/* ============ Gallery — the strike reel ============ */
+.gallery-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;margin-bottom:2.6rem}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+@media(max-width:900px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.gallery-grid{grid-template-columns:1fr}}
+.gallery-item{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--strata);background:var(--kiln);aspect-ratio:16/10}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.82) contrast(1.08) brightness(.92);transition:transform .5s var(--ease)}
+@media(hover:hover){.gallery-item:hover img{transform:scale(1.06)}}
+.gallery-item::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,11,9,0) 45%,rgba(13,11,9,.62) 100%),radial-gradient(ellipse at center,transparent 55%,rgba(13,11,9,.5) 100%);pointer-events:none}
+.gallery-item.photo{box-shadow:inset 0 0 0 1px rgba(0,0,0,.4)}
+.gallery-caption{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:2.4rem 1.1rem .95rem;transform:translateY(0)}
+.gallery-caption h4{font-family:var(--font-d);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:.92rem;color:var(--bone)}
+.gallery-caption p{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);margin-top:.2rem}
+@media(hover:hover){.gallery-caption{transform:translateY(38%);transition:transform .4s var(--ease)}.gallery-item:hover .gallery-caption{transform:translateY(0)}}
+.strata-card{display:flex;align-items:center;justify-content:center;min-height:100%;background:
+  repeating-linear-gradient(178deg,rgba(58,46,34,.9) 0 14px,rgba(36,28,21,.9) 14px 26px,rgba(180,80,42,.28) 26px 30px,rgba(23,19,16,.9) 30px 46px),
+  linear-gradient(160deg,#241C15,#171310)}
+.strata-card span{font-family:var(--font-d);font-size:.8rem;letter-spacing:.3em;color:var(--dust);text-transform:uppercase;border:1px solid var(--strata);padding:.7rem 1.1rem;border-radius:6px;background:rgba(13,11,9,.55)}
+.ripple{position:absolute;left:50%;top:42%;width:90px;height:90px;margin:-45px 0 0 -45px;border:2px solid rgba(234,243,236,.8);border-radius:50%;z-index:2;pointer-events:none;opacity:0}
+.shimmer{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.32) 50%,transparent 60%);transform:translateX(-150%)}
+
+/* ============ Why boreholes / testimonials ============ */
+.edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:2.8rem}
+@media(max-width:860px){.edu-grid{grid-template-columns:1fr}}
+.edu-card{background:var(--umber);border:1px solid var(--strata);border-left:3px solid var(--murram);border-radius:10px;padding:1.9rem 1.6rem}
+.edu-card h3{font-family:var(--font-d);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:1.05rem;margin-bottom:.7rem}
+.edu-card p{color:var(--dust);font-size:.93rem;line-height:1.75}
+.testimonials{background:linear-gradient(180deg,rgba(23,19,16,0),rgba(36,28,21,.35) 30%,rgba(36,28,21,.35) 70%,rgba(23,19,16,0))}
+.quote-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem;margin-top:2.8rem}
+@media(max-width:760px){.quote-grid{grid-template-columns:1fr}}
+.quote-card{background:var(--kiln);border:1px solid var(--strata);border-radius:12px;padding:2rem 1.8rem;position:relative}
+.quote-mark{font-family:var(--font-d);font-size:3rem;line-height:1;color:var(--murram);display:block;margin-bottom:.4rem}
+.quote-card blockquote{font-family:var(--font-d);font-weight:500;font-size:1.28rem;line-height:1.45;color:var(--bone);letter-spacing:.01em}
+.quote-card cite{display:block;margin-top:1.1rem;font-style:normal;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dust)}
+.verify-tag{display:inline-block;margin-top:.7rem;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);border:1px dashed rgba(232,163,61,.5);border-radius:4px;padding:.25rem .6rem}
+
+/* ============ Contact — resurface ============ */
+.contact{background:linear-gradient(180deg,var(--basalt) 0%,#0c1210 55%,#0d1a16 100%)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:3rem;margin-top:2.8rem;align-items:start}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+.contact-facts{display:grid;gap:1.35rem;margin-top:.4rem}
+.fact b{display:block;font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--murram);margin-bottom:.3rem}
+.fact p,.fact a{color:var(--bone);font-size:1.02rem;text-decoration:none;line-height:1.7}
+.fact a:hover{color:var(--amber)}
+.call-big{display:inline-flex;margin-top:.4rem;font-family:var(--font-d);font-weight:700;font-size:clamp(1.6rem,5.5vw,2.2rem);letter-spacing:.04em;color:#160f06;background:var(--amber);padding:.85rem 1.7rem;border-radius:10px;text-decoration:none;box-shadow:0 8px 30px rgba(232,163,61,.35)}
+.quote-card-form{background:var(--kiln);border:1px solid var(--strata);border-radius:14px;padding:2rem 1.8rem}
+.quote-card-form h3{font-family:var(--font-d);font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:1.2rem;margin-bottom:.4rem}
+.quote-card-form>p{color:var(--dust);font-size:.9rem;margin-bottom:1.5rem}
+.form-group{margin-bottom:1.15rem}
+.form-group label{display:block;margin-bottom:.45rem;font-size:.82rem;font-weight:600;letter-spacing:.04em;color:var(--bone)}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:.85rem .95rem;border:1px solid var(--strata);border-radius:8px;background:var(--umber);color:var(--bone);font-family:var(--font-b);font-size:.95rem;transition:border-color .25s,box-shadow .25s;appearance:none}
+.form-group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23A79B8A' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .95rem center}
+.form-group select option{background:var(--umber);color:var(--bone)}
+.form-group textarea{resize:vertical;min-height:110px}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px rgba(232,163,61,.22)}
+.btn-success{background:var(--teal)!important;color:#06231b!important;box-shadow:0 6px 26px rgba(111,191,168,.35)!important}
+.form-note{margin-top:1rem;font-size:.85rem;color:var(--teal);min-height:1.4em}
+
+/* ============ Final CTA + footer ============ */
+.cta-band{text-align:center;overflow:hidden}
+.cta-band .glow{position:absolute;left:50%;top:50%;width:560px;height:560px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(111,191,168,.16),transparent 65%);pointer-events:none;z-index:-1}
+.cta-band h2{font-family:var(--font-d);font-weight:700;text-transform:uppercase;font-size:clamp(2rem,6.5vw,3.4rem);color:var(--strike);line-height:1.1;max-width:14em;margin:0 auto}
+.cta-band p{color:var(--dust);margin:1.1rem auto 2rem;max-width:32em}
+footer{background:#0a0806;border-top:1px solid var(--strata);padding:3.5rem 0 0;color:var(--dust)}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.3fr;gap:2rem;max-width:1140px;margin:0 auto;padding:0 1.25rem 2.5rem}
+@media(max-width:860px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.foot-grid{grid-template-columns:1fr}}
+.foot-grid h4{font-family:var(--font-d);font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:.85rem;color:var(--bone);margin-bottom:1rem}
+.foot-grid ul{list-style:none;display:grid;gap:.55rem}
+.foot-grid a{color:var(--dust);text-decoration:none;font-size:.9rem;transition:color .25s}
+.foot-grid a:hover{color:var(--amber)}
+.foot-grid p{font-size:.9rem;line-height:1.8}
+.foot-about{font-size:.9rem;line-height:1.8;max-width:20em}
+.foot-bottom{border-top:1px solid var(--strata);padding:1.4rem 1.25rem;text-align:center;font-size:.8rem;color:var(--dust);max-width:1140px;margin:0 auto}
+
+@media(max-width:700px){section{padding:3.6rem 0}}
+/* motion.js support: CTA pulse, drill-string draw, checklist tick pop */
+.btn-pulse{position:relative}
+.btn-pulse::after{content:"";position:absolute;inset:-1px;border-radius:inherit;box-shadow:0 0 0 0 rgba(232,163,61,.45);animation:pulseRing 2.4s ease-in-out infinite;pointer-events:none}
+@keyframes pulseRing{0%{box-shadow:0 0 0 0 rgba(232,163,61,.45)}70%{box-shadow:0 0 0 16px rgba(232,163,61,0)}100%{box-shadow:0 0 0 0 rgba(232,163,61,0)}}
+@media(min-width:900px){.js-motion .drill-line::before{transform:scaleX(var(--dl,0))}}
+@media(max-width:899px){.js-motion .drill-line::before{transform:scaleY(var(--dl,0))}}
+.why-us-list li.tick-in::before{animation:tickPop .3s cubic-bezier(.34,1.8,.64,1)}
+@keyframes tickPop{from{transform:scale(0)}to{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+<script>
+/* Flag motion intent early to avoid a flash of un-hidden content; motion.js clears if it can't run. */
+(function(){var h=document.documentElement;try{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;}catch(e){return;}
+h.classList.add('js-motion');setTimeout(function(){if(!window.__motionReady)h.classList.remove('js-motion');},4000);})();
+</script>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <a href="#" class="logo">Deep Core Wells</a>
-            <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#why-us">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#testimonials">Why Boreholes</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#quote" class="cta-button">Free Quote</a></li>
-            </ul>
-        </nav>
-    </header>
+<!-- Ambient descent wash layers (opacity scrubbed by motion.js) -->
+<div class="wash w1" aria-hidden="true"></div>
+<div class="wash w2" aria-hidden="true"></div>
+<div class="wash w3" aria-hidden="true"></div>
+<div class="wash w4" aria-hidden="true"></div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Professional Water Well Drilling Services</h1>
-        <p>Expert drilling, pump installation & water treatment solutions — based in Kitale, drilling countrywide</p>
-        <div class="hero-buttons">
-            <button class="primary-btn" onclick="scrollToContact()">Get Free Quote</button>
-            <button class="secondary-btn" onclick="scrollToServices()">Our Services</button>
+<!-- Fixed depth rail (desktop only) -->
+<aside class="depth-rail" aria-hidden="true">
+  <span class="readout">0 m</span>
+  <div class="track"><span class="marker"></span><span class="tick"></span></div>
+  <span class="readout" style="opacity:.5">200 m</span>
+</aside>
+
+<div class="page">
+<!-- ================= Header ================= -->
+<header class="site-head" id="siteHead">
+  <nav class="nav" aria-label="Main navigation">
+    <a href="#top" class="wordmark">Deep Core Wells</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="nav-cta">Free Quote</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+<!-- ================= Hero ================= -->
+<section class="hero" aria-label="Introduction">
+  <div class="hero-bg" aria-hidden="true">
+    <img src="images/mutwot-water-strike.jpg" alt="" fetchpriority="high">
+  </div>
+  <div class="hero-grain" aria-hidden="true"></div>
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+  <div class="strata s1" aria-hidden="true"></div>
+  <div class="strata s2" aria-hidden="true"></div>
+  <div class="strata s3" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-depth" aria-hidden="true">DEPTH <span id="heroDepthNum">000</span> m</div>
+    <span class="hero-kicker">Deep Core Wells · Kitale, Kenya — Drilling Countrywide</span>
+    <h1 id="heroTitle">The <span class="accent">water</span> is down there. We bring it up.</h1>
+    <p class="hero-sub">Professional borehole drilling, pump installation, and water treatment — a Kitale crew that drills anywhere in Kenya. Licensed, insured, WRA-compliant. Free quotes.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn btn-amber" id="heroCta">Get a free quote</a>
+      <a href="tel:+254706716310" class="btn btn-ghost">Call 0706 716 310</a>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"><span>Scroll to drill down</span><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+</section>
+
+<!-- ================= Services ================= -->
+<section class="services" id="services">
+  <div class="container">
+    <span class="kicker reveal">What we do</span>
+    <h2 class="section-title">One crew. The whole water story.</h2>
+    <span class="title-rule" aria-hidden="true"></span>
+    <p class="section-sub reveal">From the first survey to the water at your tap.</p>
+    <div class="services-grid">
+      <article class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2v7"/><path d="M8 5l4-3 4 3"/><path d="M9 12l3 3 3-3"/><path d="M9 17l3 3 3-3"/></svg></div>
+        <h3>Water Well Drilling</h3>
+        <p>Homes, farms, schools, industry: we bore through soil and rock until the aquifer gives — anywhere in Kenya.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 13l4-4"/><path d="M12 5v2"/></svg></div>
+        <h3>Pump Installation &amp; Service</h3>
+        <p>The right pump, set at the right depth, so your water keeps flowing for decades.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div>
+        <h3>Water Treatment</h3>
+        <p>We test what's down there, treat what needs treating, and hand you water that's safe to drink.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M9 3h6"/><path d="M10 3v5L4.5 18a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L14 8V3"/><path d="M7.5 14h9"/></svg></div>
+        <h3>Well Testing</h3>
+        <p>Comprehensive flow tests and water quality analysis. We provide detailed reports and recommendations for optimal system performance.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3>Well Maintenance</h3>
+        <p>Regular maintenance and inspection services to keep your well system running at peak performance. Preventative care saves money long-term.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 3v4"/><path d="M5 7l2.5 2.5"/><path d="M19 7l-2.5 2.5"/><path d="M7 21h10"/><path d="M9 21v-6a3 3 0 0 1 6 0v6"/></svg></div>
+        <h3>Emergency Service</h3>
+        <p>24/7 emergency response available for well-related issues. Fast, professional service when you need it most.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Why choose us ================= -->
+<section class="why-us" id="why-us">
+  <div class="container">
+    <div class="why-grid">
+      <div>
+        <span class="kicker reveal">Why Deep Core Wells</span>
+        <h2 class="section-title">Industry-leading service since 2020</h2>
+        <span class="title-rule" aria-hidden="true"></span>
+        <ul class="why-us-list">
+          <li>Years of hands-on drilling experience</li>
+          <li>Licensed, bonded, and fully insured</li>
+          <li>Professional, certified technicians</li>
+          <li>Fair pricing and transparent quotes</li>
+          <li>Same-day emergency service available</li>
+          <li>100% satisfaction guarantee</li>
+          <li>Latest drilling equipment and technology</li>
+          <li>Free water testing and consultations</li>
+        </ul>
+      </div>
+      <figure class="why-photo reveal-r">
+        <img src="images/mutwot-drilling-rig.jpg" alt="Deep Core Wells drilling rig at work on red murram soil" loading="lazy" decoding="async">
+        <figcaption>On site — Mutwot, Simat</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Credentials band ================= -->
+<section class="credentials trust-section">
+  <div class="container">
+    <p class="strip-intro reveal">The permits, the paperwork, and the proof — <strong>handled before we drill.</strong></p>
+    <div class="badges">
+      <div class="badge"><b>Licensed</b><span>Fully licensed water well drillers</span></div>
+      <div class="badge"><b>WRA Approved</b><span>Compliant with Water Resources Authority permits</span></div>
+      <div class="badge"><b>NEMA Compliant</b><span>Environmental assessments done to NEMA standards</span></div>
+      <div class="badge"><b>Countrywide</b><span>We drill anywhere in Kenya</span></div>
+    </div>
+    <div class="stats-grid stats">
+      <div class="shockwave" aria-hidden="true"></div>
+      <div class="shockwave" aria-hidden="true"></div>
+      <div class="stat-item">
+        <!-- [VERIFY] 200+ wells drilled — unconfirmed, confirm with business before launch -->
+        <span class="stat-num" data-count="200" data-suffix="+">200+</span>
+        <span class="stat-under" aria-hidden="true"></span>
+        <p class="stat-label">Wells drilled</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-count="6" data-suffix="+">6+</span>
+        <span class="stat-under" aria-hidden="true"></span>
+        <p class="stat-label">Years in the ground</p>
+      </div>
+      <div class="stat-item">
+        <!-- [VERIFY] 98% satisfaction — unconfirmed, confirm with business before launch -->
+        <span class="stat-num" data-count="98" data-suffix="%">98%</span>
+        <span class="stat-under" aria-hidden="true"></span>
+        <p class="stat-label">Customer satisfaction</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num static">24/7</span>
+        <span class="stat-under" aria-hidden="true"></span>
+        <p class="stat-label">Emergency service</p>
+      </div>
+      <p class="stat-note">Drilling since 2020 · WRA permits · NEMA-compliant environmental assessments · Countrywide</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Process ================= -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="center">
+      <span class="kicker reveal">How it happens</span>
+      <h2 class="section-title">Five stages between you and water.</h2>
+      <span class="title-rule" aria-hidden="true"></span>
+    </div>
+    <div class="drill-line">
+      <div class="process-step">
+        <div class="step-ring"><svg viewBox="0 0 68 68"><circle class="ring-bg" cx="34" cy="34" r="30"/><circle class="ring-fg" cx="34" cy="34" r="30" stroke-dasharray="188.5" stroke-dashoffset="188.5"/></svg><span class="n">1</span></div>
+        <span class="depth-tag">Surface</span>
+        <h3>Survey</h3>
+        <p>Before steel touches soil, we read the ground. A hydrogeological survey maps the aquifer so we drill where the water actually is — not where we hope it is.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-ring"><svg viewBox="0 0 68 68"><circle class="ring-bg" cx="34" cy="34" r="30"/><circle class="ring-fg" cx="34" cy="34" r="30" stroke-dasharray="188.5" stroke-dashoffset="188.5"/></svg><span class="n">2</span></div>
+        <span class="depth-tag">Going down</span>
+        <h3>Drill</h3>
+        <p>Then the rig goes to work: metre by metre through soil and rock, casing the hole as it deepens, cuttings rising like smoke signals from below.</p>
+      </div>
+      <div class="process-step strike">
+        <div class="step-ring"><svg viewBox="0 0 68 68"><circle class="ring-bg" cx="34" cy="34" r="30"/><circle class="ring-fg" cx="34" cy="34" r="30" stroke-dasharray="188.5" stroke-dashoffset="188.5"/></svg><span class="n">3</span></div>
+        <span class="depth-tag">The breakthrough</span>
+        <h3>Strike</h3>
+        <p>The moment every driller waits for. Water breaking through under pressure, flooding up the borehole. The strike.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-ring"><svg viewBox="0 0 68 68"><circle class="ring-bg" cx="34" cy="34" r="30"/><circle class="ring-fg" cx="34" cy="34" r="30" stroke-dasharray="188.5" stroke-dashoffset="188.5"/></svg><span class="n">4</span></div>
+        <span class="depth-tag">Set at depth</span>
+        <h3>Pump</h3>
+        <p>A pump sized for your yield, set at depth, wired, and run-tested until the flow holds steady.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-ring"><svg viewBox="0 0 68 68"><circle class="ring-bg" cx="34" cy="34" r="30"/><circle class="ring-fg" cx="34" cy="34" r="30" stroke-dasharray="188.5" stroke-dashoffset="188.5"/></svg><span class="n">5</span></div>
+        <span class="depth-tag">First flow</span>
+        <h3>Clean water</h3>
+        <p>We analyse the water, treat what needs treating, and leave you with a tap you can trust.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Gallery ================= -->
+<section class="gallery" id="projects">
+  <div class="container">
+    <div class="gallery-head">
+      <div>
+        <span class="kicker reveal">Completed projects</span>
+        <h2 class="section-title">The strike reel.</h2>
+        <span class="title-rule" aria-hidden="true"></span>
+      </div>
+      <p class="section-sub reveal" style="margin-top:0;max-width:26em">Real rigs on real ground — including our borehole at Mutwot Comprehensive School, Simat, Eldoret: the rig, the strike, the water.</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <figure class="gallery-item photo graded">
+        <img src="images/mutwot-drilling-rig.jpg" alt="Borehole drilling rig on site at Mutwot Comprehensive School, Simat, Eldoret" loading="lazy" decoding="async">
+        <figcaption class="gallery-caption"><h4>Borehole Drilling</h4><p>Mutwot Comprehensive School — Simat, Eldoret</p></figcaption>
+      </figure>
+      <figure class="gallery-item photo graded" id="strikePhoto">
+        <img src="images/mutwot-water-strike.jpg" alt="Water strike during borehole drilling at Mutwot Comprehensive School, Simat, Eldoret" loading="lazy" decoding="async">
+        <figcaption class="gallery-caption"><h4>Water Strike</h4><p>Mutwot Comprehensive School — Simat, Eldoret</p></figcaption>
+        <span class="shimmer" aria-hidden="true"></span>
+      </figure>
+      <figure class="gallery-item placeholder-card">
+        <div class="strata-card"><span>Photo coming soon</span></div>
+        <figcaption class="gallery-caption"><h4>Water Treatment System</h4><p>Photo coming soon</p></figcaption>
+      </figure>
+      <figure class="gallery-item placeholder-card">
+        <div class="strata-card"><span>Photo coming soon</span></div>
+        <figcaption class="gallery-caption"><h4>Community Water Project</h4><p>Photo coming soon</p></figcaption>
+      </figure>
+      <figure class="gallery-item placeholder-card">
+        <div class="strata-card"><span>Photo coming soon</span></div>
+        <figcaption class="gallery-caption"><h4>Farm Irrigation Borehole</h4><p>Photo coming soon</p></figcaption>
+      </figure>
+      <figure class="gallery-item placeholder-card">
+        <div class="strata-card"><span>Photo coming soon</span></div>
+        <figcaption class="gallery-caption"><h4>Commercial Borehole</h4><p>Photo coming soon</p></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Why boreholes matter ================= -->
+<section class="why-borehole" id="why-boreholes">
+  <div class="container">
+    <span class="kicker reveal">Why a borehole</span>
+    <h2 class="section-title">Why boreholes matter in Kenya</h2>
+    <span class="title-rule" aria-hidden="true"></span>
+    <div class="edu-grid">
+      <article class="edu-card">
+        <h3>Reliable water security</h3>
+        <p>Groundwater doesn't wait for rain. A properly drilled borehole delivers year-round, independent of rainfall and municipal supply.</p>
+      </article>
+      <article class="edu-card">
+        <h3>Farming &amp; irrigation</h3>
+        <p>Boreholes carry Kenyan farms through the dry season: irrigation, livestock, greenhouses.</p>
+      </article>
+      <article class="edu-card">
+        <h3>A lasting investment</h3>
+        <p>Cut water bills, end vendor dependence, add value to the property. Licensed through WRA, a borehole serves for decades.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Testimonials ================= -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <span class="kicker reveal">Testimonials</span>
+    <h2 class="section-title">Word from the ground.</h2>
+    <span class="title-rule" aria-hidden="true"></span>
+    <div class="quote-grid">
+      <!-- [VERIFY] placeholder testimonial — confirm with business before launch -->
+      <article class="quote-card testimonial-card">
+        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+        <blockquote>They surveyed on Monday and struck water on Thursday. Our school finally has its own supply.</blockquote>
+        <cite>— [Name, role], Mutwot Comprehensive School, Simat, Eldoret</cite>
+        <span class="verify-tag">[Verify] placeholder</span>
+      </article>
+      <!-- [VERIFY] placeholder testimonial — confirm with business before launch -->
+      <article class="quote-card testimonial-card">
+        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+        <blockquote>Fair quote, no surprises — and the pump has run clean for two seasons now.</blockquote>
+        <cite>— [Name], farmer, [location]</cite>
+        <span class="verify-tag">[Verify] placeholder</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Contact ================= -->
+<section class="contact" id="contact">
+  <div class="container">
+    <span class="kicker reveal">Get in touch</span>
+    <h2 class="section-title">Your water is underground. Let's go get it.</h2>
+    <span class="title-rule" aria-hidden="true"></span>
+    <p class="section-sub reveal">Tell us where you are and what you need — we respond within 24 hours. Quotes are free.</p>
+    <div class="contact-grid">
+      <div class="contact-facts">
+        <div class="fact"><b>Phone — 24/7 emergency line</b><a class="call-big" href="tel:+254706716310">0706 716 310</a></div>
+        <div class="fact"><b>Email</b><p><a href="mailto:info@deepcorewells.com">info@deepcorewells.com</a></p></div>
+        <div class="fact"><b>Office</b><p>Mega Centre, 3rd Floor, Makasembo Road, Kitale, Kenya</p></div>
+        <div class="fact"><b>Hours</b><p>Mon–Fri 8:00 AM – 6:00 PM · Sat 8:00 AM – 2:00 PM · Sun: emergencies only</p></div>
+        <div class="fact"><b>Coverage</b><p>We drill countrywide.</p></div>
+      </div>
+      <form id="quoteForm" class="quote-card-form" novalidate>
+        <h3>Request a free quote</h3>
+        <p>Same fields, straight to our crew — no account needed.</p>
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" name="name" required autocomplete="name">
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">⛏️</div>
-                    <h3>Water Well Drilling</h3>
-                    <p>Professional drilling services for residential, commercial, and municipal applications. Quality equipment and experienced technicians ensure optimal results every time.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔧</div>
-                    <h3>Pump Installation & Service</h3>
-                    <p>Expert pump installation and maintenance services. We work with leading brands to ensure efficient, reliable water delivery systems for your property.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💧</div>
-                    <h3>Water Treatment</h3>
-                    <p>Complete water treatment solutions including testing, analysis, and system installation. Ensure clean, safe water for your home or business.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔄</div>
-                    <h3>Well Maintenance</h3>
-                    <p>Regular maintenance and inspection services to keep your well system running at peak performance. Preventative care saves money long-term.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>Well Testing</h3>
-                    <p>Comprehensive flow tests and water quality analysis. We provide detailed reports and recommendations for optimal system performance.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">⚡</div>
-                    <h3>Emergency Service</h3>
-                    <p>24/7 emergency response available for well-related issues. Fast, professional service when you need it most.</p>
-                </div>
-            </div>
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" required autocomplete="tel">
         </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section class="why-us" id="why-us">
-        <div class="container">
-            <h2 class="section-title">Why Choose Deep Core Wells?</h2>
-            <div class="why-us-content">
-                <div class="why-us-text">
-                    <h2>Industry-Leading Service Since 2020</h2>
-                    <ul class="why-us-list">
-                        <li>Years of hands-on drilling experience</li>
-                        <li>Licensed, bonded, and fully insured</li>
-                        <li>Professional, certified technicians</li>
-                        <li>Fair pricing and transparent quotes</li>
-                        <li>Same-day emergency service available</li>
-                        <li>100% satisfaction guarantee</li>
-                        <li>Latest drilling equipment and technology</li>
-                        <li>Free water testing and consultations</li>
-                    </ul>
-                </div>
-                <div class="why-us-image">⭐</div>
-            </div>
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
         </div>
-    </section>
-
-    <!-- Trust Badges -->
-    <section class="trust-section">
-        <div class="container">
-            <h2 class="section-title">Trusted & Certified</h2>
-            <div class="trust-badges">
-                <div class="badge">
-                    <div class="badge-icon">📜</div>
-                    <h4>Licensed</h4>
-                    <p>Fully licensed water well drillers</p>
-                </div>
-                <div class="badge">
-                    <div class="badge-icon">💧</div>
-                    <h4>WRA Approved</h4>
-                    <p>Compliant with Water Resources Authority permits</p>
-                </div>
-                <div class="badge">
-                    <div class="badge-icon">🌍</div>
-                    <h4>NEMA Compliant</h4>
-                    <p>Environmental assessments done to NEMA standards</p>
-                </div>
-                <div class="badge">
-                    <div class="badge-icon">🇰🇪</div>
-                    <h4>Countrywide Coverage</h4>
-                    <p>We drill anywhere in Kenya</p>
-                </div>
-            </div>
+        <div class="form-group">
+          <label for="service">Service Type *</label>
+          <select id="service" name="service" required>
+            <option value="">Select a service...</option>
+            <option value="drilling">Water Well Drilling</option>
+            <option value="pump">Pump Installation &amp; Service</option>
+            <option value="treatment">Water Treatment</option>
+            <option value="maintenance">Well Maintenance</option>
+            <option value="testing">Well Testing</option>
+            <option value="emergency">Emergency Service</option>
+            <option value="other">Other</option>
+          </select>
         </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>200+</h3>
-                    <p>Wells Drilled</p>
-                </div>
-                <div class="stat-item">
-                    <h3>6+</h3>
-                    <p>Years Experience</p>
-                </div>
-                <div class="stat-item">
-                    <h3>98%</h3>
-                    <p>Customer Satisfaction</p>
-                </div>
-                <div class="stat-item">
-                    <h3>24/7</h3>
-                    <p>Emergency Service</p>
-                </div>
-            </div>
+        <div class="form-group">
+          <label for="message">Tell us about your project</label>
+          <textarea id="message" name="message" placeholder="Where is the site? What do you need water for?"></textarea>
         </div>
-    </section>
+        <button type="submit" class="btn btn-amber btn-block" id="quoteSubmit">Get Free Quote</button>
+        <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
 
-    <!-- Process Section -->
-    <section class="process">
-        <div class="container">
-            <h2 class="section-title">Our Process</h2>
-            <div class="process-grid">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3>Initial Consultation</h3>
-                    <p>We assess your property and understand your water needs, geology, and requirements.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3>Site Evaluation</h3>
-                    <p>Professional evaluation of your property to determine optimal drilling location and depth.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3>Expert Drilling</h3>
-                    <p>Professional drilling team uses modern equipment to drill your well safely and efficiently.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h3>Installation & Testing</h3>
-                    <p>Complete pump installation and comprehensive water testing to ensure quality and safety.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ================= Final CTA ================= -->
+<section class="cta-band">
+  <span class="glow" aria-hidden="true"></span>
+  <div class="container">
+    <h2 class="reveal">The water is down there.</h2>
+    <p class="reveal">Free quotes · Response within 24 hours · We drill countrywide</p>
+    <a href="#contact" class="btn btn-amber">Get a free quote</a>
+  </div>
+</section>
+</main>
 
-    <!-- Completed Projects Gallery -->
-    <section class="gallery" id="projects">
-        <div class="container">
-            <h2 class="section-title">Completed Projects</h2>
-            <div class="gallery-grid" id="galleryGrid">
-                <div class="gallery-item">
-                    <img src="images/mutwot-drilling-rig.jpg" alt="Borehole drilling rig on site at Mutwot Comprehensive School, Simat, Eldoret">
-                    <div class="gallery-caption">
-                        <h4>Borehole Drilling</h4>
-                        <p>Mutwot Comprehensive School — Simat, Eldoret</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/mutwot-water-strike.jpg" alt="Water strike during borehole drilling at Mutwot Comprehensive School, Simat, Eldoret">
-                    <div class="gallery-caption">
-                        <h4>Water Strike</h4>
-                        <p>Mutwot Comprehensive School — Simat, Eldoret</p>
-                    </div>
-                </div>
-                <div class="gallery-item placeholder-card">
-                    <div class="gallery-placeholder">🚧</div>
-                    <div class="gallery-caption">
-                        <h4>Water Treatment System</h4>
-                        <p>Photo coming soon</p>
-                    </div>
-                </div>
-                <div class="gallery-item placeholder-card">
-                    <div class="gallery-placeholder">🚧</div>
-                    <div class="gallery-caption">
-                        <h4>Community Water Project</h4>
-                        <p>Photo coming soon</p>
-                    </div>
-                </div>
-                <div class="gallery-item placeholder-card">
-                    <div class="gallery-placeholder">🚧</div>
-                    <div class="gallery-caption">
-                        <h4>Farm Irrigation Borehole</h4>
-                        <p>Photo coming soon</p>
-                    </div>
-                </div>
-                <div class="gallery-item placeholder-card">
-                    <div class="gallery-placeholder">🚧</div>
-                    <div class="gallery-caption">
-                        <h4>Commercial Borehole</h4>
-                        <p>Photo coming soon</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ================= Footer ================= -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <h4>Deep Core Wells</h4>
+      <p class="foot-about">Professional water well drilling and pump services since 2020. Licensed, bonded, and insured.</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Well Drilling</a></li>
+        <li><a href="#services">Pump Installation</a></li>
+        <li><a href="#services">Water Treatment</a></li>
+        <li><a href="#services">Emergency Service</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#why-us">About Us</a></li>
+        <li><a href="#why-boreholes">Why Boreholes</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact">Free Quote</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact Us</h4>
+      <p><strong>Phone:</strong> <a href="tel:+254706716310">0706 716 310</a></p>
+      <p><strong>Email:</strong> <a href="mailto:info@deepcorewells.com">info@deepcorewells.com</a></p>
+      <p><strong>Location:</strong> Mega Centre, 3rd Floor, Makasembo Road, Kitale</p>
+      <p><strong>Coverage:</strong> We drill countrywide</p>
+      <p><strong>Available:</strong> 24/7 Emergency Service</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p>&copy; 2026 Deep Core Wells · Mega Centre, 3rd Floor, Makasembo Road, Kitale, Kenya · Licensed &amp; insured water well drilling — we drill countrywide.</p>
+  </div>
+</footer>
+</div><!-- /.page -->
+<script>
+(function(){
+  "use strict";
+  /* Mobile nav toggle */
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  if (toggle && links) {
+    toggle.addEventListener('click', function(){
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    links.addEventListener('click', function(e){
+      if (e.target.tagName === 'A') links.classList.remove('open');
+    });
+  }
 
-    <!-- Testimonials -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <h2 class="section-title">Why Boreholes Matter in Kenya</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="service-icon">💧</div>
-                    <div class="testimonial-text">Groundwater is one of Kenya's most reliable water sources, especially in arid and semi-arid regions. A properly drilled borehole provides a consistent, year-round supply — independent of rainfall and unreliable municipal systems.</div>
-                    <div class="testimonial-author">Reliable Water Security</div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="service-icon">🌾</div>
-                    <div class="testimonial-text">From smallholder farms to large-scale irrigation, boreholes power Kenyan agriculture. A borehole can transform a farm's productivity, enabling irrigation through dry seasons and supporting livestock, greenhouses, and horticulture.</div>
-                    <div class="testimonial-author">Farming & Irrigation</div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="service-icon">🏡</div>
-                    <div class="testimonial-text">A borehole is a long-term investment that adds value to homes, schools, hospitals, and businesses. It cuts water bills, ends dependence on water vendors, and — with proper drilling and licensing through WRA — serves for decades.</div>
-                    <div class="testimonial-author">A Lasting Investment</div>
-                </div>
-            </div>
-        </div>
-    </section>
+  /* Header solidifies on scroll (CSS transition; motion.js may translate it) */
+  var head = document.getElementById('siteHead');
+  function onScrollHead(){ if (head) head.classList.toggle('solid', window.scrollY > 40); }
+  window.addEventListener('scroll', onScrollHead, { passive: true });
+  onScrollHead();
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Get Your Free Quote</h2>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="contact-item">
-                        <strong>📞 Phone</strong>
-                        <p><a href="tel:+254706716310" style="color: #0066cc; text-decoration: none;">0706 716 310</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <strong>📧 Email</strong>
-                        <p><a href="mailto:info@deepcorewells.com" style="color: #0066cc; text-decoration: none;">info@deepcorewells.com</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <strong>🕐 Hours</strong>
-                        <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 8:00 AM - 2:00 PM<br>Sunday: Emergency Service Available</p>
-                    </div>
-                    <div class="contact-item">
-                        <strong>📍 Location</strong>
-                        <p>Mega Centre, 3rd Floor<br>Makasembo Road, Kitale, Kenya<br><strong>We drill countrywide</strong> — serving residential and commercial clients across Kenya.</p>
-                    </div>
-                </div>
+  /* Smooth anchor scrolling (native smooth where supported) */
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor){
+    anchor.addEventListener('click', function(e){
+      var id = this.getAttribute('href');
+      if (id.length < 2) return;
+      var target = document.querySelector(id);
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
 
-                <form id="quoteForm" class="quote-form">
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="service">Service Type *</label>
-                        <select id="service" name="service" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem;" required>
-                            <option value="">Select a service...</option>
-                            <option value="drilling">Water Well Drilling</option>
-                            <option value="pump">Pump Installation & Service</option>
-                            <option value="treatment">Water Treatment</option>
-                            <option value="maintenance">Well Maintenance</option>
-                            <option value="testing">Well Testing</option>
-                            <option value="emergency">Emergency Service</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Tell us about your project</label>
-                        <textarea id="message" name="message" placeholder="Describe your water well needs..."></textarea>
-                    </div>
-                    <button type="submit" class="primary-btn" style="width: 100%; margin-top: 1rem;">Get Free Quote</button>
-                </form>
-            </div>
-        </div>
-    </section>
+  /* Quote form — front-end only, same fields as before */
+  var form = document.getElementById('quoteForm');
+  if (form) {
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      var name = document.getElementById('name').value.trim().split(' ')[0] || 'there';
+      var btn = document.getElementById('quoteSubmit');
+      var note = document.getElementById('formNote');
+      btn.classList.add('btn-success');
+      btn.textContent = 'Request received ✓';
+      btn.disabled = true;
+      if (note) note.textContent = 'Thanks ' + name + ' — your quote request is in. We respond within 24 hours.';
+      form.querySelectorAll('input, select, textarea').forEach(function(el){ el.disabled = true; });
+      /* In production this POSTs to a backend; the page stays fully static. */
+    });
+  }
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Ready for Professional Well Drilling?</h2>
-            <p>Don't wait for water problems. Contact Deep Core Wells today for a free consultation and quote.</p>
-            <button class="primary-btn" onclick="scrollToContact()">Schedule Your Free Consultation</button>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Deep Core Wells</h4>
-                <p>Professional water well drilling and pump services since 2020. Licensed, bonded, and insured.</p>
-            </div>
-            <div class="footer-section">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="#services">Well Drilling</a></li>
-                    <li><a href="#services">Pump Installation</a></li>
-                    <li><a href="#services">Water Treatment</a></li>
-                    <li><a href="#services">Emergency Service</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#why-us">About Us</a></li>
-                    <li><a href="#testimonials">Why Boreholes</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Contact Us</h4>
-                <p><strong>Phone:</strong> <a href="tel:+254706716310">0706 716 310</a></p>
-                <p><strong>Email:</strong> <a href="mailto:info@deepcorewells.com">info@deepcorewells.com</a></p>
-                <p><strong>Location:</strong> Mega Centre, 3rd Floor, Makasembo Road, Kitale</p>
-                <p><strong>Coverage:</strong> We drill countrywide</p>
-                <p><strong>Available:</strong> 24/7 Emergency Service</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Deep Core Wells. All Rights Reserved. | Licensed & Insured Water Well Drilling Contractor</p>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scrolling
-        function scrollToContact() {
-            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function scrollToServices() {
-            document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Form handling
-        document.getElementById('quoteForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
-            const service = document.getElementById('service').value;
-
-            // In production, this would send to a backend server
-            alert(`Thank you, ${name}! We received your quote request.\n\nWe'll contact you at ${phone} or ${email} within 24 hours.\n\nService: ${service}`);
-
-            // Reset form
-            this.reset();
+  /* Project photos uploaded via admin.html (Cloudinary) — inherit the grade */
+  (function loadCloudinaryProjects(){
+    var CLOUD_NAME = 'pm0sj0b5';
+    var TAG = 'deepcore-projects';
+    fetch('https://res.cloudinary.com/' + CLOUD_NAME + '/image/list/' + TAG + '.json')
+      .then(function(r){ if (!r.ok) throw new Error('no list'); return r.json(); })
+      .then(function(data){
+        if (!data.resources || !data.resources.length) return;
+        var grid = document.getElementById('galleryGrid');
+        grid.querySelectorAll('.placeholder-card').forEach(function(el){ el.remove(); });
+        data.resources.sort(function(a,b){ return new Date(b.created_at) - new Date(a.created_at); });
+        data.resources.forEach(function(res){
+          var ctx = (res.context && res.context.custom) || {};
+          var title = ctx.caption || 'Completed Project';
+          var location = ctx.alt || '';
+          var url = 'https://res.cloudinary.com/' + CLOUD_NAME +
+            '/image/upload/c_fill,w_600,h_440,q_auto,f_auto/' + res.public_id + '.jpg';
+          var item = document.createElement('figure');
+          item.className = 'gallery-item photo graded';
+          var img = document.createElement('img');
+          img.loading = 'lazy'; img.decoding = 'async'; img.src = url;
+          img.alt = title + (location ? ' - ' + location : '');
+          var cap = document.createElement('figcaption');
+          cap.className = 'gallery-caption';
+          var h4 = document.createElement('h4'); h4.textContent = title;
+          var p = document.createElement('p'); p.textContent = location;
+          cap.appendChild(h4); cap.appendChild(p);
+          item.appendChild(img); item.appendChild(cap);
+          grid.appendChild(item);
         });
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                if (this.getAttribute('href') !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }
-            });
-        });
-
-        // Load project photos uploaded via the admin page (Cloudinary)
-        (function loadCloudinaryProjects() {
-            var CLOUD_NAME = 'pm0sj0b5';
-            var TAG = 'deepcore-projects';
-            fetch('https://res.cloudinary.com/' + CLOUD_NAME + '/image/list/' + TAG + '.json')
-                .then(function(r) { if (!r.ok) throw new Error('no list'); return r.json(); })
-                .then(function(data) {
-                    if (!data.resources || !data.resources.length) return;
-                    var grid = document.getElementById('galleryGrid');
-                    // Remove "coming soon" placeholders once real photos exist
-                    grid.querySelectorAll('.placeholder-card').forEach(function(el) { el.remove(); });
-                    // Newest first
-                    data.resources.sort(function(a, b) {
-                        return new Date(b.created_at) - new Date(a.created_at);
-                    });
-                    data.resources.forEach(function(res) {
-                        var ctx = (res.context && res.context.custom) || {};
-                        var title = ctx.caption || 'Completed Project';
-                        var location = ctx.alt || '';
-                        var url = 'https://res.cloudinary.com/' + CLOUD_NAME +
-                            '/image/upload/c_fill,w_600,h_440,q_auto,f_auto/' +
-                            res.public_id + '.jpg';
-                        var item = document.createElement('div');
-                        item.className = 'gallery-item';
-                        item.innerHTML =
-                            '<img loading="lazy" alt="">' +
-                            '<div class="gallery-caption"><h4></h4><p></p></div>';
-                        item.querySelector('img').src = url;
-                        item.querySelector('img').alt = title + (location ? ' - ' + location : '');
-                        item.querySelector('h4').textContent = title;
-                        item.querySelector('p').textContent = location;
-                        grid.appendChild(item);
-                    });
-                })
-                .catch(function() { /* no uploads yet - keep static gallery */ });
-        })();
-    </script>
+        if (window.ScrollTrigger) window.ScrollTrigger.refresh();
+      })
+      .catch(function(){ /* no uploads yet - keep static gallery */ });
+  })();
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="js/motion.js" defer></script>
 </body>
 </html>
