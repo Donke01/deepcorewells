@@ -34,7 +34,7 @@ a{color:inherit}
 .wash.w2{background:linear-gradient(180deg,rgba(180,80,42,.16) 0%,rgba(180,80,42,0) 75%)}
 .wash.w3{background:linear-gradient(180deg,rgba(36,28,21,.55),rgba(13,11,9,0) 80%)}
 .wash.w4{background:linear-gradient(180deg,rgba(111,191,168,.14),rgba(111,191,168,0) 70%)}
-.page{position:relative;z-index:1}
+.page{position:relative;z-index:1;overflow-x:clip}
 
 /* Depth rail — desktop only */
 .depth-rail{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:40;display:none;flex-direction:column;align-items:center;gap:10px;opacity:0}
@@ -997,7 +997,8 @@ const root=document.getElementById('process'),stage=root.querySelector('.d-stage
 const headH=()=>{const h=document.getElementById('siteHead');return h?h.offsetHeight:64;};
 let stageW=0,stageHset=0;
 /* lock the stage to the visible screen height; ignore small changes from the browser bar hiding */
-function setStageH(force){const w=innerWidth,h=innerHeight;if(force||w!==stageW||Math.abs(h-stageHset)>120){stageW=w;stageHset=h;root.style.setProperty('--stage-h',h+'px');return true;}return false;}
+function visH(){const v=window.visualViewport,c=document.documentElement.clientHeight;return Math.round(Math.min(innerHeight,v&&v.height?v.height*(v.scale||1):innerHeight,c||innerHeight));}
+function setStageH(force){const w=innerWidth,h=visH();if(force||w!==stageW||Math.abs(h-stageHset)>120){stageW=w;stageHset=h;root.style.setProperty('--stage-h',h+'px');return true;}return false;}
 setStageH(true);
 let cardTop=[];
 setTimeout(()=>root.classList.remove('intro'),3200);
@@ -1284,7 +1285,7 @@ function applyGreen(R,gAll){
 applyGreen(0,0);
 
 /* strata block with a carved half-round borehole */
-const plugs=[],aquiferMats=[];
+const plugs=[],aquiferMats=[],layerLabels=[];
 LAYERS.forEach((L,i)=>{
   const h=L.bot-L.top,yc=-(L.top+h/2);
   const mk=(rx)=>{const tx=grainTex(L.col,1000+i*77,Math.round(h*1.6)+8,rx,Math.max(1,h/12));
@@ -1298,7 +1299,7 @@ LAYERS.forEach((L,i)=>{
   const plug=new THREE.Mesh(new THREE.BoxGeometry(RH*2,1,RH),mk(.1));plug.position.z=FZ-RH/2;plug.userData=L;scene.add(plug);plugs.push(plug);
   if(i>0){const seam=new THREE.Mesh(new THREE.BoxGeometry(W,.22,.12),new THREE.MeshBasicMaterial({color:0x0a0806}));seam.position.set(0,-L.top,FZ+.02);scene.add(seam);}
   const sp=labelSprite(L.name,`${L.top}–${L.bot} m`,L.name==='Aquifer'?'#6FBFA8':'#F2EDE4');
-  sp.position.set(16,-(L.top+Math.min(h/2,5)),FZ+1.5);scene.add(sp);
+  sp.position.set(16,-(L.top+Math.min(h/2,5)),FZ+1.5);scene.add(sp);layerLabels.push(sp);
 });
 (function(){
   const r=rng(7),dummy=new THREE.Object3D(),c=new THREE.Color();
@@ -1526,6 +1527,7 @@ function resize(){
   if(W0>=900||(H0<=520&&W0>H0))camera.setViewOffset(W0,H0,-W0*(W0>=900?.17:.22),0,W0,H0);else{offYcur=offTarget();camera.setViewOffset(W0,H0,0,offYcur,W0,H0);}
   camera.updateProjectionMatrix();measure();
 }
+if(window.visualViewport)visualViewport.addEventListener('resize',()=>{clearTimeout(rzT);rzT=setTimeout(()=>{if(setStageH(false)){resize();fitCards();}},150);});
 let rzT=0;addEventListener('resize',()=>{clearTimeout(rzT);rzT=setTimeout(()=>{if(setStageH(false)){resize();fitCards();}else measure();},150);});addEventListener('orientationchange',()=>setTimeout(()=>{setStageH(true);resize();fitCards();},350));addEventListener('load',measure);resize();
 
 /* loop */
@@ -1550,6 +1552,7 @@ function frame(now){
   const c=camAt(t),k=reduce?1:1-Math.exp(-dt*6);
   CK.forEach(n=>cam[n]=lerp(cam[n],c[n],k));
   const portrait=W0/H0<.8,dist=cam.dist*(portrait?1.75:1);
+  const lblOp=(portrait?sm((dist-120)/80):sm((dist-60)/50))*.85;layerLabels.forEach(l=>{l.material.opacity=lblOp;l.visible=lblOp>.02;});
   const breath=reduce?0:Math.sin(clock*.21)*.025;
   const shake=reduce?0:(v.drilling?.07:0)+v.burst*.3;
   const ty=-cam.fd;
