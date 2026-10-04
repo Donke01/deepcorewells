@@ -732,6 +732,12 @@ footer.site-foot{background:#090705;border-top:0;padding:0;color:var(--dust)}
   .log-row{background:none;border:0;border-bottom:1px solid var(--strata);border-radius:0;padding:18px 0}
   .log-row:hover{transform:none}
 }
+
+/* hero headline: exactly two lines, one size */
+.descent .d-hero h1{max-width:none}
+.d-hero h1 .d-wm{display:block;width:fit-content}
+.d-hero h1 .l{white-space:nowrap}
+@media (max-width:899px){.descent .d-hero h1{font-size:calc(var(--k,1)*clamp(2.6rem,13.5vw,4.6rem))}}
 </style>
 </head>
 <body>
@@ -794,7 +800,7 @@ footer.site-foot{background:#090705;border-top:0;padding:0;color:var(--dust)}
 
     <div class="d-cards">
       <article class="d-card d-hero on">
-        <h1 class="d-split">The <span class="d-water">water</span> is down there.</h1>
+        <h1 class="d-split"><span class="l">The <span class="d-water">water</span> is</span><span class="l">down there.</span></h1>
         <p class="d-tagline d-fx">We bring it up.</p>
         <p class="d-lede d-fx">Borehole drilling across Kenya.</p>
         <div class="d-row d-fx d2">
