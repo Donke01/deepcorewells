@@ -642,6 +642,25 @@ footer.site-foot{background:#090705;border-top:0;padding:0;color:var(--dust)}
   .cta-drip{animation:none;opacity:1}
   .log-row,.c-call,.b-amber,.case-media img{transition:none}
 }
+
+/* ---------- calm pass: fewer overlays, boxes and labels ---------- */
+.wash,.depth-rail{display:none!important}
+.d-prog,.d-num,.d-gnote,.d-callout,.d-spec{display:none!important}
+.sx-eye::before{display:none}
+.sx-eye{letter-spacing:.2em;color:var(--dust)}
+.log-ic{display:none}
+.log-top{gap:0}
+.permits{gap:0;border-top:1px solid var(--strata)}
+.permit{background:none;border:0;border-bottom:1px solid var(--strata);border-radius:0;padding:14px 0}
+.permit::after{display:none}
+@media (min-width:860px){.permits{border-top:0;gap:28px}.permit{border-bottom:0;border-top:2px solid var(--murram);padding-top:16px}}
+.facts4{display:none}
+.case-dl{display:none}
+.case-card{background:none;border:0;padding:clamp(4px,2vw,12px) 0}
+.proj.placeholder-card{display:none}
+.reason::before{display:none}
+.reason{background:none}
+.checks li{border-bottom-color:rgba(58,46,34,.55)}
 </style>
 </head>
 <body>
@@ -1645,7 +1664,7 @@ for(let i=0;i<motes.n;i++){const j=i*3;motes.pos[j]=Rn()*50;motes.pos[j+1]=Math.
 
 /* post: bloom + film grade */
 let composer=null,bloom=null,grade=null;
-const GradeShader={uniforms:{tDiffuse:{value:null},time:{value:0},ca:{value:.0015},vig:{value:1},flash:{value:0},grain:{value:.05}},
+const GradeShader={uniforms:{tDiffuse:{value:null},time:{value:0},ca:{value:.0006},vig:{value:.85},flash:{value:0},grain:{value:.02}},
   vertexShader:'varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}',
   fragmentShader:`uniform sampler2D tDiffuse;uniform float time,ca,vig,flash,grain;varying vec2 vUv;
   float h(vec2 p){return fract(sin(dot(p,vec2(12.9898,78.233)))*43758.5453);}
@@ -1703,7 +1722,7 @@ function frame(now){
   const c=camAt(t),k=reduce?1:1-Math.exp(-dt*6);
   CK.forEach(n=>cam[n]=lerp(cam[n],c[n],k));
   const portrait=W0/H0<.8,dist=cam.dist*(portrait?1.75:1);
-  const lblOp=(portrait?sm((dist-120)/80):sm((dist-60)/50))*.85;layerLabels.forEach(l=>{l.material.opacity=lblOp;l.visible=lblOp>.02;});
+  layerLabels.forEach(l=>{l.visible=false;});
   const breath=reduce?0:Math.sin(clock*.21)*.025;
   const shake=reduce?0:(v.drilling?.07:0)+v.burst*.3;
   const ty=-cam.fd;
@@ -1815,7 +1834,7 @@ function frame(now){
   if(!covered){
     if(composer){
       grade.uniforms.time.value=reduce?0:clock;
-      grade.uniforms.ca.value=.0012+v.burst*.008;
+      grade.uniforms.ca.value=.0005+v.burst*.004;
       grade.uniforms.flash.value=0;
       if(bloom)bloom.strength=.7-v.burst*.25+(v.drilling?.08:0)-v.green*.25;
       composer.render();
