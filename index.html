@@ -1183,12 +1183,12 @@ const DOT=dotTex();
 /* sky dome */
 const sky=new THREE.Mesh(new THREE.SphereGeometry(900,32,16),new THREE.ShaderMaterial({
   side:THREE.BackSide,depthWrite:false,
-  uniforms:{sun:{value:new THREE.Vector3(-0.55,0.06,-0.83).normalize()},day:{value:0}},
+  uniforms:{sun:{value:new THREE.Vector3(-0.55,0.06,-0.83).normalize()},day:{value:0},sunK:{value:1}},
   vertexShader:'varying vec3 vD;void main(){vD=normalize(position);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}',
-  fragmentShader:`varying vec3 vD;uniform vec3 sun;uniform float day;
+  fragmentShader:`varying vec3 vD;uniform vec3 sun;uniform float day;uniform float sunK;
   void main(){float h=vD.y;vec3 top=mix(vec3(.03,.026,.024),vec3(.16,.22,.26),day);vec3 hor=mix(vec3(.36,.17,.07),vec3(.62,.5,.36),day);vec3 low=vec3(.05,.04,.035);
   vec3 c=h>0.0?mix(hor,top,smoothstep(0.0,0.42,h)):mix(hor*.5,low,smoothstep(0.0,-0.12,h));
-  float s=max(dot(vD,sun),0.0);c+=vec3(.95,.5,.18)*pow(s,18.0)*.9*(1.0-day*.5)+vec3(.5,.22,.08)*pow(s,4.0)*.35;
+  float s=max(dot(vD,sun),0.0);c+=(vec3(.95,.5,.18)*pow(s,18.0)*.9*(1.0-day*.5)+vec3(.5,.22,.08)*pow(s,4.0)*.35)*sunK;c*=mix(.45,1.0,sunK);
   gl_FragColor=vec4(c,1.0);}`}));
 scene.add(sky);
 
@@ -1462,7 +1462,7 @@ function particles(n,color,size,additive,opacity){
 const Rn=()=>Math.random()-0.5;
 const cuttings=particles(isSmall?420:700,0xC4673C,.7,false,.95);
 const dust=particles(isSmall?160:260,0x9a6a48,3.2,false,.12);
-const geyser=particles(reduce?600:(isSmall?2600:4200),0xD8DCD0,.95,true,.9);
+const geyser=particles(reduce?600:(isSmall?2600:4200),0xE6F4EE,.95,true,.95);
 const sheet=particles(reduce?300:(isSmall?1400:2200),0xCFD6CC,.7,true,.8);
 const mist=particles(isSmall?420:700,0xC9CFC4,9,false,.12);
 const bubbles=particles(isSmall?500:800,0xEAF3EC,.32,true,.9);
@@ -1541,7 +1541,11 @@ function frame(now){
   /* day comes up as the land turns green */
   const day=v.green*.75;
   sky.material.uniforms.day.value=day;sunLight.intensity=day*.9;
-  beamMat.uniforms.k.value=.16*(1-day*.8);
+  /* during air-lift: kill the lamp beams and sun glare so the water reads */
+  const glare=1-.92*v.burst;
+  sky.material.uniforms.sunK.value=glare;
+  beamMat.uniforms.k.value=.16*(1-day*.8)*glare;
+  spot.intensity=1.5*(1-.55*v.burst);fill.intensity=.7*(1-.75*v.burst);rim.intensity=.22+.45*v.burst;
 
   survey.visible=v.survey>.01;survey.children.forEach(o=>o.scale.y=Math.max(.01,v.survey));
   sweep.visible=v.sweep>=0;if(sweep.visible){sweep.position.y=-v.sweep;sweepMat.uniforms.a.value=.9*v.survey;}
@@ -1631,8 +1635,8 @@ function frame(now){
     if(composer){
       grade.uniforms.time.value=reduce?0:clock;
       grade.uniforms.ca.value=.0012+v.burst*.008;
-      grade.uniforms.flash.value=Math.pow(v.burst,3)*.3;
-      if(bloom)bloom.strength=.7+v.burst*.85+(v.drilling?.08:0)-v.green*.25;
+      grade.uniforms.flash.value=0;
+      if(bloom)bloom.strength=.7-v.burst*.25+(v.drilling?.08:0)-v.green*.25;
       composer.render();
     }else renderer.render(scene,camera);
   }
