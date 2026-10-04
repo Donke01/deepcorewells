@@ -720,6 +720,18 @@ footer.site-foot{background:#090705;border-top:0;padding:0;color:var(--dust)}
   .d-card p.d-tagline{font-size:calc(var(--k,1)*clamp(1.3rem,6vw,1.7rem))}
   .d-hero .d-btn{flex:0 0 auto;padding:calc(var(--k,1)*.85rem) 1.3rem;font-size:calc(var(--k,1)*.85rem)}
 }
+
+/* fewer cards: text sits on the scene, lists use dividers */
+.d-card{background:none!important;border:0!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;padding:0 2px 6px!important}
+.d-card h2,.d-card p,.d-card .d-tag{text-shadow:0 1px 14px rgba(0,0,0,.7)}
+.d-stage::after{content:"";position:absolute;left:0;right:0;bottom:0;height:60%;background:linear-gradient(rgba(13,11,9,0),rgba(13,11,9,.88) 72%);z-index:3;pointer-events:none}
+@media (min-width:900px){.d-stage::after{top:0;bottom:0;right:auto;width:55%;height:auto;background:linear-gradient(90deg,rgba(13,11,9,.88),rgba(13,11,9,0))}}
+.d-num{display:none}
+@media (max-width:859px){
+  .log{gap:0;border-top:1px solid var(--strata)}
+  .log-row{background:none;border:0;border-bottom:1px solid var(--strata);border-radius:0;padding:18px 0}
+  .log-row:hover{transform:none}
+}
 </style>
 </head>
 <body>
