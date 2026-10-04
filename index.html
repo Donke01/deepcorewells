@@ -277,8 +277,8 @@ h.classList.add('js-motion');setTimeout(function(){if(!window.__motionReady)h.cl
 </script>
 <style>
 /* ============ DESCENT — scroll-driven 3D story (replaces hero + process) ============ */
-.descent{--scrim:rgba(13,11,9,.72);--font-m:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--d-ease:cubic-bezier(.2,.8,.2,1);
-  position:relative;padding:0;z-index:2;background:var(--basalt)}
+:root{--scrim:rgba(13,11,9,.72);--font-m:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--d-ease:cubic-bezier(.2,.8,.2,1)}
+.descent{position:relative;padding:0;z-index:2;background:var(--basalt)}
 .d-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;z-index:1}
 .d-track{position:relative;margin-top:-100vh;margin-top:-100svh;pointer-events:none}
 .d-track div{height:130vh}
@@ -303,7 +303,8 @@ h.classList.add('js-motion');setTimeout(function(){if(!window.__motionReady)h.cl
 #d-phStrike img{object-position:center 32%}
 .d-credit{position:absolute;right:16px;top:calc(var(--head-h) + 70px);z-index:3;font-family:var(--font-m);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dust)}
 
-.d-curtain{position:fixed;inset:0;z-index:300;pointer-events:none;display:grid;grid-template-rows:1fr 1fr}
+.d-curtain{position:fixed;inset:0;z-index:300;pointer-events:none;display:grid;grid-template-rows:1fr 1fr;animation:dGone 0s linear 2.4s forwards}
+@keyframes dGone{to{visibility:hidden}}
 .d-curtain i{display:block;background:var(--basalt)}
 .d-curtain i:first-child{transform-origin:top;animation:dPart 1.5s var(--d-ease) .35s both}
 .d-curtain i:last-child{transform-origin:bottom;animation:dPart 1.5s var(--d-ease) .35s both}
@@ -960,6 +961,7 @@ const NST=9;
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const root=document.getElementById('process'),stage=root.querySelector('.d-stage');
 setTimeout(()=>root.classList.remove('intro'),3200);
+setTimeout(()=>{const c=document.querySelector('.d-curtain');if(c)c.remove();},2200);
 
 /* split headline words for the mask reveal */
 document.querySelectorAll('.d-split').forEach(el=>{
