@@ -15,7 +15,7 @@
     railTrack: '.depth-rail .track',
     washes: ['.wash.w1', '.wash.w2', '.wash.w3', '.wash.w4'],
     head: '.site-head',
-    hero: '.hero',
+    hero: '.descent',
     heroCanvas: '#hero-canvas',
     heroTitle: '#heroTitle',
     heroSub: '.hero-sub',
