@@ -286,7 +286,7 @@ h.classList.add('js-motion');setTimeout(function(){if(!window.__motionReady)h.cl
 .d-track div[data-s="1"]{height:140vh}
 .d-track div[data-s="2"]{height:260vh}
 .d-track div[data-s="3"],.d-track div[data-s="5"],.d-track div[data-s="6"]{height:160vh}
-.d-track div[data-s="4"]{height:140vh}
+.d-track div[data-s="4"]{height:200vh}
 .d-track div[data-s="8"]{height:100vh}
 #d-scene{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
 .d-fallback{position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,#1a120b 0 30%,#4a3322 30% 33%,#9a4426 33% 48%,#6e5038 48% 62%,#2f2925 62% 82%,#38504a 82% 92%,#1d1916 92%)}
@@ -1018,10 +1018,10 @@ function story(t){
   v.draw=sm((t-5.6)/.35)*(1-sm((t-7)/.4));
   v.water=t<3.1?-1:t<3.75?STRIKE-(STRIKE-REST)*sm((t-3.1)/.6):REST+(PUMPLVL-REST)*v.draw;
   v.seep=t<3.05?0:t<3.8?sm((t-3.05)/.25):t<5.6?.3:t<7?.3+.7*v.draw:.25;
-  v.burst=(t>4&&t<4.62)?Math.sin(Math.PI*clamp((t-4)/.62)):0;
-  v.ring=clamp((t-4.08)/.4);
-  v.pool=sm((t-4.12)/.3)*(1-sm((t-5.1)/.6));
-  v.photo=sm((t-4.3)/.14)*(1-sm((t-4.86)/.14));
+  v.burst=sm((t-4)/.07)*(1-sm((t-4.62)/.12));
+  if(v.water>=0)v.water*=1-v.burst;
+  v.pool=sm((t-4.05)/.25)*(1-sm((t-5.1)/.6));
+  v.photo=sm((t-4.64)/.1)*(1-sm((t-4.9)/.1));
   v.pump=t<5.08?-1:PUMP*sm((t-5.1)/.5);
   v.pipe=sm((t-5.95)/.15);
   v.tank=sm((t-6.1)/.7);
@@ -1039,8 +1039,8 @@ const CAM=[
   {t:3,   fd:117,dist:34, az:.48,el:.0, fov:42},
   {t:3.4, fd:122,dist:30, az:.3, el:.02,fov:40},
   {t:3.85,fd:72, dist:118,az:.42,el:.05,fov:40},
-  {t:4.1, fd:-12,dist:72, az:.56,el:.0, fov:44},
-  {t:4.5, fd:-12,dist:62, az:.62,el:.02,fov:42},
+  {t:4.1, fd:-19,dist:96, az:.5, el:.02,fov:46},
+  {t:4.55,fd:-15,dist:78, az:.64,el:.04,fov:44},
   {t:5.05,fd:30, dist:70, az:.45,el:.06,fov:38},
   {t:5.6, fd:121,dist:33, az:.64,el:.04,fov:38},
   {t:5.95,fd:62, dist:160,az:.28,el:.06,fov:38},
@@ -1381,6 +1381,13 @@ const pool=new THREE.Mesh(new THREE.CircleGeometry(1,40,0,Math.PI),new THREE.Mes
 pool.rotation.x=-Math.PI/2;pool.position.set(0,.12,FZ);scene.add(pool);
 const ring=new THREE.Mesh(new THREE.TorusGeometry(1,.06,6,64),new THREE.MeshBasicMaterial({color:0xBFEBDD,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));
 ring.rotation.x=-Math.PI/2;ring.position.set(0,.5,FZ);scene.add(ring);
+const ring2=ring.clone();ring2.material=ring.material.clone();scene.add(ring2);
+/* air-lift jet: a solid, churning column of water */
+const jetGeo=new THREE.CylinderGeometry(.9,2.2,1,20,1,true);jetGeo.translate(0,.5,0);
+const jetMat=new THREE.ShaderMaterial({transparent:true,depthWrite:false,side:THREE.DoubleSide,blending:THREE.AdditiveBlending,uniforms:{time:{value:0},a:{value:0}},
+  vertexShader:'varying vec2 vU;varying vec3 vN;varying vec3 vV;void main(){vU=uv;vec4 mv=modelViewMatrix*vec4(position,1.0);vV=normalize(-mv.xyz);vN=normalize(normalMatrix*normal);gl_Position=projectionMatrix*mv;}',
+  fragmentShader:'varying vec2 vU;varying vec3 vN;varying vec3 vV;uniform float time;uniform float a;void main(){float s=sin(vU.y*38.0-time*26.0+sin(vU.x*25.0+time*3.0)*2.0)*.5+.5;float s2=sin(vU.y*13.0-time*17.0+vU.x*40.0)*.5+.5;float edge=pow(abs(dot(vN,vV)),.8);float fade=smoothstep(1.0,.55,vU.y)*smoothstep(0.0,.04,vU.y);gl_FragColor=vec4(vec3(.82,.88,.84)*(.35+.65*s*s2)*edge*fade*a*.9,1.0);}'});
+const jet=new THREE.Mesh(jetGeo,jetMat);jet.position.set(0,1,FZ-.3);jet.frustumCulled=false;scene.add(jet);
 
 /* pump + riser + wellhead */
 const pumpG=new THREE.Group();
@@ -1422,9 +1429,10 @@ function particles(n,color,size,additive,opacity){
 const Rn=()=>Math.random()-0.5;
 const cuttings=particles(isSmall?420:700,0xC4673C,.7,false,.95);
 const dust=particles(isSmall?160:260,0x9a6a48,3.2,false,.12);
-const geyser=particles(reduce?500:(isSmall?1100:1800),0xD8DCD0,.85,true,.9);
-const mist=particles(isSmall?220:360,0xC9CFC4,5,false,.14);
-const bubbles=particles(isSmall?260:420,0xEAF3EC,.32,true,.9);
+const geyser=particles(reduce?600:(isSmall?2600:4200),0xD8DCD0,.95,true,.9);
+const sheet=particles(reduce?300:(isSmall?1400:2200),0xCFD6CC,.7,true,.8);
+const mist=particles(isSmall?420:700,0xC9CFC4,9,false,.12);
+const bubbles=particles(isSmall?500:800,0xEAF3EC,.32,true,.9);
 const seep=particles(isSmall?420:700,0x8fe0c8,.38,true,.9);
 const tapStream=particles(300,0x9fdccb,.36,true,.9);
 const motes=particles(isSmall?140:240,0xffcf8a,.22,true,.7);
@@ -1487,7 +1495,7 @@ function frame(now){
   CK.forEach(n=>cam[n]=lerp(cam[n],c[n],k));
   const portrait=W0/H0<.8,dist=cam.dist*(portrait?1.62:1);
   const breath=reduce?0:Math.sin(clock*.21)*.025;
-  const shake=reduce?0:(v.drilling?.07:0)+v.burst*.45;
+  const shake=reduce?0:(v.drilling?.07:0)+v.burst*.3;
   const ty=-cam.fd;
   camPos.set(Math.sin(cam.az+breath)*dist,ty+dist*cam.el,FZ+Math.cos(cam.az+breath)*dist);
   if(shake){camPos.x+=Math.sin(clock*41)*shake;camPos.y+=Math.sin(clock*37+1)*shake;}
@@ -1527,8 +1535,9 @@ function frame(now){
   if(wv){const wd=Math.max(.01,hd-v.water);[waterBack,waterFace].forEach(m=>{m.scale.y=wd;m.position.y=-(v.water+wd/2);});meniscus.position.y=-v.water-.12;}
   waterMat.uniforms.time.value=clock;waterMat.uniforms.glow.value=v.burst*.6;
   strikeLight.intensity=t>3?(sm((t-3.05)/.3)*.9+v.burst*1.5):0;strikeLight.position.set(0,wv?-Math.max(3,v.water):-STRIKE,FZ+5);
-  pool.visible=v.pool>.01;pool.scale.setScalar(.1+v.pool*9);
-  ring.visible=v.ring>0&&v.ring<1;ring.scale.setScalar(1+sm(v.ring)*22);ring.material.opacity=(1-v.ring)*.8;
+  pool.visible=v.pool>.01;pool.scale.setScalar(.1+v.pool*24);
+  [ring,ring2].forEach((r,i)=>{const k=(clock*.9+i*.5)%1;r.visible=v.burst>.15;r.scale.setScalar(1+k*16);r.material.opacity=(1-k)*.7*v.burst;});
+  jet.visible=v.burst>.01;jet.scale.set(1+v.burst*.25,Math.max(.01,40*v.burst),1+v.burst*.25);jetMat.uniforms.time.value=clock;jetMat.uniforms.a.value=v.burst;
   const lvOp=t>3.65&&t<7.8?sm((t-3.65)/.15)*(1-sm((t-7.6)/.2))*.95:0;
   lvl.visible=lvOp>.01;if(lvl.visible)updateLevel(v.draw,lvOp);
 
@@ -1552,12 +1561,13 @@ function frame(now){
   }
   seep.step(dt,0,.07,undefined,0,(j,p)=>Math.abs(p[j])<RH);
   if(v.burst>.02){
-    bubbles.emit((reduce?60:260)*v.burst,dt,(j,p,vl)=>{p[j]=Rn()*1.8;p[j+1]=-HOLE+Math.random()*4;p[j+2]=FZ-.3+Rn()*.6;vl[j]=Rn()*.6;vl[j+1]=45+Math.random()*30;vl[j+2]=0;});
-    geyser.emit((reduce?220:(isSmall?700:1100))*v.burst,dt,(j,p,vl)=>{p[j]=Rn()*.9;p[j+1]=.8;p[j+2]=FZ-.3+Rn()*.9;const s=.55+.45*v.burst;vl[j]=Rn()*6;vl[j+1]=(17+Math.random()*25)*s;vl[j+2]=Rn()*6;});
-    mist.emit(70*v.burst,dt,(j,p,vl)=>{p[j]=Rn()*3;p[j+1]=6+Math.random()*16*v.burst;p[j+2]=FZ-.5+Rn()*3;vl[j]=Rn()*3+.8;vl[j+1]=Math.random()*2;vl[j+2]=Rn()*3;});
+    bubbles.emit((reduce?100:520)*v.burst,dt,(j,p,vl)=>{p[j]=Rn()*1.8;p[j+1]=-HOLE+Math.random()*4;p[j+2]=FZ-.3+Rn()*.6;vl[j]=Rn()*.6;vl[j+1]=50+Math.random()*30;vl[j+2]=0;});
+    geyser.emit((reduce?300:(isSmall?1700:2800))*v.burst,dt,(j,p,vl)=>{p[j]=Rn()*1.4;p[j+1]=1.2;p[j+2]=FZ-.3+Rn()*1.4;const s=.6+.4*v.burst;vl[j]=Rn()*3.5;vl[j+1]=(26+Math.random()*22)*s;vl[j+2]=Rn()*3.5;});
+    sheet.emit((reduce?150:(isSmall?700:1100))*v.burst,dt,(j,p,vl)=>{const a=Math.random()*6.283,sp=9+Math.random()*8;p[j]=Math.cos(a)*.8;p[j+1]=1.4;p[j+2]=FZ-.3+Math.sin(a)*.8;vl[j]=Math.cos(a)*sp;vl[j+1]=3+Math.random()*5;vl[j+2]=Math.sin(a)*sp;});
+    mist.emit(260*v.burst,dt,(j,p,vl)=>{p[j]=Rn()*12;p[j+1]=3+Math.random()*34*v.burst;p[j+2]=FZ-1+Rn()*10;vl[j]=Rn()*3+1;vl[j+1]=Math.random()*1.5;vl[j+2]=Rn()*3;});
   }
   bubbles.step(dt,0,.6,undefined,0,(j,p)=>p[j+1]>0);
-  geyser.step(dt,-25,.34,.15,.15);mist.step(dt,-.6,.3,undefined,.6);
+  geyser.step(dt,-25,.28,.15,.12);sheet.step(dt,-22,.6,.15,.3);mist.step(dt,-.4,.22,undefined,.5);
   if(v.tap)tapStream.emit(140,dt,(j,p,vl)=>{p[j]=-13.7;p[j+1]=7.8;p[j+2]=FZ-7+Rn()*.15;vl[j]=1.4+Rn()*.3;vl[j+1]=-.8;vl[j+2]=Rn()*.2;});
   tapStream.step(dt,-22,1.15,.15);
   if(!reduce){for(let i=0;i<motes.n;i++){const j=i*3;motes.pos[j]+=Math.sin(clock*.4+i)*.01;motes.pos[j+1]+=Math.cos(clock*.3+i*1.7)*.008;}motes.mat.opacity=(.55+.2*Math.sin(clock*1.3))*(1-v.green*.8);}
@@ -1571,7 +1581,7 @@ function frame(now){
   else if(t>2.08&&t<2.98){anchor=[0,-v.bit-1,FZ];ttl='Bit · '+String(Math.round(v.bit)).padStart(3,'0')+' m';sub=layerAt(v.bit);}
   else if(t>3.15&&t<3.62){anchor=[-14,-127,FZ+.2];ttl='Seepage';sub='Through pores and cracks';wet=true;}
   else if(t>3.7&&t<3.98){anchor=[-10,-REST,FZ+.2];ttl='Rest level · 35 m';sub='Its own pressure';wet=true;}
-  else if(t>4.02&&t<4.28){anchor=[0,-60,FZ];ttl='Air-lift';sub='Compressed air pushes water up';wet=true;}
+  else if(t>4.08&&t<4.55){anchor=[1.5,24,FZ];ttl='Air-lift';sub='Water forced out by compressed air';wet=true;}
   else if(t>5.62&&t<5.97){const x=12,dd=REST+(PUMPLVL-REST)*v.draw*Math.exp(-(x-RH)/14);anchor=[x,-dd,FZ+.25];ttl='Cone of depression';sub='Pumping level 48 m';wet=true;}
   else if(t>6.2&&t<6.9){anchor=[TANK.x,13.4,TANK.y];ttl='Tank · '+Math.round(v.tank*100)+'%';sub='Treated, ready to use';wet=true;}
   if(anchor){
@@ -1587,7 +1597,7 @@ function frame(now){
       grade.uniforms.time.value=reduce?0:clock;
       grade.uniforms.ca.value=.0012+v.burst*.008;
       grade.uniforms.flash.value=Math.pow(v.burst,3)*.3;
-      if(bloom)bloom.strength=.7+v.burst*.6+(v.drilling?.08:0)-v.green*.25;
+      if(bloom)bloom.strength=.7+v.burst*.85+(v.drilling?.08:0)-v.green*.25;
       composer.render();
     }else renderer.render(scene,camera);
   }
