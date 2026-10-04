@@ -28,7 +28,7 @@
 :root{
   --basalt:#0D0B09; --umber:#171310; --kiln:#241C15; --strata:#3A2E22;
   --bone:#F2EDE4; --dust:#A79B8A; --amber:#E8A33D; --murram:#B4502A;
-  --teal:#6FBFA8; --strike:#EAF3EC;
+  --teal:#3FA9D6; --strike:#EAF3EC;
   --font-d:'Oswald','Arial Narrow',sans-serif;
   --font-b:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
   --ease:cubic-bezier(0.2,0.7,0.2,1);
@@ -47,7 +47,7 @@ a{color:inherit}
 .wash.w1{background:linear-gradient(180deg,rgba(232,163,61,.20),rgba(232,163,61,0) 70%)}
 .wash.w2{background:linear-gradient(180deg,rgba(180,80,42,.16) 0%,rgba(180,80,42,0) 75%)}
 .wash.w3{background:linear-gradient(180deg,rgba(36,28,21,.55),rgba(13,11,9,0) 80%)}
-.wash.w4{background:linear-gradient(180deg,rgba(111,191,168,.14),rgba(111,191,168,0) 70%)}
+.wash.w4{background:linear-gradient(180deg,rgba(63,169,214,.14),rgba(63,169,214,0) 70%)}
 .page{position:relative;z-index:1;overflow-x:clip}
 
 /* Depth rail — desktop only */
@@ -196,7 +196,7 @@ html.reduced-motion *,html.reduced-motion *::before,html.reduced-motion *::after
 .process-step.strike .n{color:var(--teal)}
 .process-step h3{font-family:var(--font-d);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:1.15rem;color:var(--bone);margin-bottom:.55rem}
 .process-step .depth-tag{display:inline-block;font-family:ui-monospace,Menlo,monospace;font-size:.68rem;letter-spacing:.22em;color:var(--murram);border:1px solid var(--strata);border-radius:4px;padding:.2rem .6rem;margin-bottom:.7rem}
-.process-step.strike .depth-tag{color:var(--teal);border-color:rgba(111,191,168,.4)}
+.process-step.strike .depth-tag{color:var(--teal);border-color:rgba(63,169,214,.4)}
 .process-step p{color:var(--dust);font-size:.92rem;line-height:1.7}
 @media(min-width:900px){.process-step p{max-width:15em;margin:0 auto}}
 
@@ -255,12 +255,12 @@ html.reduced-motion *,html.reduced-motion *::before,html.reduced-motion *::after
 .form-group select option{background:var(--umber);color:var(--bone)}
 .form-group textarea{resize:vertical;min-height:110px}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px rgba(232,163,61,.22)}
-.btn-success{background:var(--teal)!important;color:#06231b!important;box-shadow:0 6px 26px rgba(111,191,168,.35)!important}
+.btn-success{background:var(--teal)!important;color:#06231b!important;box-shadow:0 6px 26px rgba(63,169,214,.35)!important}
 .form-note{margin-top:1rem;font-size:.85rem;color:var(--teal);min-height:1.4em}
 
 /* ============ Final CTA + footer ============ */
 .cta-band{text-align:center;overflow:hidden}
-.cta-band .glow{position:absolute;left:50%;top:50%;width:560px;height:560px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(111,191,168,.16),transparent 65%);pointer-events:none;z-index:-1}
+.cta-band .glow{position:absolute;left:50%;top:50%;width:560px;height:560px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(63,169,214,.16),transparent 65%);pointer-events:none;z-index:-1}
 .cta-band h2{font-family:var(--font-d);font-weight:700;text-transform:uppercase;font-size:clamp(2rem,6.5vw,3.4rem);color:var(--strike);line-height:1.1;max-width:14em;margin:0 auto}
 .cta-band p{color:var(--dust);margin:1.1rem auto 2rem;max-width:32em}
 footer{background:#0a0806;border-top:1px solid var(--strata);padding:3.5rem 0 0;color:var(--dust)}
@@ -305,7 +305,7 @@ h.classList.add('js-motion');setTimeout(function(){if(!window.__motionReady)h.cl
 .d-track div[data-s="4"]{height:200vh}
 .d-track div[data-s="8"]{height:100vh}
 #d-scene{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
-.d-fallback{position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,#1a120b 0 30%,#4a3322 30% 33%,#9a4426 33% 48%,#6e5038 48% 62%,#2f2925 62% 82%,#38504a 82% 92%,#1d1916 92%)}
+.d-fallback{position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,#1a120b 0 30%,#4a3322 30% 33%,#9a4426 33% 48%,#6e5038 48% 62%,#2f2925 62% 82%,#2E4450 82% 92%,#1d1916 92%)}
 
 .d-photo{position:absolute;left:0;right:0;top:0;height:100%;z-index:1;pointer-events:none;will-change:transform,opacity}
 .d-photo img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;filter:contrast(1.07) saturate(.9) brightness(.8) sepia(.08)}
@@ -338,7 +338,7 @@ h.classList.add('js-motion');setTimeout(function(){if(!window.__motionReady)h.cl
 .d-gauge{position:absolute;z-index:5;left:16px;top:calc(var(--head-h) + 12px);display:grid;grid-template-columns:auto auto;column-gap:8px;row-gap:8px;pointer-events:none;opacity:0}
 .d-readout{grid-column:1 / -1;font-family:var(--font-m);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dust);line-height:1.35}
 .d-readout b{display:block;font-family:var(--font-d);font-weight:600;font-size:1.7rem;letter-spacing:.03em;color:var(--amber);font-variant-numeric:tabular-nums;transition:color .4s;text-shadow:0 0 18px rgba(232,163,61,.35)}
-.d-readout b.wet{color:var(--teal);text-shadow:0 0 18px rgba(111,191,168,.4)}
+.d-readout b.wet{color:var(--teal);text-shadow:0 0 18px rgba(63,169,214,.4)}
 .d-readout span:last-child{color:var(--bone)}
 .d-col{position:relative;width:5px;height:min(34vh,300px);display:flex;flex-direction:column;outline:1px solid var(--strata);outline-offset:2px}
 .d-col span{display:block}
@@ -375,7 +375,7 @@ h.classList.add('js-motion');setTimeout(function(){if(!window.__motionReady)h.cl
 .d-tag.wet{color:var(--teal)}
 .descent h1,.descent h2{font-family:var(--font-d);text-transform:uppercase;font-weight:700;letter-spacing:.01em;text-wrap:balance;margin:0;position:relative;color:var(--bone)}
 .descent h1{font-size:clamp(2.6rem,10.5vw,4.9rem);line-height:.94;text-shadow:0 2px 30px rgba(13,11,9,.6)}
-.descent h1 .d-water{color:var(--teal);text-shadow:0 0 30px rgba(111,191,168,.35)}
+.descent h1 .d-water{color:var(--teal);text-shadow:0 0 30px rgba(63,169,214,.35)}
 .descent h2{font-size:clamp(2rem,7.5vw,2.8rem);line-height:.98}
 .d-wm{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
 .d-wi{display:inline-block;transform:translateY(108%);transition:transform .8s var(--d-ease);transition-delay:calc(var(--i) * 55ms)}
@@ -526,7 +526,7 @@ h.classList.add('js-motion');setTimeout(function(){if(!window.__motionReady)h.cl
 .permits{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media (min-width:860px){.permits{grid-template-columns:repeat(4,1fr);gap:14px}}
 .permit{position:relative;border:1px solid var(--strata);border-radius:4px;padding:18px 16px 16px;background:var(--umber);display:grid;gap:6px;min-width:0}
-.permit::after{content:"";position:absolute;top:12px;right:12px;width:9px;height:9px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(111,191,168,.15)}
+.permit::after{content:"";position:absolute;top:12px;right:12px;width:9px;height:9px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(63,169,214,.15)}
 .permit b{font-family:var(--font-d);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:1.05rem;color:var(--bone)}
 .permit span{font-size:.82rem;line-height:1.45;color:var(--dust)}
 .facts4{display:grid;grid-template-columns:1fr 1fr;margin:clamp(2.4rem,6vw,3.5rem) 0 0;border-top:1px solid var(--strata);border-left:1px solid var(--strata)}
@@ -564,11 +564,11 @@ h.classList.add('js-motion');setTimeout(function(){if(!window.__motionReady)h.cl
 .proj.placeholder-card .slot{position:absolute;top:12px;left:12px;font-family:var(--font-m);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dust);border:1px dashed #4a3a2a;padding:.3rem .45rem;border-radius:2px}
 
 /* ---------- 4. Why a borehole ---------- */
-.sx-bore{background:linear-gradient(180deg,#0D0B09 0%,#0E1513 100%)}
+.sx-bore{background:linear-gradient(180deg,#0D0B09 0%,#0C1419 100%)}
 .reasons{display:grid;gap:12px;counter-reset:r}
 @media (min-width:860px){.reasons{grid-template-columns:repeat(3,1fr);gap:18px}}
-.reason{position:relative;border:1px solid #233a33;border-radius:4px;padding:clamp(22px,4vw,30px);background:rgba(111,191,168,.035);overflow:hidden;min-width:0}
-.reason::before{counter-increment:r;content:"0" counter(r);position:absolute;right:14px;top:6px;font-family:var(--font-d);font-weight:700;font-size:4.2rem;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(111,191,168,.22)}
+.reason{position:relative;border:1px solid #1f3644;border-radius:4px;padding:clamp(22px,4vw,30px);background:rgba(63,169,214,.035);overflow:hidden;min-width:0}
+.reason::before{counter-increment:r;content:"0" counter(r);position:absolute;right:14px;top:6px;font-family:var(--font-d);font-weight:700;font-size:4.2rem;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(63,169,214,.22)}
 .reason svg{width:30px;height:30px;stroke:var(--teal);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .reason h3{font-family:var(--font-d);font-weight:600;text-transform:uppercase;letter-spacing:.03em;font-size:clamp(1.25rem,4.4vw,1.5rem);color:var(--bone);margin:18px 0 8px}
 .reason p{margin:0;color:var(--dust);font-size:.95rem;line-height:1.6}
@@ -604,11 +604,11 @@ h.classList.add('js-motion');setTimeout(function(){if(!window.__motionReady)h.cl
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px rgba(232,163,61,.18)}
 .field input:disabled,.field select:disabled,.field textarea:disabled{opacity:.55}
 .qf .b-amber{width:100%;padding:1.05rem}
-.qf .b-amber.is-done{background:var(--teal);box-shadow:0 0 30px rgba(111,191,168,.35)}
+.qf .b-amber.is-done{background:var(--teal);box-shadow:0 0 30px rgba(63,169,214,.35)}
 .form-note{margin:0;color:var(--teal);font-size:.92rem;min-height:1.2em}
 
 /* ---------- 6. Final CTA ---------- */
-.sx-cta{position:relative;overflow:hidden;text-align:center;padding:clamp(4.5rem,12vw,8rem) 0;background:radial-gradient(ellipse at 50% 110%,rgba(111,191,168,.16),transparent 60%),var(--basalt);border-top:1px solid var(--strata)}
+.sx-cta{position:relative;overflow:hidden;text-align:center;padding:clamp(4.5rem,12vw,8rem) 0;background:radial-gradient(ellipse at 50% 110%,rgba(63,169,214,.16),transparent 60%),var(--basalt);border-top:1px solid var(--strata)}
 .cta-mark{position:relative;display:inline-block;width:clamp(150px,34vw,210px);margin-bottom:clamp(1.4rem,4vw,2rem)}
 .cta-mark svg{display:block;width:100%;height:auto;position:relative}
 .cta-mark::before{content:"";position:absolute;right:calc(100% - 5%);top:calc(30.6% - 4.7%);height:9.4%;width:100vw;background:var(--murram);border-radius:0}
@@ -727,7 +727,7 @@ footer.site-foot{background:#090705;border-top:0;padding:0;color:var(--dust)}
 <!-- ================= Header ================= -->
 <header class="site-head" id="siteHead">
   <nav class="nav" aria-label="Main navigation">
-    <a href="#top" class="wordmark" aria-label="Deep Core Wells, home"><svg class="mark" viewBox="0 18 212 170" aria-hidden="true" focusable="false"><path d="M64 70 H66 A12 12 0 0 1 78 82 V140 A30 30 0 0 0 138 140 V60 A26 26 0 0 1 164 34 H174 A12 12 0 0 1 186 46 V58" fill="none" stroke="#E8A33D" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path d="M78 116 V140 A30 30 0 0 0 138 140 V60 A26 26 0 0 1 164 34 H174 A12 12 0 0 1 186 46 V52" fill="none" stroke="#6FBFA8" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M72.5 115 H83.5" stroke="#F2EDE4" stroke-width="2.2" stroke-linecap="round" opacity=".9"/><path d="M10 70 H64" stroke="#B4502A" stroke-width="16" stroke-linecap="round"/><path d="M64 62 V78" stroke="#0D0B09" stroke-width="1.5" opacity=".6"/><rect x="127" y="64" width="22" height="12" rx="3" fill="#C98318"/><path d="M186 70 C186 70 174 84 174 93 a12 12 0 0 0 24 0 C198 84 186 70 186 70 Z" fill="#6FBFA8"/><circle cx="181" cy="93" r="2.6" fill="#F2EDE4" opacity=".55"/></svg><span>Deep Core Wells</span></a>
+    <a href="#top" class="wordmark" aria-label="Deep Core Wells, home"><svg class="mark" viewBox="0 18 212 170" aria-hidden="true" focusable="false"><path d="M64 70 H66 A12 12 0 0 1 78 82 V140 A30 30 0 0 0 138 140 V60 A26 26 0 0 1 164 34 H174 A12 12 0 0 1 186 46 V58" fill="none" stroke="#E8A33D" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path d="M78 116 V140 A30 30 0 0 0 138 140 V60 A26 26 0 0 1 164 34 H174 A12 12 0 0 1 186 46 V52" fill="none" stroke="#3FA9D6" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M72.5 115 H83.5" stroke="#F2EDE4" stroke-width="2.2" stroke-linecap="round" opacity=".9"/><path d="M10 70 H64" stroke="#B4502A" stroke-width="16" stroke-linecap="round"/><path d="M64 62 V78" stroke="#0D0B09" stroke-width="1.5" opacity=".6"/><rect x="127" y="64" width="22" height="12" rx="3" fill="#C98318"/><path d="M186 70 C186 70 174 84 174 93 a12 12 0 0 0 24 0 C198 84 186 70 186 70 Z" fill="#3FA9D6"/><circle cx="181" cy="93" r="2.6" fill="#F2EDE4" opacity=".55"/></svg><span>Deep Core Wells</span></a>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#services">Services</a></li>
@@ -853,8 +853,8 @@ footer.site-foot{background:#090705;border-top:0;padding:0;color:var(--dust)}
       <li class="log-row" style="--band:#B4502A"><div class="log-top"><span class="log-no">02</span></div><h3>Pump installation</h3><p>Sized to your borehole's yield and set at the right depth.</p></li>
       <li class="log-row" style="--band:#8A6A4E"><div class="log-top"><span class="log-no">03</span></div><h3>Water treatment</h3><p>Testing and treatment for safe drinking water.</p></li>
       <li class="log-row" style="--band:#5C524B"><div class="log-top"><span class="log-no">04</span></div><h3>Borehole testing</h3><p>Yield and water-quality tests, with a written report.</p></li>
-      <li class="log-row" style="--band:#3E6B5F"><div class="log-top"><span class="log-no">05</span></div><h3>Maintenance &amp; repair</h3><p>Servicing to keep your borehole and pump working.</p></li>
-      <li class="log-row" style="--band:#6FBFA8"><div class="log-top"><span class="log-no">06</span></div><h3>Emergency call-outs</h3><p>Available 24 hours a day, 7 days a week.</p></li>
+      <li class="log-row" style="--band:#2A5F78"><div class="log-top"><span class="log-no">05</span></div><h3>Maintenance &amp; repair</h3><p>Servicing to keep your borehole and pump working.</p></li>
+      <li class="log-row" style="--band:#3FA9D6"><div class="log-top"><span class="log-no">06</span></div><h3>Emergency call-outs</h3><p>Available 24 hours a day, 7 days a week.</p></li>
     </ol>
   </div>
 </section>
@@ -862,9 +862,7 @@ footer.site-foot{background:#090705;border-top:0;padding:0;color:var(--dust)}
 <!-- ================= Why us ================= -->
 <section class="sx sx-why" id="why-us">
   <div class="wrap why2">
-    <figure class="why2-photo rv">
-      <img src="images/mutwot-drilling-rig.jpg" alt="Deep Core Wells drilling rig on site" loading="lazy" decoding="async">
-    </figure>
+    
     <div>
       <header class="sx-head rv">
         <p class="sx-eye">Why us</p>
@@ -903,7 +901,7 @@ footer.site-foot{background:#090705;border-top:0;padding:0;color:var(--dust)}
 <footer class="site-foot" id="contact">
   <div class="f-ground" aria-hidden="true"></div>
   <div class="wrap ft">
-    <div class="ft-brand"><svg class="mark" viewBox="0 18 212 170" aria-hidden="true" focusable="false"><path d="M64 70 H66 A12 12 0 0 1 78 82 V140 A30 30 0 0 0 138 140 V60 A26 26 0 0 1 164 34 H174 A12 12 0 0 1 186 46 V58" fill="none" stroke="#E8A33D" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path d="M78 116 V140 A30 30 0 0 0 138 140 V60 A26 26 0 0 1 164 34 H174 A12 12 0 0 1 186 46 V52" fill="none" stroke="#6FBFA8" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M72.5 115 H83.5" stroke="#F2EDE4" stroke-width="2.2" stroke-linecap="round" opacity=".9"/><path d="M10 70 H64" stroke="#B4502A" stroke-width="16" stroke-linecap="round"/><path d="M64 62 V78" stroke="#0D0B09" stroke-width="1.5" opacity=".6"/><rect x="127" y="64" width="22" height="12" rx="3" fill="#C98318"/><path d="M186 70 C186 70 174 84 174 93 a12 12 0 0 0 24 0 C198 84 186 70 186 70 Z" fill="#6FBFA8"/><circle cx="181" cy="93" r="2.6" fill="#F2EDE4" opacity=".55"/></svg><div><b>Deep Core Wells</b><span>From the ground to your tap</span></div></div>
+    <div class="ft-brand"><svg class="mark" viewBox="0 18 212 170" aria-hidden="true" focusable="false"><path d="M64 70 H66 A12 12 0 0 1 78 82 V140 A30 30 0 0 0 138 140 V60 A26 26 0 0 1 164 34 H174 A12 12 0 0 1 186 46 V58" fill="none" stroke="#E8A33D" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path d="M78 116 V140 A30 30 0 0 0 138 140 V60 A26 26 0 0 1 164 34 H174 A12 12 0 0 1 186 46 V52" fill="none" stroke="#3FA9D6" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M72.5 115 H83.5" stroke="#F2EDE4" stroke-width="2.2" stroke-linecap="round" opacity=".9"/><path d="M10 70 H64" stroke="#B4502A" stroke-width="16" stroke-linecap="round"/><path d="M64 62 V78" stroke="#0D0B09" stroke-width="1.5" opacity=".6"/><rect x="127" y="64" width="22" height="12" rx="3" fill="#C98318"/><path d="M186 70 C186 70 174 84 174 93 a12 12 0 0 0 24 0 C198 84 186 70 186 70 Z" fill="#3FA9D6"/><circle cx="181" cy="93" r="2.6" fill="#F2EDE4" opacity=".55"/></svg><div><b>Deep Core Wells</b><span>From the ground to your tap</span></div></div>
     <div class="ft-contact"><a class="f-call" href="tel:+254706716310">0706 716 310</a><a class="ft-mail" href="mailto:info@deepcorewells.com">info@deepcorewells.com</a></div>
   </div>
   <div class="wrap ft-meta">
@@ -1030,7 +1028,7 @@ const LAYERS=[
   {name:'Murram',top:4,bot:28,col:'#9a4426',rock:'#7d3a22'},
   {name:'Weathered rock',top:28,bot:62,col:'#6e5038',rock:'#8a6a4e'},
   {name:'Basalt',top:62,bot:118,col:'#2f2925',rock:'#45403b'},
-  {name:'Aquifer',top:118,bot:138,col:'#33463f',rock:'#7d8a82'},
+  {name:'Aquifer',top:118,bot:138,col:'#2E4450',rock:'#7f8c96'},
   {name:'Bedrock',top:138,bot:150,col:'#1d1916',rock:'#2c2723'}
 ];
 const MAXD=150,STRIKE=120,HOLE=135,PUMP=125,REST=35,PUMPLVL=48;
@@ -1206,7 +1204,7 @@ scene.fog=new THREE.Fog(0x120d09,170,720);
 const camera=new THREE.PerspectiveCamera(36,1,0.3,1400);
 scene.add(new THREE.HemisphereLight(0x7d6a55,0x0d0b09,0.42));
 const key=new THREE.DirectionalLight(0xffd6a0,0.7);key.position.set(110,25,70);scene.add(key);
-const rim=new THREE.DirectionalLight(0x6fbfa8,0.22);rim.position.set(-90,-30,50);scene.add(rim);
+const rim=new THREE.DirectionalLight(0x3FA9D6,0.22);rim.position.set(-90,-30,50);scene.add(rim);
 const sunLight=new THREE.DirectionalLight(0xffe2b0,0);sunLight.position.set(-60,90,40);scene.add(sunLight);
 
 /* textures */
@@ -1333,7 +1331,7 @@ LAYERS.forEach((L,i)=>{
   const h=L.bot-L.top,yc=-(L.top+h/2);
   const mk=(rx)=>{const tx=grainTex(L.col,1000+i*77,Math.round(h*1.6)+8,rx,Math.max(1,h/12));
     const m=new THREE.MeshStandardMaterial({map:tx,bumpMap:tx,bumpScale:.55,roughness:.95,metalness:0});
-    if(L.name==='Aquifer'){m.emissive=new THREE.Color(0x6FBFA8);m.emissiveIntensity=0;aquiferMats.push(m);}return m;};
+    if(L.name==='Aquifer'){m.emissive=new THREE.Color(0x3FA9D6);m.emissiveIntensity=0;aquiferMats.push(m);}return m;};
   const side=mk(W/2/28),back=mk(4);
   const bk=new THREE.Mesh(new THREE.BoxGeometry(W,h,D-RH),back);bk.position.set(0,yc,(-D/2+FZ-RH)/2);scene.add(bk);
   const sw=W/2-RH;
@@ -1341,7 +1339,7 @@ LAYERS.forEach((L,i)=>{
   const rgt=new THREE.Mesh(new THREE.BoxGeometry(sw,h,RH),side);rgt.position.set(RH+sw/2,yc,FZ-RH/2);scene.add(rgt);
   const plug=new THREE.Mesh(new THREE.BoxGeometry(RH*2,1,RH),mk(.1));plug.position.z=FZ-RH/2;plug.userData=L;scene.add(plug);plugs.push(plug);
   if(i>0){const seam=new THREE.Mesh(new THREE.BoxGeometry(W,.22,.12),new THREE.MeshBasicMaterial({color:0x0a0806}));seam.position.set(0,-L.top,FZ+.02);scene.add(seam);}
-  const sp=labelSprite(L.name,`${L.top}–${L.bot} m`,L.name==='Aquifer'?'#6FBFA8':'#F2EDE4');
+  const sp=labelSprite(L.name,`${L.top}–${L.bot} m`,L.name==='Aquifer'?'#3FA9D6':'#F2EDE4');
   sp.position.set(16,-(L.top+Math.min(h/2,5)),FZ+1.5);scene.add(sp);layerLabels.push(sp);
 });
 (function(){
@@ -1370,13 +1368,13 @@ holeWall.position.set(0,0,FZ);scene.add(holeWall);
 const casing=new THREE.Mesh(halfCyl(RH*.9),new THREE.MeshStandardMaterial({color:0x8d8579,roughness:.38,metalness:.75,side:THREE.DoubleSide}));
 casing.position.set(0,0,FZ);scene.add(casing);
 const sTex=slotTex();
-const screen=new THREE.Mesh(halfCyl(RH*.9),new THREE.MeshStandardMaterial({map:sTex,roughness:.45,metalness:.6,side:THREE.DoubleSide,emissive:0x0e2a24}));
+const screen=new THREE.Mesh(halfCyl(RH*.9),new THREE.MeshStandardMaterial({map:sTex,roughness:.45,metalness:.6,side:THREE.DoubleSide,emissive:0x0b2533}));
 screen.position.set(0,0,FZ);scene.add(screen);
 const waterMat=new THREE.ShaderMaterial({transparent:true,depthWrite:false,uniforms:{time:{value:0},glow:{value:0}},
   vertexShader:'varying vec3 vW;void main(){vec4 w=modelMatrix*vec4(position,1.0);vW=w.xyz;gl_Position=projectionMatrix*viewMatrix*w;}',
   fragmentShader:`varying vec3 vW;uniform float time;uniform float glow;
   void main(){float a=sin(vW.y*1.3+time*2.6+sin(vW.x*3.0+time))*.5+.5;float b=sin(vW.y*.45-time*1.4+vW.x*5.0)*.5+.5;
-  float n=a*b;vec3 deep=vec3(.05,.22,.2);vec3 lite=vec3(.5,.82,.72);vec3 c=mix(deep,lite,n*.55+.12)+glow*vec3(.25,.4,.36);
+  float n=a*b;vec3 deep=vec3(.04,.17,.27);vec3 lite=vec3(.55,.8,.95);vec3 c=mix(deep,lite,n*.55+.12)+glow*vec3(.25,.38,.48);
   gl_FragColor=vec4(c,.86);}`});
 const waterBack=new THREE.Mesh(halfCyl(RH*.86),waterMat);waterBack.position.z=FZ;scene.add(waterBack);
 const waterFace=new THREE.Mesh(new THREE.PlaneGeometry(RH*1.72,1),waterMat);waterFace.position.z=FZ+.02;scene.add(waterFace);
@@ -1385,7 +1383,7 @@ const meniscus=new THREE.Mesh(new THREE.PlaneGeometry(RH*1.8,.28),new THREE.Mesh
 /* water-level line across the face: flat at rest, dips into a cone while pumping */
 const LN=161;
 const lvlGeo=new THREE.BufferGeometry();lvlGeo.setAttribute('position',new THREE.BufferAttribute(new Float32Array(LN*3),3));
-const lvlMat=new THREE.LineDashedMaterial({color:0x6FBFA8,dashSize:1.2,gapSize:.8,transparent:true,opacity:0});
+const lvlMat=new THREE.LineDashedMaterial({color:0x3FA9D6,dashSize:1.2,gapSize:.8,transparent:true,opacity:0});
 const lvl=new THREE.Line(lvlGeo,lvlMat);lvl.frustumCulled=false;scene.add(lvl);
 function updateLevel(draw,op){
   const p=lvlGeo.attributes.position.array;
@@ -1409,7 +1407,7 @@ for(let k=0;k<3;k++){
 }
 bit.position.z=FZ-.15;scene.add(bit);
 const bitLight=new THREE.PointLight(0xE8A33D,0,30,1.6);scene.add(bitLight);
-const strikeLight=new THREE.PointLight(0x6FBFA8,0,70,1.3);scene.add(strikeLight);
+const strikeLight=new THREE.PointLight(0x3FA9D6,0,70,1.3);scene.add(strikeLight);
 
 /* rig: green truck-mounted rig like the one at Mutwot */
 const rig=new THREE.Group();scene.add(rig);
@@ -1476,7 +1474,7 @@ const sweep=new THREE.Mesh(new THREE.PlaneGeometry(150,5),sweepMat);sweep.positi
 /* air-lift: muddy pool + shock ring */
 const pool=new THREE.Mesh(new THREE.CircleGeometry(1,40,0,Math.PI),new THREE.MeshStandardMaterial({color:0x6b6458,roughness:.08,metalness:.5,transparent:true,opacity:.85}));
 pool.rotation.x=-Math.PI/2;pool.position.set(0,.12,FZ);scene.add(pool);
-const ring=new THREE.Mesh(new THREE.TorusGeometry(1,.06,6,64),new THREE.MeshBasicMaterial({color:0xBFEBDD,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));
+const ring=new THREE.Mesh(new THREE.TorusGeometry(1,.06,6,64),new THREE.MeshBasicMaterial({color:0xBFE6F5,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));
 ring.rotation.x=-Math.PI/2;ring.position.set(0,.5,FZ);scene.add(ring);
 const ring2=ring.clone();ring2.material=ring.material.clone();scene.add(ring2);
 /* air-lift jet: a solid, churning column of water */
@@ -1530,8 +1528,8 @@ const geyser=particles(reduce?600:(isSmall?2600:4200),0xE6F4EE,.95,true,.95);
 const sheet=particles(reduce?300:(isSmall?1400:2200),0xCFD6CC,.7,true,.8);
 const mist=particles(isSmall?420:700,0xC9CFC4,9,false,.12);
 const bubbles=particles(isSmall?500:800,0xEAF3EC,.32,true,.9);
-const seep=particles(isSmall?420:700,0x8fe0c8,.38,true,.9);
-const tapStream=particles(300,0x9fdccb,.36,true,.9);
+const seep=particles(isSmall?420:700,0x8fd3f0,.38,true,.9);
+const tapStream=particles(300,0x9fd2ea,.36,true,.9);
 const motes=particles(isSmall?140:240,0xffcf8a,.22,true,.7);
 for(let i=0;i<motes.n;i++){const j=i*3;motes.pos[j]=Rn()*50;motes.pos[j+1]=Math.random()*26;motes.pos[j+2]=FZ-Math.random()*30;motes.life[i]=1;}
 

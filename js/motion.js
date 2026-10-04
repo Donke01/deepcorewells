@@ -479,7 +479,7 @@
         p.vy += 0.22; p.x += p.vx; p.y += p.vy;
         var fade = Math.max(0, 1 - t / 1.4);
         ctx.globalAlpha = p.a * fade;
-        ctx.fillStyle = p.teal ? 'rgb(111,191,168)' : 'rgb(234,243,236)';
+        ctx.fillStyle = p.teal ? 'rgb(63,169,214)' : 'rgb(234,243,236)';
         ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.2832); ctx.fill();
       }
       ctx.globalAlpha = 1;
