@@ -427,6 +427,20 @@ h.classList.add('js-motion');setTimeout(function(){if(!window.__motionReady)h.cl
   .d-hint{margin-top:.7rem;font-size:.56rem}
   .d-compare{aspect-ratio:16/8;margin-top:.7rem}
   .d-credit{top:calc(var(--head-h) + 64px)}
+  .d-card{max-height:calc(100svh - var(--head-h) - 96px);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+  .d-card.d-hero{max-height:calc(100svh - var(--head-h) - 28px);overflow-y:auto}
+  .d-clabel{white-space:normal;width:max-content;max-width:min(56vw,230px);font-size:.54rem;letter-spacing:.12em}
+  .d-clabel b{font-size:.85rem}
+  .d-num{right:-.04em;top:-.12em}
+}
+@media (max-width:899px) and (max-height:740px){
+  .descent h1{font-size:clamp(1.9rem,8.6vw,2.6rem)}
+  .descent h2{font-size:clamp(1.5rem,6.4vw,1.9rem)}
+  .d-card p{font-size:.82rem;line-height:1.45}
+  .d-hero p{margin-top:.35rem}
+  .d-hint{display:none}
+  .d-num{font-size:3.8rem}
+  .d-compare{aspect-ratio:16/7}
 }
 /* very short screens (landscape phones): card on the left, scene on the right */
 @media (max-width:899px) and (max-height:520px) and (orientation:landscape){
@@ -1019,7 +1033,7 @@ const rLabel=document.getElementById('d-rLabel'),rDepth=document.getElementById(
 const stepEls=[...document.querySelectorAll('#d-steps i')],slabel=document.getElementById('d-slabel');
 const NAMES=['Surface · Kitale','Stage 01 / 05 · Survey','Stage 02 / 05 · Drill','Stage 03 / 05 · Strike','Stage 03 / 05 · Air-lift','Stage 04 / 05 · Pump','Stage 05 / 05 · First flow','Before & after','Your borehole'];
 const layerAt=d=>{if(d<=0.2)return 'Ground level';for(const L of LAYERS){if(d<L.bot)return L.name;}return 'Bedrock';};
-const callout=document.getElementById('d-callout'),cTitle=document.getElementById('d-cTitle'),cSub=document.getElementById('d-cSub');
+const callout=document.getElementById('d-callout'),cTitle=document.getElementById('d-cTitle'),cSub=document.getElementById('d-cSub'),cLabel=callout.querySelector('.d-clabel');
 const phRig=document.getElementById('d-phRig'),phStrike=document.getElementById('d-phStrike'),phStrikeImg=phStrike.querySelector('img');
 
 /* scroll → story time */
@@ -1626,8 +1640,11 @@ function frame(now){
     const x=(proj.x*.5+.5)*W0,y=(-proj.y*.5+.5)*H0,sr=stage.getBoundingClientRect(),cr=cards[activeCard].getBoundingClientRect();
     const underCard=W0<900&&x>cr.left-10&&y>cr.top-sr.top-10&&!(H0<=520&&W0>H0);
     const ok=proj.z<1&&x>8&&x<W0-8&&y>130&&y<H0-40&&!underCard;
-    if(ok){callout.style.transform=`translate3d(${x.toFixed(1)}px,${y.toFixed(1)}px,0)`;callout.classList.toggle('flip',x>W0-210);callout.classList.toggle('wet',wet);
-      if(cTitle.textContent!==ttl)cTitle.textContent=ttl;if(cSub.textContent!==sub)cSub.textContent=sub;}
+    if(ok){callout.style.transform=`translate3d(${x.toFixed(1)}px,${y.toFixed(1)}px,0)`;callout.classList.toggle('wet',wet);
+      if(cTitle.textContent!==ttl)cTitle.textContent=ttl;if(cSub.textContent!==sub)cSub.textContent=sub;
+      const lw=cLabel.offsetWidth,flip=x+74+lw>W0-8&&x-74-lw>=8;callout.classList.toggle('flip',flip);
+      const want=flip?x-74-lw:x+74,left=Math.min(Math.max(8,want),W0-8-lw);
+      cLabel.style.left=(left-x)+'px';cLabel.style.right='auto';}
     callout.classList.toggle('on',ok);
   }else callout.classList.remove('on');
 
