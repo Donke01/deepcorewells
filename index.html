@@ -707,6 +707,19 @@ footer.site-foot{background:#090705;border-top:0;padding:0;color:var(--dust)}
   .ft-contact{justify-items:center;text-align:center}
   .ft-meta{align-items:center;text-align:center}
 }
+
+/* hero: one big statement */
+.descent .d-hero h1{font-size:clamp(3.2rem,8vw,6.2rem);line-height:.9;max-width:9.5ch;letter-spacing:.005em}
+.d-card p.d-tagline{margin:.55rem 0 0;font-family:var(--font-d);font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--amber);font-size:clamp(1.35rem,2.6vw,2rem);line-height:1.1}
+.d-card p.d-lede{margin:.7rem 0 0;color:var(--dust);font-size:1rem}
+.d-hero .d-row{margin-top:1.5rem;gap:14px 20px}
+.d-call{color:var(--bone);text-decoration:none;font-family:var(--font-m);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--strata);padding-bottom:3px;white-space:nowrap}
+.d-call:hover{color:var(--amber);border-color:var(--amber)}
+@media (max-width:899px){
+  .descent .d-hero h1{font-size:calc(var(--k,1)*clamp(3rem,15vw,4.6rem));line-height:.9}
+  .d-card p.d-tagline{font-size:calc(var(--k,1)*clamp(1.3rem,6vw,1.7rem))}
+  .d-hero .d-btn{flex:0 0 auto;padding:calc(var(--k,1)*.85rem) 1.3rem;font-size:calc(var(--k,1)*.85rem)}
+}
 </style>
 </head>
 <body>
@@ -769,14 +782,13 @@ footer.site-foot{background:#090705;border-top:0;padding:0;color:var(--dust)}
 
     <div class="d-cards">
       <article class="d-card d-hero on">
-        <p class="d-tag d-fx">Deep Core Wells · Borehole drilling across Kenya</p>
-        <h1 class="d-split">The <span class="d-water">water</span> is down there. We bring it up.</h1>
-        <p class="d-fx">Professional borehole drilling, pump installation and water treatment, anywhere in Kenya. Licensed, insured, WRA-compliant. Free quotes.</p>
+        <h1 class="d-split">The <span class="d-water">water</span> is down there.</h1>
+        <p class="d-tagline d-fx">We bring it up.</p>
+        <p class="d-lede d-fx">Borehole drilling across Kenya.</p>
         <div class="d-row d-fx d2">
           <a class="d-btn" href="#contact">Get a free quote</a>
-          <a class="d-btn ghost" href="tel:+254706716310">Call 0706 716 310</a>
+          <a class="d-call" href="tel:+254706716310">or call 0706 716 310</a>
         </div>
-        <span class="d-hint d-fx d2">Scroll to go underground</span>
       </article>
       <article class="d-card">
         <div class="d-num">01</div>
