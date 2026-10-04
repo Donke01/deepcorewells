@@ -6,6 +6,20 @@
 <meta name="description" content="Deep Core Wells — professional borehole drilling across Kenya. Water well drilling, pump installation and water treatment, countrywide. Licensed, insured, WRA-compliant. Free quotes.">
 <meta name="keywords" content="borehole drilling Kenya, water well drilling Kenya, borehole drilling countrywide, pump installation, water treatment, deep core wells">
 <title>Deep Core Wells | Borehole Drilling Across Kenya</title>
+<link rel="icon" href="images/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="images/brand/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="images/brand/apple-touch-icon.png">
+<meta name="theme-color" content="#0D0B09">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Deep Core Wells">
+<meta property="og:title" content="Deep Core Wells | Borehole Drilling Across Kenya">
+<meta property="og:description" content="Borehole drilling, pump installation and water treatment across Kenya. From the ground to your tap.">
+<meta property="og:url" content="https://deepcorewells.com/">
+<meta property="og:image" content="https://deepcorewells.com/images/brand/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://deepcorewells.com/images/brand/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -64,7 +78,9 @@ html.reduced-motion *,html.reduced-motion *::before,html.reduced-motion *::after
 .site-head.solid{background:rgba(13,11,9,.96);border-bottom-color:var(--strata)}
 .nav{max-width:1140px;margin:0 auto;padding:0 1.25rem;height:var(--head-h);display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .wordmark{font-family:var(--font-d);font-weight:700;font-size:1.15rem;letter-spacing:.06em;text-transform:uppercase;color:var(--bone);text-decoration:none;display:flex;align-items:center;gap:.6rem}
-.wordmark::before{content:"";width:10px;height:10px;background:var(--amber);transform:rotate(45deg);flex:none;box-shadow:0 0 10px rgba(232,163,61,.7)}
+.wordmark .mark{height:30px;width:auto;flex:none;display:block}
+.foot-brand .mark{height:46px;width:auto;display:block;margin-bottom:.9rem}
+.foot-brand .foot-tag{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin:.2rem 0 .8rem}
 .nav-links{display:flex;list-style:none;gap:1.6rem;align-items:center}
 .nav-links a{color:var(--dust);text-decoration:none;font-size:.86rem;font-weight:500;letter-spacing:.04em;transition:color .25s}
 .nav-links a:hover{color:var(--bone)}
@@ -466,7 +482,7 @@ h.classList.add('js-motion');setTimeout(function(){if(!window.__motionReady)h.cl
 <!-- ================= Header ================= -->
 <header class="site-head" id="siteHead">
   <nav class="nav" aria-label="Main navigation">
-    <a href="#top" class="wordmark">Deep Core Wells</a>
+    <a href="#top" class="wordmark" aria-label="Deep Core Wells, home"><svg class="mark" viewBox="0 18 212 170" aria-hidden="true" focusable="false"><path d="M64 70 H66 A12 12 0 0 1 78 82 V140 A30 30 0 0 0 138 140 V60 A26 26 0 0 1 164 34 H174 A12 12 0 0 1 186 46 V58" fill="none" stroke="#E8A33D" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path d="M78 116 V140 A30 30 0 0 0 138 140 V60 A26 26 0 0 1 164 34 H174 A12 12 0 0 1 186 46 V52" fill="none" stroke="#6FBFA8" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M72.5 115 H83.5" stroke="#F2EDE4" stroke-width="2.2" stroke-linecap="round" opacity=".9"/><path d="M10 70 H64" stroke="#B4502A" stroke-width="16" stroke-linecap="round"/><path d="M64 62 V78" stroke="#0D0B09" stroke-width="1.5" opacity=".6"/><rect x="127" y="64" width="22" height="12" rx="3" fill="#C98318"/><path d="M186 70 C186 70 174 84 174 93 a12 12 0 0 0 24 0 C198 84 186 70 186 70 Z" fill="#6FBFA8"/><circle cx="181" cy="93" r="2.6" fill="#F2EDE4" opacity=".55"/></svg><span>Deep Core Wells</span></a>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#services">Services</a></li>
@@ -846,8 +862,10 @@ h.classList.add('js-motion');setTimeout(function(){if(!window.__motionReady)h.cl
 <!-- ================= Footer ================= -->
 <footer>
   <div class="foot-grid">
-    <div>
+    <div class="foot-brand">
+      <svg class="mark" viewBox="0 18 212 170" aria-hidden="true" focusable="false"><path d="M64 70 H66 A12 12 0 0 1 78 82 V140 A30 30 0 0 0 138 140 V60 A26 26 0 0 1 164 34 H174 A12 12 0 0 1 186 46 V58" fill="none" stroke="#E8A33D" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path d="M78 116 V140 A30 30 0 0 0 138 140 V60 A26 26 0 0 1 164 34 H174 A12 12 0 0 1 186 46 V52" fill="none" stroke="#6FBFA8" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M72.5 115 H83.5" stroke="#F2EDE4" stroke-width="2.2" stroke-linecap="round" opacity=".9"/><path d="M10 70 H64" stroke="#B4502A" stroke-width="16" stroke-linecap="round"/><path d="M64 62 V78" stroke="#0D0B09" stroke-width="1.5" opacity=".6"/><rect x="127" y="64" width="22" height="12" rx="3" fill="#C98318"/><path d="M186 70 C186 70 174 84 174 93 a12 12 0 0 0 24 0 C198 84 186 70 186 70 Z" fill="#6FBFA8"/><circle cx="181" cy="93" r="2.6" fill="#F2EDE4" opacity=".55"/></svg>
       <h4>Deep Core Wells</h4>
+      <p class="foot-tag">From the ground to your tap</p>
       <p class="foot-about">Professional water well drilling and pump services since 2020. Licensed, bonded, and insured.</p>
     </div>
     <div>
