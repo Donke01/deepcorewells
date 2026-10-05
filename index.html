@@ -1010,7 +1010,10 @@ img[src*="mwingi"]{object-position:50% 45%}
   .pc-media:not(:has(.ba-view))::-webkit-scrollbar{display:none}
   .pc-media:not(:has(.ba-view)) figure{flex:0 0 100%;height:auto;scroll-snap-align:start}
   .pc-media.two:not(:has(.ba-view)) figure,.pc-media.three figure{flex-basis:86%}
-  .pc-media:not(:has(.ba-view)) img{height:auto;max-height:78vh;object-fit:cover;object-position:50% 50%}
+  .pc-media:not(:has(.ba-view)) img{height:auto;max-height:115vw;object-fit:cover}
+  /* multi-photo cards: one shared square shape so portrait and landscape shots line up */
+  .pc-media.two figure,.pc-media.three figure{aspect-ratio:1/1}
+  .pc-media.two img,.pc-media.three img{height:100%;max-height:none}
   .pc:hover .pc-media figure img{transform:none}
 }
 img[src*="ndalat"]{object-position:40% 40%}
