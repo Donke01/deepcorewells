@@ -1064,10 +1064,10 @@ img[src*="chepkongi-primary"]{object-position:55% 68%}
 img[src*="longonot"]{object-position:40% 55%}
 
 /* WhatsApp floating button */
-.wa-fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:120;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.28);transition:transform .25s ease,box-shadow .25s ease;animation:waIn .5s ease 2.6s both}
+.wa-fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:120;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.28);transition:transform .25s ease,box-shadow .25s ease}
 .wa-fab svg{width:32px;height:32px}
 .wa-fab:hover{transform:scale(1.07);box-shadow:0 10px 30px rgba(0,0,0,.35)}
-.wa-fab::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:waPulse 2.4s ease-out 3.2s infinite;opacity:0}
+.wa-fab::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:waPulse 2.4s ease-out 1s infinite;opacity:0}
 @keyframes waIn{from{opacity:0;transform:translateY(16px) scale(.8)}}
 @keyframes waPulse{0%{opacity:.6;transform:scale(1)}100%{opacity:0;transform:scale(1.6)}}
 html.qd-lock .wa-fab{display:none}
