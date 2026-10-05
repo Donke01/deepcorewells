@@ -1100,6 +1100,15 @@ footer.site-foot{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
 .soc:hover{transform:translateY(-3px) scale(1.06)}
 .soc svg{width:22px;height:22px}
 .soc[data-soc="youtube"]{border-radius:12px;width:48px}
+
+/* CTA banner on white; stronger "See more projects" */
+.cta{background:#fff;color:#14212A;border:1.5px solid #C7D8E0;box-shadow:0 14px 40px rgba(20,33,42,.10);border-top:5px solid #1F6F95}
+.cta h3{color:#14212A}
+.cta p{color:#56636B}
+.cta-call{color:#1F6F95;font-weight:600}
+.proj-more button{background:#1F6F95;color:#fff;border:0;font-weight:700;font-size:.95rem;padding:.95rem 1.8rem;box-shadow:0 8px 20px rgba(31,111,149,.3);display:inline-flex;align-items:center;gap:8px}
+.proj-more button:hover{background:#185a79;color:#fff}
+.proj-more button span{font-size:1.05rem}
 /* Soft, organic bottom edge on the 3D stage instead of a hard straight line */
 @media (max-width:899px){.d-cards{bottom:calc(env(safe-area-inset-bottom,0px) + 40px)!important}}
 .d-stage{-webkit-mask-image:linear-gradient(#000,#000),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='40' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cfilter id='b' x='-5%25' y='-50%25' width='110%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='3.5'/%3E%3C/filter%3E%3Cpath filter='url%28%23b%29' d='M-50 -30H1250V16C1150 22 1100 12 1040 18S930 26 870 17 760 10 700 18 590 25 530 16 420 11 360 19 250 24 190 15 80 12 0 17Z'/%3E%3C/svg%3E");mask-image:linear-gradient(#000,#000),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='40' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cfilter id='b' x='-5%25' y='-50%25' width='110%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='3.5'/%3E%3C/filter%3E%3Cpath filter='url%28%23b%29' d='M-50 -30H1250V16C1150 22 1100 12 1040 18S930 26 870 17 760 10 700 18 590 25 530 16 420 11 360 19 250 24 190 15 80 12 0 17Z'/%3E%3C/svg%3E");
@@ -1454,7 +1463,7 @@ html.qd-lock{overflow:hidden}
         <div class="pc-txt"><div><h3>Drilling with Life Water Canada</h3><p class="pc-place">Mwingi, Kitui County</p></div></div>
       </article>
     </div>
-    <div class="proj-more"><button type="button" id="projMore" aria-controls="projList" aria-expanded="false">See more projects</button></div>
+    <div class="proj-more"><button type="button" id="projMore" aria-controls="projList" aria-expanded="false">See more projects <span aria-hidden="true">&#8595;</span></button></div>
     <div class="proj-grid rv-kids" id="galleryGrid"></div>
     <div class="cta rv">
       <div><h3>Ready for your own water?</h3><p>Free consultation, anywhere in Kenya.</p></div>
@@ -2536,7 +2545,7 @@ requestAnimationFrame(frame);
 <script src="js/assistant.js" defer></script>
 <script>
 (function(){var b=document.getElementById('projMore'),l=document.getElementById('projList');if(!b||!l)return;
-  b.addEventListener('click',function(){var on=l.classList.toggle('all');b.setAttribute('aria-expanded',on);b.textContent=on?'Show fewer projects':'See more projects';
+  b.addEventListener('click',function(){var on=l.classList.toggle('all');b.setAttribute('aria-expanded',on);b.innerHTML=on?'Show fewer projects <span aria-hidden="true">&#8593;</span>':'See more projects <span aria-hidden="true">&#8595;</span>';
     if(!on)document.getElementById('projects').scrollIntoView({behavior:'smooth'});});})();
 </script>
 <script>document.querySelectorAll('.soc[href="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();});});</script>
