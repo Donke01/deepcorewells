@@ -757,6 +757,15 @@ footer.site-foot{background:#090705;border-top:0;padding:0;color:var(--dust)}
 .sx .case-media img,.sx .proj img{filter:contrast(1.04) saturate(1.04)}
 .sx .case-card h3{color:var(--ink)}
 .sx .case-loc{color:var(--blue-ink)}
+
+/* Framed layout: sections sit as bordered panels instead of running edge to edge */
+:root{--gut:12px;--frame-r:16px}
+@media (min-width:760px){:root{--gut:22px;--frame-r:22px}}
+.sx{width:calc(100% - var(--gut)*2);max-width:1280px;margin:var(--gut) auto 0;border:1px solid var(--line);border-radius:var(--frame-r);overflow:hidden}
+.sx + .sx{border-top:1px solid var(--line)}
+.site-foot{width:calc(100% - var(--gut)*2);max-width:1280px;margin:var(--gut) auto var(--gut);border:1px solid var(--strata);border-radius:var(--frame-r);overflow:hidden}
+@media (min-width:900px){.d-stage::before{content:"";position:absolute;inset:var(--gut);top:calc(var(--head-h,64px) + 4px);border:1px solid rgba(242,237,228,.16);border-radius:var(--frame-r);pointer-events:none;z-index:4}}
+@media (min-width:900px){.d-prog{right:calc(var(--gut) + 18px);top:calc(var(--head-h) + 20px)}}
 /* Quote form dialog */
 .qd{margin:auto;border:0;padding:0;background:transparent;color:var(--bone);width:min(440px,calc(100vw - 32px));max-height:calc(100svh - 32px);overflow:visible}
 .qd::backdrop{background:rgba(8,6,5,.72);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
