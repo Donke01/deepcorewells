@@ -1004,6 +1004,15 @@ img[src*="mwingi"]{object-position:50% 45%}
 @media (min-width:860px){.svc-grid > :nth-child(6){grid-column:span 2}}
 
 .pc-media.one figure{height:100%}
+/* phones: show every project photo whole (no cropping); multi-photo cards become a swipe row */
+@media (max-width:759px){
+  .pc-media:not(:has(.ba-view)){display:flex;height:auto;align-items:center;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;overscroll-behavior-x:contain}
+  .pc-media:not(:has(.ba-view))::-webkit-scrollbar{display:none}
+  .pc-media:not(:has(.ba-view)) figure{flex:0 0 100%;height:auto;scroll-snap-align:start}
+  .pc-media.two:not(:has(.ba-view)) figure,.pc-media.three figure{flex-basis:86%}
+  .pc-media:not(:has(.ba-view)) img{height:auto;max-height:78vh;object-fit:cover;object-position:50% 50%}
+  .pc:hover .pc-media figure img{transform:none}
+}
 img[src*="ndalat"]{object-position:40% 40%}
 img[src*="kakuma"]{object-position:40% 55%}
 img[src*="urudi-rig"]{object-position:50% 38%}
