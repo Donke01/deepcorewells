@@ -20,7 +20,7 @@
       a: "It depends on the ground in your area, and the survey tells us before we start. The boreholes on this site range from about 100 m to 300 m deep, for example Keyo Village at 100 m and Duka Moja, Narok at 300 m. Many in the Eldoret and Turbo area are around 140 to 160 m." },
     { id: 'permit', q: 'Which permits do I need?',
       k: ['permit', 'permits', 'licence', 'license', 'wra', 'warma', 'wrma', 'nema', 'approval', 'authorisation', 'authorization', 'legal', 'law', 'government', 'eia', 'registration', 'kibali'],
-      a: "Drilling a borehole needs approvals from WRA, WRMA and NEMA. For more details on what your site needs, chat with us on WhatsApp.", cta: ['wa'] },
+      a: "Drilling a borehole needs approvals from WRA and NEMA. For more details on what your site needs, chat with us on WhatsApp.", cta: ['wa'] },
     { id: 'process', q: 'What are the steps?',
       k: ['step', 'steps', 'process', 'procedure', 'how do you drill', 'how is it done', 'stages', 'start', 'begin', 'what happens'],
       a: "1. Geological survey to find the water.\n2. Permits.\n3. Drilling, with casing put in to keep the hole open.\n4. Air-lift to flush the borehole clean and get the water flowing.\n5. Pump installation, sized to how much water the borehole gives.\n6. Testing: the water is analysed by government labs.\n7. Clean water, ready at your tap." },
