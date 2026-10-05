@@ -739,6 +739,27 @@ footer.site-foot{background:#090705;border-top:0;padding:0;color:var(--dust)}
 .d-hero h1 .d-wm{display:block;width:fit-content}
 .d-hero h1 .l{white-space:nowrap}
 @media (max-width:899px){.descent .d-hero h1{font-size:calc(var(--k,1)*clamp(2.6rem,13.5vw,4.6rem))}}
+
+/* Quote form dialog */
+.qd{margin:auto;border:0;padding:0;background:transparent;color:var(--bone);width:min(440px,calc(100vw - 32px));max-height:calc(100svh - 32px);overflow:visible}
+.qd::backdrop{background:rgba(8,6,5,.72);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.qd[open]{animation:qdIn .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes qdIn{from{opacity:0;transform:translateY(14px)}}
+.qd-form{position:relative;display:grid;gap:12px;background:var(--umber);border:1px solid var(--strata);border-top:3px solid var(--teal);border-radius:8px;padding:24px 20px 20px;max-height:calc(100svh - 32px);overflow:auto;box-sizing:border-box}
+.qd h2{font-family:var(--font-d);font-weight:700;text-transform:uppercase;font-size:1.6rem;letter-spacing:.02em;margin:0;padding-right:36px}
+.qd-sub{margin:-4px 0 4px;color:var(--dust);font-size:.9rem;line-height:1.45}
+.qd label{display:grid;gap:6px;font-family:var(--font-m);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dust)}
+.qd label i{font-style:normal;text-transform:none;letter-spacing:0;opacity:.7}
+.qd input,.qd select,.qd textarea{font:inherit;font-family:var(--font-b);font-size:16px;letter-spacing:0;text-transform:none;color:var(--bone);background:var(--basalt);border:1px solid var(--strata);border-radius:4px;padding:.7rem .8rem;width:100%;box-sizing:border-box}
+.qd textarea{resize:vertical;min-height:72px}
+.qd input:focus,.qd select:focus,.qd textarea:focus{outline:2px solid var(--teal);outline-offset:0;border-color:transparent}
+.qd input.bad{border-color:var(--murram)}
+.qd-err{margin:0;min-height:1em;color:#e8805f;font-size:.85rem}
+.qd-send{font-family:var(--font-d);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:.92rem;background:var(--amber);color:var(--basalt);border:0;border-radius:4px;padding:.95rem 1rem;cursor:pointer}
+.qd-alt{background:none;border:0;color:var(--dust);font:inherit;font-size:.88rem;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:4px}
+.qd-x{position:absolute;top:10px;right:10px;width:40px;height:40px;border:0;background:none;color:var(--dust);font-size:1.8rem;line-height:1;cursor:pointer}
+.qd-x:hover,.qd-alt:hover{color:var(--bone)}
+html.qd-lock{overflow:hidden}
 </style>
 </head>
 <body>
@@ -767,7 +788,7 @@ footer.site-foot{background:#090705;border-top:0;padding:0;color:var(--dust)}
       <li><a href="#process">Process</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="#contact" class="nav-cta">Free Quote</a></li>
+      <li><a href="#contact" class="nav-cta" data-quote>Free Quote</a></li>
     </ul>
   </nav>
 </header>
@@ -805,7 +826,7 @@ footer.site-foot{background:#090705;border-top:0;padding:0;color:var(--dust)}
         <p class="d-tagline d-fx">We bring it up.</p>
         <p class="d-lede d-fx">Borehole drilling across Kenya.</p>
         <div class="d-row d-fx d2">
-          <a class="d-btn" href="#contact">Get a free quote</a>
+          <a class="d-btn" href="#contact" data-quote>Get a free quote</a>
           <a class="d-call" href="tel:+254706716310">or call 0706 716 310</a>
         </div>
       </article>
@@ -862,7 +883,7 @@ footer.site-foot{background:#090705;border-top:0;padding:0;color:var(--dust)}
         <p class="d-tag wet d-fx">One season later</p>
         <h2 class="d-split">Before and after</h2>
         <p class="d-fx">Gardens, crops and livestock, all year round.</p>
-        <div class="d-row d-fx d2"><a class="d-btn" href="#contact">Get a free quote</a><a class="d-call" href="tel:+254706716310">or call 0706 716 310</a></div>
+        <div class="d-row d-fx d2"><a class="d-btn" href="#contact" data-quote>Get a free quote</a><a class="d-call" href="tel:+254706716310">or call 0706 716 310</a></div>
         <div class="d-compare d-fx d2" id="d-cmp">
           <div class="d-ph before"><b>Before</b><em>Your dry site photo</em></div>
           <div class="d-ph after"><b>After</b><em>Same spot, one season on</em></div>
@@ -949,6 +970,26 @@ footer.site-foot{background:#090705;border-top:0;padding:0;color:var(--dust)}
     <p>&copy; 2026 Deep Core Wells</p>
   </div>
 </footer>
+
+<dialog class="qd" id="quoteDialog" aria-labelledby="qdTitle">
+  <form class="qd-form" id="quoteForm" novalidate>
+    <button type="button" class="qd-x" data-close aria-label="Close">&times;</button>
+    <h2 id="qdTitle">Get a free quote</h2>
+    <p class="qd-sub">Tell us about your site. We'll get back to you within 24 hours.</p>
+    <label>Full name<input name="name" required autocomplete="name"></label>
+    <label>Phone<input name="phone" type="tel" inputmode="tel" required autocomplete="tel" placeholder="07XX XXX XXX"></label>
+    <label>Site location<input name="location" required placeholder="Town or county"></label>
+    <label>Service<select name="service">
+      <option>Borehole drilling</option><option>Pump installation</option><option>Water treatment</option>
+      <option>Borehole testing</option><option>Maintenance &amp; repair</option><option>Emergency call-out</option>
+    </select></label>
+    <label><span>Details <i>(optional)</i></span><textarea name="details" rows="3" placeholder="e.g. water for home and livestock"></textarea></label>
+    <p class="qd-err" id="qdErr" role="alert"></p>
+    <button type="submit" class="qd-send" value="wa">Send on WhatsApp</button>
+    <button type="submit" class="qd-alt" value="mail">Send by email instead</button>
+  </form>
+</dialog>
+
 </div><!-- /.page -->
 <script>
 (function(){
@@ -977,29 +1018,11 @@ footer.site-foot{background:#090705;border-top:0;padding:0;color:var(--dust)}
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor){
     anchor.addEventListener('click', function(e){
       var id = this.getAttribute('href');
-      if (id.length < 2) return;
+      if (id.length < 2 || this.hasAttribute('data-quote')) return;
       var target = document.querySelector(id);
       if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
   });
-
-  /* Quote form — front-end only, same fields as before */
-  var form = document.getElementById('quoteForm');
-  if (form) {
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      if (!form.checkValidity()) { form.reportValidity(); return; }
-      var name = document.getElementById('name').value.trim().split(' ')[0] || 'there';
-      var btn = document.getElementById('quoteSubmit');
-      var note = document.getElementById('formNote');
-      btn.classList.add('btn-success','is-done');
-      btn.textContent = 'Request received ✓';
-      btn.disabled = true;
-      if (note) note.textContent = 'Thanks ' + name + ' — your quote request is in. We respond within 24 hours.';
-      form.querySelectorAll('input, select, textarea').forEach(function(el){ el.disabled = true; });
-      /* In production this POSTs to a backend; the page stays fully static. */
-    });
-  }
 
   /* Reveal sections as they scroll into view */
   (function reveals(){
@@ -1838,6 +1861,34 @@ function frame(now){
   requestAnimationFrame(frame);
 }
 requestAnimationFrame(frame);
+})();
+</script>
+<script>
+(function(){
+  var dlg=document.getElementById('quoteDialog'),form=document.getElementById('quoteForm'),err=document.getElementById('qdErr');
+  if(!dlg||!dlg.showModal)return; /* very old browsers keep the #contact link */
+  var PHONE='254706716310',MAIL='info@deepcorewells.com';
+  function open(e){e.preventDefault();
+    var nav=document.querySelector('.nav-links.open,.open[data-nav]');if(nav)nav.classList.remove('open');
+    document.documentElement.classList.add('qd-lock');dlg.showModal();
+    setTimeout(function(){var f=form.querySelector('input');if(f&&matchMedia('(hover:hover)').matches)f.focus();},60);}
+  document.querySelectorAll('[data-quote]').forEach(function(a){a.addEventListener('click',open);});
+  dlg.addEventListener('close',function(){document.documentElement.classList.remove('qd-lock');});
+  dlg.querySelector('[data-close]').addEventListener('click',function(){dlg.close();});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close();});
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var how=(e.submitter&&e.submitter.value)||'wa',bad=[];
+    ['name','phone','location'].forEach(function(n){var el=form.elements[n],ok=el.value.trim().length>(n==='phone'?8:1);el.classList.toggle('bad',!ok);if(!ok)bad.push(el);});
+    if(bad.length){err.textContent='Please fill in your name, phone and site location.';bad[0].focus();return;}
+    err.textContent='';
+    var v=function(n){return form.elements[n].value.trim();};
+    var msg='Hello Deep Core Wells, I would like a free quote.\n\nName: '+v('name')+'\nPhone: '+v('phone')+'\nSite: '+v('location')+'\nService: '+v('service')+(v('details')?'\nDetails: '+v('details'):'');
+    var url=how==='mail'?'mailto:'+MAIL+'?subject='+encodeURIComponent('Free quote request: '+v('service'))+'&body='+encodeURIComponent(msg)
+                        :'https://wa.me/'+PHONE+'?text='+encodeURIComponent(msg);
+    if(how==='mail')location.href=url;else window.open(url,'_blank','noopener');
+    dlg.close();
+  });
 })();
 </script>
 </body>
