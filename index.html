@@ -783,6 +783,68 @@ header.site-head .nav-links a:hover{color:#1F6F95}
 header.site-head .nav-toggle{border-color:#B9CCD5}
 header.site-head .nav-toggle span{background:#14212A}
 @media (max-width:900px){header.site-head .nav-links{background:rgba(227,238,243,.99);border-bottom-color:#C7D8E0}header.site-head .nav-links li{border-bottom-color:#C7D8E0}}
+
+/* ===== Visual lower sections ===== */
+.sx{padding:clamp(3rem,7vw,4.5rem) 0}
+.sx-head{margin-bottom:clamp(1.6rem,4vw,2.4rem)}
+.sx .wrap{max-width:1120px}
+.ic{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:#E3EEF3;flex:none}
+.ic svg{width:24px;height:24px;fill:none;stroke:#1F6F95;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.svc{background:#fff;border-radius:16px;padding:20px 18px;display:flex;flex-direction:column;gap:10px;box-shadow:0 1px 2px rgba(20,30,40,.05),0 10px 30px rgba(20,30,40,.06);transition:transform .35s var(--d-ease),box-shadow .35s}
+.svc:hover{transform:translateY(-3px);box-shadow:0 2px 4px rgba(20,30,40,.06),0 18px 40px rgba(20,30,40,.1)}
+.svc h3{margin:6px 0 0;font-family:var(--font-d);font-weight:600;text-transform:uppercase;letter-spacing:.03em;font-size:1.02rem;line-height:1.15;color:var(--ink)}
+.svc p{margin:0;color:var(--ink2);font-size:.88rem;line-height:1.4}
+.svc-feature{grid-column:1/-1;position:relative;min-height:300px;padding:0;overflow:hidden;justify-content:flex-end;background:#1b1611}
+.svc-feature img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:42% 55%}
+.svc-feature::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,18,0) 35%,rgba(10,14,18,.82))}
+.svc-feature-txt{position:relative;z-index:1;padding:22px 20px;display:grid;gap:8px;justify-items:start}
+.svc-feature .ic{background:rgba(255,255,255,.16);backdrop-filter:blur(6px)}
+.svc-feature .ic svg{stroke:#fff}
+.svc-feature h3{color:#fff;font-size:1.5rem}
+.svc-feature p{color:rgba(255,255,255,.85);font-size:.95rem}
+.svc-urgent{grid-column:1/-1;flex-direction:row;align-items:center;flex-wrap:wrap;gap:14px 16px;background:linear-gradient(135deg,#1F6F95,#2B8DBA);color:#fff}
+.svc-urgent .ic{background:rgba(255,255,255,.16)}
+.svc-urgent .ic svg{stroke:#fff}
+.svc-urgent h3{color:#fff;margin:0}
+.svc-urgent p{color:rgba(255,255,255,.85)}
+.svc-urgent > div{flex:1 1 180px}
+.svc-call{font-family:var(--font-d);font-weight:600;letter-spacing:.05em;font-size:1.15rem;color:#1F6F95;background:#fff;border-radius:999px;padding:.6rem 1.2rem;text-decoration:none;white-space:nowrap}
+@media (min-width:860px){
+  .svc-grid{grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:auto auto auto}
+  .svc-feature{grid-column:1;grid-row:1 / span 2;min-height:420px}
+  .svc-urgent{grid-column:1 / -1}
+  .svc{padding:24px 22px}
+}
+/* why us: blue band */
+.sx.sx-why{background:linear-gradient(160deg,#1F6F95,#164E69);border-color:#1F6F95}
+.sx-why .sx-h{color:#fff}
+.sx-why .sx-eye{color:#BFE6F5}
+.why-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.why-grid li{display:grid;justify-items:center;text-align:center;gap:6px;padding:22px 14px;border-radius:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}
+.why-grid .ic{background:rgba(255,255,255,.14);width:54px;height:54px;margin-bottom:6px}
+.why-grid .ic svg{stroke:#fff;width:26px;height:26px}
+.why-grid b{font-family:var(--font-d);font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:1.02rem;color:#fff;line-height:1.15}
+.why-grid span{font-size:.85rem;color:rgba(255,255,255,.78);line-height:1.35}
+@media (min-width:860px){.why-grid{grid-template-columns:repeat(4,1fr);gap:16px}.why-grid li{padding:30px 18px}}
+/* projects */
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.shots figure{margin:0;position:relative;border-radius:16px;overflow:hidden;aspect-ratio:3/4;background:var(--paper2)}
+.shots figure:last-child{grid-column:1/-1;aspect-ratio:16/9}
+.shots img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--d-ease)}
+.shots figure:hover img{transform:scale(1.04)}
+.shots figure:first-child img{object-position:42% 60%}
+.shots figure:last-child img{object-position:50% 45%}
+.shots figcaption{position:absolute;left:12px;bottom:12px;font-family:var(--font-m);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#14212A;background:rgba(255,255,255,.9);padding:.4rem .6rem;border-radius:999px}
+@media (min-width:860px){.shots{grid-template-columns:repeat(3,1fr)}.shots figure:last-child{grid-column:auto;aspect-ratio:3/4}}
+.proj-grid:not(:empty){margin-top:12px}
+.cta{margin-top:clamp(28px,5vw,44px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 24px;padding:clamp(22px,4vw,34px);border-radius:18px;background:#14212A;color:#fff;text-align:left}
+.cta h3{margin:0;font-family:var(--font-d);font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:clamp(1.4rem,4.5vw,2rem);line-height:1.05}
+.cta p{margin:6px 0 0;color:rgba(255,255,255,.75);font-size:.95rem}
+.cta-act{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px}
+.cta-btn{font-family:var(--font-d);font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:.9rem;background:var(--amber);color:#160f06;padding:.9rem 1.4rem;border-radius:8px;text-decoration:none}
+.cta-call{color:#BFE6F5;text-decoration:none;font-size:.92rem}
+@media (max-width:600px){.cta{flex-direction:column;align-items:stretch;text-align:center}.cta-act{flex-direction:column}.cta-btn{text-align:center}}
 /* Quote form dialog */
 .qd{margin:auto;border:0;padding:0;background:transparent;color:var(--bone);width:min(440px,calc(100vw - 32px));max-height:calc(100svh - 32px);overflow:visible}
 .qd::backdrop{background:rgba(8,6,5,.72);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
@@ -951,33 +1013,33 @@ html.qd-lock{overflow:hidden}
       <p class="sx-eye">Services</p>
       <h2 class="sx-h">What we do</h2>
     </header>
-    <ol class="log rv-kids">
-      <li class="log-row" style="--band:#5A4231"><div class="log-top"><span class="log-no">01</span></div><h3>Borehole drilling</h3><p>For homes, farms, schools and businesses.</p></li>
-      <li class="log-row" style="--band:#B4502A"><div class="log-top"><span class="log-no">02</span></div><h3>Pump installation</h3><p>Sized to your borehole's yield and set at the right depth.</p></li>
-      <li class="log-row" style="--band:#8A6A4E"><div class="log-top"><span class="log-no">03</span></div><h3>Water treatment</h3><p>Testing and treatment for safe drinking water.</p></li>
-      <li class="log-row" style="--band:#5C524B"><div class="log-top"><span class="log-no">04</span></div><h3>Borehole testing</h3><p>Yield and water-quality tests, with a written report.</p></li>
-      <li class="log-row" style="--band:#2A5F78"><div class="log-top"><span class="log-no">05</span></div><h3>Maintenance &amp; repair</h3><p>Servicing to keep your borehole and pump working.</p></li>
-      <li class="log-row" style="--band:#3FA9D6"><div class="log-top"><span class="log-no">06</span></div><h3>Emergency call-outs</h3><p>Available 24 hours a day, 7 days a week.</p></li>
-    </ol>
+    <div class="svc-grid rv-kids">
+      <article class="svc svc-feature">
+        <img src="images/mutwot-drilling-rig.jpg" alt="Deep Core Wells drilling rig on site" loading="lazy" decoding="async">
+        <div class="svc-feature-txt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21l4-18 4 18M9.4 15h5.2M10.6 9.5h2.8M4 21h16"/></svg></span><h3>Borehole drilling</h3><p>Homes, farms, schools and businesses.</p></div>
+      </article>
+      <article class="svc"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V8h7v13M5 12h7M12 10h3.5a2.5 2.5 0 0 1 2.5 2.5V14"/><path d="M18 17.2c0 1-.8 1.8-1.5 1.8s-1.5-.8-1.5-1.8.9-2.2 1.5-2.7c.6.5 1.5 1.7 1.5 2.7z"/></svg></span><h3>Pump installation</h3><p>Sized to your yield.</p></article>
+      <article class="svc"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/><path d="M9.3 14.3l1.9 1.9 3.6-3.9"/></svg></span><h3>Water treatment</h3><p>Safe drinking water.</p></article>
+      <article class="svc"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6.5L5.2 18a2 2 0 0 0 1.8 3h10a2 2 0 0 0 1.8-3L14 9.5V3M7.6 15h8.8"/></svg></span><h3>Borehole testing</h3><p>Yield and quality reports.</p></article>
+      <article class="svc"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3.5 17.5l3 3 5.8-5.8a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.5-.5-2.6z"/></svg></span><h3>Maintenance &amp; repair</h3><p>Keep it running.</p></article>
+      <article class="svc svc-urgent"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h3.5l2 5-2.4 1.5a11 11 0 0 0 5.4 5.4L15 13.5l5 2V19a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span><div><h3>Emergency call-outs</h3><p>24 hours a day, 7 days a week.</p></div><a class="svc-call" href="tel:+254706716310">0706 716 310</a></article>
+    </div>
   </div>
 </section>
 
 <!-- ================= Why us ================= -->
 <section class="sx sx-why" id="why-us">
-  <div class="wrap why2">
-    
-    <div>
-      <header class="sx-head rv">
-        <p class="sx-eye">Why us</p>
-        <h2 class="sx-h">Why Deep Core Wells</h2>
-      </header>
-      <ul class="checks rv-kids">
-        <li><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="none" stroke="#3A2E22"/><path d="M6 10.4l2.6 2.6L14.2 7" fill="none" stroke="#E8A33D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Licensed and insured, WRA and NEMA compliant</li>
-        <li><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="none" stroke="#3A2E22"/><path d="M6 10.4l2.6 2.6L14.2 7" fill="none" stroke="#E8A33D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>A hydrogeological survey before we drill</li>
-        <li><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="none" stroke="#3A2E22"/><path d="M6 10.4l2.6 2.6L14.2 7" fill="none" stroke="#E8A33D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Clear, written quotes</li>
-        <li><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="none" stroke="#3A2E22"/><path d="M6 10.4l2.6 2.6L14.2 7" fill="none" stroke="#E8A33D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free consultation and water testing</li>
-      </ul>
-    </div>
+  <div class="wrap">
+    <header class="sx-head rv">
+      <p class="sx-eye">Why us</p>
+      <h2 class="sx-h">Why Deep Core Wells</h2>
+    </header>
+    <ul class="why-grid rv-kids">
+      <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.6 12l2.4 2.4 4.4-4.6"/></svg></span><b>Licensed &amp; insured</b><span>WRA and NEMA compliant</span></li>
+      <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><b>Survey first</b><span>Before we drill</span></li>
+      <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3h7.5l4 4v14H6.5z"/><path d="M14 3v4h4M9.5 12h5.5M9.5 16h5.5"/></svg></span><b>Clear quotes</b><span>In writing, up front</span></li>
+      <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9.5L4 20z"/><path d="M8.5 10.5h7"/></svg></span><b>Free consultation</b><span>And water testing</span></li>
+    </ul>
   </div>
 </section>
 
@@ -988,13 +1050,16 @@ html.qd-lock{overflow:hidden}
       <p class="sx-eye">Projects</p>
       <h2 class="sx-h">Recent work</h2>
     </header>
-    <article class="case rv">
-      <div class="case-media">
-        <figure><img src="images/mutwot-drilling-rig.jpg" alt="Drilling rig at Mutwot Comprehensive School" loading="lazy" decoding="async"><figcaption>Drilling</figcaption></figure>
-        <figure><img src="images/mutwot-water-strike.jpg" alt="Water strike at Mutwot Comprehensive School" loading="lazy" decoding="async"><figcaption>Water strike</figcaption></figure>
-      </div>
-    </article>
+    <div class="shots rv-kids">
+      <figure><img src="images/mutwot-drilling-rig.jpg" alt="Drilling rig on site" loading="lazy" decoding="async"><figcaption>Drilling</figcaption></figure>
+      <figure><img src="images/mutwot-water-strike.jpg" alt="Water strike" loading="lazy" decoding="async"><figcaption>Water strike</figcaption></figure>
+      <figure><img src="images/water-strike-airlift.jpg" alt="Water bursting from a new borehole during air-lift" loading="lazy" decoding="async"><figcaption>Air-lift</figcaption></figure>
+    </div>
     <div class="proj-grid rv-kids" id="galleryGrid"></div>
+    <div class="cta rv">
+      <div><h3>Ready for your own water?</h3><p>Free consultation, anywhere in Kenya.</p></div>
+      <div class="cta-act"><a class="cta-btn" href="#contact" data-quote>Get a free quote</a><a class="cta-call" href="tel:+254706716310">or call 0706 716 310</a></div>
+    </div>
   </div>
 </section>
 
