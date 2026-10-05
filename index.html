@@ -1001,6 +1001,18 @@ img[src*="mwingi"]{object-position:50% 45%}
 @media (min-width:860px){.svc-photo{grid-column:2 / span 2}}
 @media (min-width:860px){.svc-photo-test{grid-column:auto}}
 @media (max-width:859px){.svc-grid > :nth-child(6){grid-column:1/-1}}
+/* photo tiles shaped to their photos: survey is portrait, so it gets a tall column */
+@media (min-width:860px){
+  .svc-grid > .svc-photo:not(.svc-photo-test){grid-column:2;grid-row:1 / span 2;min-height:440px}
+  .svc-grid > .svc-feature{min-height:440px}
+  .svc-photo-test{min-height:280px}
+}
+@media (max-width:859px){
+  .svc-grid > .svc-photo:not(.svc-photo-test){aspect-ratio:4/5;min-height:0}
+  .svc-photo-test{aspect-ratio:4/3;min-height:0}
+  .svc-grid > .svc-feature{aspect-ratio:1/1;min-height:0}
+}
+.svc-photo:not(.svc-photo-test) img{object-position:50% 45%}
 .svc-photo-test img{object-position:40% 45%}
 
 @media (min-width:760px){.proj-list > .pc:last-child:nth-child(odd){grid-column:1/-1}.proj-list > .pc:last-child:nth-child(odd) .pc-media{height:380px}}
