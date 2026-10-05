@@ -943,6 +943,10 @@ footer.site-foot{background:linear-gradient(160deg,#1F6F95,#164E69);color:rgba(2
 .pf-shots figure:hover img{transform:scale(1.04)}
 .pf-main img{object-position:50% 58%}
 @media (min-width:760px){.pf-shots{grid-template-columns:1.6fr 1fr;grid-template-rows:1fr 1fr;height:clamp(440px,44vw,580px)}.pf-shots figure{aspect-ratio:auto}.pf-shots .pf-main{grid-column:1;grid-row:1 / span 2;aspect-ratio:auto}}
+
+.pf-shots.pf-two{grid-template-columns:1fr 1fr;grid-template-rows:none;height:auto}
+.pf-shots.pf-two figure{aspect-ratio:3/4}
+@media (min-width:760px){.pf-shots.pf-two{grid-template-rows:none;height:clamp(420px,40vw,540px)}.pf-shots.pf-two figure{aspect-ratio:auto}}
 /* Soft, organic bottom edge on the 3D stage instead of a hard straight line */
 @media (max-width:899px){.d-cards{bottom:calc(env(safe-area-inset-bottom,0px) + 40px)!important}}
 .d-stage{-webkit-mask-image:linear-gradient(#000,#000),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='40' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cfilter id='b' x='-5%25' y='-50%25' width='110%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='3.5'/%3E%3C/filter%3E%3Cpath filter='url%28%23b%29' d='M-50 -30H1250V16C1150 22 1100 12 1040 18S930 26 870 17 760 10 700 18 590 25 530 16 420 11 360 19 250 24 190 15 80 12 0 17Z'/%3E%3C/svg%3E");mask-image:linear-gradient(#000,#000),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='40' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cfilter id='b' x='-5%25' y='-50%25' width='110%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='3.5'/%3E%3C/filter%3E%3Cpath filter='url%28%23b%29' d='M-50 -30H1250V16C1150 22 1100 12 1040 18S930 26 870 17 760 10 700 18 590 25 530 16 420 11 360 19 250 24 190 15 80 12 0 17Z'/%3E%3C/svg%3E");
@@ -1211,6 +1215,16 @@ html.qd-lock{overflow:hidden}
         <figure class="pf-main"><img src="images/narok-rig.jpg" alt="Drilling rig mast against the sky at Duka Moja, Narok County" loading="lazy" decoding="async"></figure>
         <figure><img src="images/narok-crew.jpg" alt="Drilling crew at work at Duka Moja" loading="lazy" decoding="async"></figure>
         <figure><img src="images/narok-mud.jpg" alt="Crew clearing drilling mud at the Duka Moja borehole" loading="lazy" decoding="async"></figure>
+      </div>
+    </article>
+    <article class="proj-feat rv">
+      <div class="pf-head">
+        <div><p class="ba-eye">Bishop Muge Memorial</p><h3>Nandi County</h3></div>
+        <span class="pf-depth"><b>150 m</b> deep</span>
+      </div>
+      <div class="pf-shots pf-two">
+        <figure><img src="images/nandi-crew.jpg" alt="Deep Core Wells crew working the drill string at Bishop Muge Memorial, Nandi County" loading="lazy" decoding="async"></figure>
+        <figure><img src="images/nandi-cuttings.jpg" alt="Red soil cuttings rising from the borehole at Bishop Muge Memorial" loading="lazy" decoding="async"></figure>
       </div>
     </article>
     <div class="shots rv-kids">
