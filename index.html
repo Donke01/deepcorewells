@@ -1093,6 +1093,13 @@ footer.site-foot{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
 .ft-map{color:inherit;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.35)}
 .ft-hours{display:inline-block;margin-top:4px;opacity:.85}
 .ft-meta a,.ft-mail{display:inline-block;padding:6px 0}
+
+/* Social icons (placeholders until real links are added: replace href="#" on each .soc) */
+.ft-social{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.soc{width:42px;height:42px;border-radius:50%;background:var(--c);display:grid;place-items:center;box-shadow:0 4px 12px rgba(0,0,0,.18);transition:transform .2s ease}
+.soc:hover{transform:translateY(-3px) scale(1.06)}
+.soc svg{width:22px;height:22px}
+.soc[data-soc="youtube"]{border-radius:12px;width:48px}
 /* Soft, organic bottom edge on the 3D stage instead of a hard straight line */
 @media (max-width:899px){.d-cards{bottom:calc(env(safe-area-inset-bottom,0px) + 40px)!important}}
 .d-stage{-webkit-mask-image:linear-gradient(#000,#000),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='40' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cfilter id='b' x='-5%25' y='-50%25' width='110%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='3.5'/%3E%3C/filter%3E%3Cpath filter='url%28%23b%29' d='M-50 -30H1250V16C1150 22 1100 12 1040 18S930 26 870 17 760 10 700 18 590 25 530 16 420 11 360 19 250 24 190 15 80 12 0 17Z'/%3E%3C/svg%3E");mask-image:linear-gradient(#000,#000),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='40' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cfilter id='b' x='-5%25' y='-50%25' width='110%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='3.5'/%3E%3C/filter%3E%3Cpath filter='url%28%23b%29' d='M-50 -30H1250V16C1150 22 1100 12 1040 18S930 26 870 17 760 10 700 18 590 25 530 16 420 11 360 19 250 24 190 15 80 12 0 17Z'/%3E%3C/svg%3E");
@@ -1463,6 +1470,7 @@ html.qd-lock{overflow:hidden}
   <div class="f-ground" aria-hidden="true"></div>
   <div class="wrap ft">
     <div class="ft-brand"><svg class="mark" viewBox="0 18 212 170" aria-hidden="true" focusable="false"><path d="M64 70 H66 A12 12 0 0 1 78 82 V140 A30 30 0 0 0 138 140 V60 A26 26 0 0 1 164 34 H174 A12 12 0 0 1 186 46 V58" fill="none" stroke="#E8A33D" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path d="M78 116 V140 A30 30 0 0 0 138 140 V60 A26 26 0 0 1 164 34 H174 A12 12 0 0 1 186 46 V52" fill="none" stroke="#3FA9D6" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M72.5 115 H83.5" stroke="#F2EDE4" stroke-width="2.2" stroke-linecap="round" opacity=".9"/><path d="M10 70 H64" stroke="#B4502A" stroke-width="16" stroke-linecap="round"/><path d="M64 62 V78" stroke="#0D0B09" stroke-width="1.5" opacity=".6"/><rect x="127" y="64" width="22" height="12" rx="3" fill="#C98318"/><path d="M186 70 C186 70 174 84 174 93 a12 12 0 0 0 24 0 C198 84 186 70 186 70 Z" fill="#3FA9D6"/><circle cx="181" cy="93" r="2.6" fill="#F2EDE4" opacity=".55"/></svg><div><b>Deep Core Wells</b><span>From the ground to your tap</span></div></div>
+    <div class="ft-social" aria-label="Social media"><a class="soc" href="#" data-soc="facebook" aria-label="Facebook (link coming soon)" style="--c:#1877F2"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M13.4 21v-7.7h2.6l.4-3h-3V8.4c0-.9.3-1.5 1.5-1.5h1.6V4.2c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.7v3h2.6V21z"/></svg></a><a class="soc" href="#" data-soc="instagram" aria-label="Instagram (link coming soon)" style="--c:linear-gradient(45deg,#FEDA75 0%,#FA7E1E 25%,#D62976 50%,#962FBF 75%,#4F5BD5 100%)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="3.3" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.3" cy="7.7" r="1.1" fill="#fff"/></svg></a><a class="soc" href="#" data-soc="tiktok" aria-label="TikTok (link coming soon)" style="--c:#000"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25F4EE" d="M10.2 10.6v3.1a2.6 2.6 0 1 0 1.9 2.5V4.5h3c.2 1.7 1.5 3 3.2 3.2v3c-1.2 0-2.3-.4-3.2-1v6.5a5.5 5.5 0 1 1-4.9-5.6z" transform="translate(-.6 -.4)"/><path fill="#FE2C55" d="M10.2 10.6v3.1a2.6 2.6 0 1 0 1.9 2.5V4.5h3c.2 1.7 1.5 3 3.2 3.2v3c-1.2 0-2.3-.4-3.2-1v6.5a5.5 5.5 0 1 1-4.9-5.6z" transform="translate(.6 .4)"/><path fill="#fff" d="M10.2 10.6v3.1a2.6 2.6 0 1 0 1.9 2.5V4.5h3c.2 1.7 1.5 3 3.2 3.2v3c-1.2 0-2.3-.4-3.2-1v6.5a5.5 5.5 0 1 1-4.9-5.6z"/></svg></a><a class="soc" href="#" data-soc="youtube" aria-label="YouTube (link coming soon)" style="--c:#FF0000"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M9.2 7v10l8-5z"/></svg></a><a class="soc" href="#" data-soc="x" aria-label="X (link coming soon)" style="--c:#000"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M16.9 5h2.4l-5.3 6 6.2 8.2h-4.9l-3.8-5-4.4 5H4.7l5.6-6.4L4.4 5h5l3.4 4.6zm-.8 12.8h1.3L9 6.4H7.6z"/></svg></a></div>
     <div class="ft-contact"><a class="f-call" href="tel:+254706716310">0706 716 310</a><a class="ft-mail" href="mailto:info@deepcorewells.com">info@deepcorewells.com</a></div>
   </div>
   <div class="wrap ft-meta">
@@ -2531,5 +2539,6 @@ requestAnimationFrame(frame);
   b.addEventListener('click',function(){var on=l.classList.toggle('all');b.setAttribute('aria-expanded',on);b.textContent=on?'Show fewer projects':'See more projects';
     if(!on)document.getElementById('projects').scrollIntoView({behavior:'smooth'});});})();
 </script>
+<script>document.querySelectorAll('.soc[href="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();});});</script>
 </body>
 </html>
