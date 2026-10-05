@@ -888,6 +888,24 @@ footer.site-foot{background:linear-gradient(160deg,#1F6F95,#164E69);color:rgba(2
 .fx-particles{position:fixed;inset:0;width:100%;height:100%;z-index:40;pointer-events:none}
 
 
+
+/* Opening animation */
+.op-intro{position:fixed;inset:0;z-index:400;background:#fff;display:grid;place-items:center;cursor:pointer}
+.intro-mark{display:grid;justify-items:center;gap:14px;transform:translateY(-6vh)}
+.intro-mark svg{width:min(42vw,190px);height:auto;overflow:visible}
+.op-intro .ln{fill:none;stroke-dasharray:1;stroke-dashoffset:1}
+.op-intro .l-ground{animation:iDraw .3s cubic-bezier(.4,0,.2,1) .05s forwards}
+.op-intro .l-pipe{animation:iDraw .65s cubic-bezier(.45,0,.2,1) .25s forwards}
+.op-intro .l-water{animation:iDraw .45s cubic-bezier(.45,0,.2,1) .6s forwards}
+.op-intro .l-collar{opacity:0;transform-box:fill-box;transform-origin:center;animation:iPop .3s ease-out .7s forwards}
+.intro-word{font-family:var(--font-d);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:clamp(1rem,4.4vw,1.35rem);color:#14212A;opacity:0;transform:translateY(8px);animation:iWord .5s ease-out .55s forwards}
+.intro-drop{position:fixed;left:0;top:0;width:28px;height:38px;margin:-4px 0 0 -14px;transform:scale(0);transform-origin:50% 0;pointer-events:none}
+.intro-drop svg{width:100%;height:100%;display:block}
+.intro-ring{position:fixed;left:0;top:0;width:20px;height:20px;margin:-10px 0 0 -10px;border:2px solid #3FA9D6;border-radius:50%;opacity:0;pointer-events:none}
+@keyframes iDraw{to{stroke-dashoffset:0}}
+@keyframes iPop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
+@keyframes iWord{to{opacity:1;transform:none}}
+.intro-pending .descent.intro .d-hero .d-wi,.intro-pending .descent.intro .d-hero .d-fx{animation-play-state:paused}
 /* Soft, organic bottom edge on the 3D stage instead of a hard straight line */
 @media (max-width:899px){.d-cards{bottom:calc(env(safe-area-inset-bottom,0px) + 40px)!important}}
 .d-stage{-webkit-mask-image:linear-gradient(#000,#000),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='40' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cfilter id='b' x='-5%25' y='-50%25' width='110%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='3.5'/%3E%3C/filter%3E%3Cpath filter='url%28%23b%29' d='M-50 -30H1250V16C1150 22 1100 12 1040 18S930 26 870 17 760 10 700 18 590 25 530 16 420 11 360 19 250 24 190 15 80 12 0 17Z'/%3E%3C/svg%3E");mask-image:linear-gradient(#000,#000),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='40' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cfilter id='b' x='-5%25' y='-50%25' width='110%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='3.5'/%3E%3C/filter%3E%3Cpath filter='url%28%23b%29' d='M-50 -30H1250V16C1150 22 1100 12 1040 18S930 26 870 17 760 10 700 18 590 25 530 16 420 11 360 19 250 24 190 15 80 12 0 17Z'/%3E%3C/svg%3E");
@@ -937,6 +955,26 @@ html.qd-lock{overflow:hidden}
 </style>
 </head>
 <body>
+<!-- Opening animation: the logo draws itself, a drop falls and its splash opens the page -->
+<div class="op-intro" id="intro" aria-hidden="true">
+  <div class="intro-mark">
+    <svg viewBox="0 18 212 170" focusable="false">
+      <path class="ln l-ground" pathLength="1" d="M10 70 H64" stroke="#B4502A" stroke-width="16" stroke-linecap="round"/>
+      <path class="ln l-pipe" pathLength="1" d="M64 70 H66 A12 12 0 0 1 78 82 V140 A30 30 0 0 0 138 140 V60 A26 26 0 0 1 164 34 H174 A12 12 0 0 1 186 46 V58" fill="none" stroke="#E8A33D" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+      <path class="ln l-water" pathLength="1" d="M78 116 V140 A30 30 0 0 0 138 140 V60 A26 26 0 0 1 164 34 H174 A12 12 0 0 1 186 46 V52" fill="none" stroke="#3FA9D6" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect class="l-collar" x="127" y="64" width="22" height="12" rx="3" fill="#C98318"/>
+    </svg>
+    <b class="intro-word">Deep Core Wells</b>
+  </div>
+  <i class="intro-drop"><svg viewBox="172 68 28 38"><path d="M186 70 C186 70 174 84 174 93 a12 12 0 0 0 24 0 C198 84 186 70 186 70 Z" fill="#3FA9D6"/><circle cx="181" cy="93" r="2.6" fill="#fff" opacity=".6"/></svg></i>
+  <span class="intro-ring"></span><span class="intro-ring r2"></span>
+</div>
+<script>
+(function(){var o=document.getElementById('intro'),skip=false;
+  try{skip=sessionStorage.getItem('dcw-intro')==='1'||matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
+  if(skip){o.parentNode.removeChild(o);}else{document.documentElement.classList.add('intro-pending');}
+})();
+</script>
 <!-- Ambient descent wash layers (opacity scrubbed by motion.js) -->
 <div class="wash w1" aria-hidden="true"></div>
 <div class="wash w2" aria-hidden="true"></div>
@@ -2158,6 +2196,32 @@ requestAnimationFrame(frame);
   }
   function kick(){if(!run){run=true;lastY=scrollY;requestAnimationFrame(frame);}}
   addEventListener('scroll',kick,{passive:true});kick();
+})();
+</script>
+<script>
+/* opening animation timeline: drop forms at the tap, falls, splashes and the splash opens the page */
+(function(){
+  var o=document.getElementById('intro');if(!o)return;
+  var drop=o.querySelector('.intro-drop'),rings=o.querySelectorAll('.intro-ring'),svg=o.querySelector('svg'),root=document.documentElement;
+  var t0=null,done=false,X=0,Y=0,LY=0,R=0,started=false;
+  function tap(){var b=svg.getBoundingClientRect();X=b.left+(186/212)*b.width;Y=b.top+((58-18)/170)*b.height;LY=Y+Math.min(innerHeight*.3,240);}
+  var ease=function(x){return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;},inq=function(x){return x*x*x;};
+  function finish(){if(done)return;done=true;root.classList.remove('intro-pending');try{sessionStorage.setItem('dcw-intro','1');}catch(e){}if(o.parentNode)o.parentNode.removeChild(o);}
+  function reveal(r){var m='radial-gradient(circle at '+X.toFixed(0)+'px '+LY.toFixed(0)+'px,transparent '+r.toFixed(1)+'px,#000 '+(r+1.5).toFixed(1)+'px)';o.style.webkitMaskImage=m;o.style.maskImage=m;}
+  function step(ts){if(done)return;if(t0===null){t0=ts;tap();}var t=(ts-t0)/1000;
+    if(t<1.05){requestAnimationFrame(step);return;}
+    if(t<1.3){var k=(t-1.05)/.25;drop.style.transform='translate('+X+'px,'+Y+'px) scale('+(k*k*(3-2*k)).toFixed(3)+')';}
+    else if(t<1.62){var f=inq((t-1.3)/.32);drop.style.transform='translate('+X+'px,'+(Y+(LY-Y)*f)+'px) scale(1,'+(1+f*.25).toFixed(3)+')';}
+    else{drop.style.opacity='0';
+      if(!started){started=true;root.classList.remove('intro-pending');}
+      var e=Math.min(1,(t-1.62)/.7),D=Math.hypot(Math.max(X,innerWidth-X),Math.max(LY,innerHeight-LY));
+      reveal(ease(e)*D);
+      for(var i=0;i<rings.length;i++){var q=Math.min(1,Math.max(0,(t-1.62-i*.08)/.55));rings[i].style.opacity=(1-q).toFixed(3);rings[i].style.transform='translate('+X+'px,'+LY+'px) scale('+(1+q*(10+i*6)).toFixed(2)+')';}
+      if(e>=1){finish();return;}}
+    requestAnimationFrame(step);}
+  o.addEventListener('click',function(){t0=performance.now()-1620;tap();});
+  requestAnimationFrame(step);
+  setTimeout(finish,4500);
 })();
 </script>
 </body>
