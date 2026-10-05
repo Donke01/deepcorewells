@@ -309,7 +309,7 @@ h.classList.add('js-motion');setTimeout(function(){if(!window.__motionReady)h.cl
 .d-fallback{position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,#1a120b 0 30%,#4a3322 30% 33%,#9a4426 33% 48%,#6e5038 48% 62%,#2f2925 62% 82%,#2E4450 82% 92%,#1d1916 92%)}
 
 .d-photo{position:absolute;left:0;right:0;top:0;height:100%;z-index:1;pointer-events:none;will-change:transform,opacity}
-.d-photo img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;filter:contrast(1.07) saturate(.9) brightness(.8) sepia(.08)}
+.d-photo img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;filter:contrast(1.05) saturate(1.02) brightness(.97)}
 .d-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(13,11,9,.6),rgba(13,11,9,0) 28%,rgba(13,11,9,0) 45%,rgba(13,11,9,.88) 100%)}
 #d-phRig img{object-position:46% 45%;animation:dKb 9s var(--d-ease) both}
 @keyframes dKb{from{transform:scale(1.12)}to{transform:scale(1.02)}}
@@ -503,7 +503,7 @@ h.classList.add('js-motion');setTimeout(function(){if(!window.__motionReady)h.cl
 @media (hover:hover){.log-row:hover{border-color:#5a4632;transform:translateX(4px)}}
 @media (min-width:860px){
   .log{gap:0;border-top:1px solid var(--strata)}
-  .log-row{grid-template-columns:8px 64px 54px minmax(220px,300px) 1fr;align-items:center;column-gap:24px;padding:26px 28px 26px 0;border-radius:0;border-width:0 0 1px 0;background:transparent}
+  .log-row{grid-template-columns:8px 64px minmax(220px,300px) 1fr;align-items:center;column-gap:24px;padding:26px 28px 26px 0;border-radius:0;border-width:0 0 1px 0;background:transparent}
   .log-row::before{grid-row:auto;align-self:stretch}
   .log-top{display:contents}
   .log-row h3{margin:0}
@@ -725,8 +725,8 @@ footer.site-foot{background:#090705;border-top:0;padding:0;color:var(--dust)}
 /* fewer cards: text sits on the scene, lists use dividers */
 .d-card{background:none!important;border:0!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;padding:0 2px 6px!important}
 .d-card h2,.d-card p,.d-card .d-tag{text-shadow:0 1px 14px rgba(0,0,0,.7)}
-.d-stage::after{content:"";position:absolute;left:0;right:0;bottom:0;height:60%;background:linear-gradient(rgba(13,11,9,0),rgba(13,11,9,.88) 72%);z-index:3;pointer-events:none}
-@media (min-width:900px){.d-stage::after{top:0;bottom:0;right:auto;width:55%;height:auto;background:linear-gradient(90deg,rgba(13,11,9,.88),rgba(13,11,9,0))}}
+.d-stage::after{content:"";position:absolute;left:0;right:0;bottom:0;height:50%;background:linear-gradient(rgba(13,11,9,0),rgba(13,11,9,.66) 78%);z-index:3;pointer-events:none}
+@media (min-width:900px){.d-stage::after{top:0;bottom:0;right:auto;width:50%;height:auto;background:linear-gradient(90deg,rgba(13,11,9,.62),rgba(13,11,9,0))}}
 .d-num{display:none}
 @media (max-width:859px){
   .log{gap:0;border-top:1px solid var(--strata)}
@@ -740,6 +740,23 @@ footer.site-foot{background:#090705;border-top:0;padding:0;color:var(--dust)}
 .d-hero h1 .l{white-space:nowrap}
 @media (max-width:899px){.descent .d-hero h1{font-size:calc(var(--k,1)*clamp(2.6rem,13.5vw,4.6rem))}}
 
+
+/* Light sections below the 3D story */
+.sx{--paper:#F6F2EB;--paper2:#EDE6DB;--ink:#1B1611;--ink2:#5B5046;--line:#DCD2C4;--blue-ink:#1F6F95;background:var(--paper);color:var(--ink)}
+.sx + .sx{border-top-color:var(--line)}
+.sx-why{background:var(--paper2)}
+.sx .sx-h{color:var(--ink)}
+.sx .sx-eye{color:var(--blue-ink)}
+.sx .sx-sub{color:var(--ink2)}
+.sx .log,.sx .log-row{border-color:var(--line)}
+.sx .log-row h3{color:var(--ink)}
+.sx .log-row p,.sx .log-no{color:var(--ink2)}
+.sx .log-row:hover{background:var(--paper2)}
+.sx .checks li{color:var(--ink);border-bottom-color:var(--line)}
+.sx .case-media figure,.sx .proj{border-color:var(--line);background:var(--paper2)}
+.sx .case-media img,.sx .proj img{filter:contrast(1.04) saturate(1.04)}
+.sx .case-card h3{color:var(--ink)}
+.sx .case-loc{color:var(--blue-ink)}
 /* Quote form dialog */
 .qd{margin:auto;border:0;padding:0;background:transparent;color:var(--bone);width:min(440px,calc(100vw - 32px));max-height:calc(100svh - 32px);overflow:visible}
 .qd::backdrop{background:rgba(8,6,5,.72);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
@@ -1269,8 +1286,8 @@ renderer.shadowMap.enabled=true;renderer.shadowMap.type=isSmall?THREE.PCFShadowM
 const scene=new THREE.Scene();
 scene.fog=new THREE.Fog(0x120d09,170,720);
 const camera=new THREE.PerspectiveCamera(36,1,0.3,1400);
-const hemi=new THREE.HemisphereLight(0x7d6a55,0x0d0b09,0.42);scene.add(hemi);
-const key=new THREE.DirectionalLight(0xffd6a0,0.7);key.position.set(110,25,70);scene.add(key);
+const hemi=new THREE.HemisphereLight(0xa8927a,0x2a2119,0.72);scene.add(hemi);
+const key=new THREE.DirectionalLight(0xffd6a0,1.05);key.position.set(110,25,70);scene.add(key);
 const rim=new THREE.DirectionalLight(0x3FA9D6,0.22);rim.position.set(-90,-30,50);scene.add(rim);
 const sunLight=new THREE.DirectionalLight(0xffe2b0,0);sunLight.position.set(-60,90,40);scene.add(sunLight);
 
@@ -1689,7 +1706,7 @@ const GradeShader={uniforms:{tDiffuse:{value:null},time:{value:0},ca:{value:.001
     c=mix(c,c*c*(3.0-2.0*c),.22);
     c+=flash*vec3(.75,.95,.9)*(1.0-r*1.8);
     c+=(h(vUv*vec2(1920.0,1080.0)+fract(time)*91.7)-.5)*grain;
-    c*=1.0-vig*smoothstep(.12,.62,r*1.5)*.85;
+    c*=1.0-vig*smoothstep(.2,.75,r*1.5)*.5;
     gl_FragColor=vec4(c,1.0);}`};
 try{
   if(THREE.EffectComposer&&THREE.UnrealBloomPass){
@@ -1751,7 +1768,7 @@ function frame(now){
 
   /* day comes up as the land turns green */
   const day=v.green*.75;
-  sky.material.uniforms.day.value=day;sunLight.intensity=day*.9;
+  sky.material.uniforms.day.value=day;sunLight.intensity=day*1.15;
   /* during air-lift: kill the lamp beams and sun glare so the water reads */
   const glare=1-.92*v.burst;
   sky.material.uniforms.sunK.value=glare;
@@ -1798,7 +1815,7 @@ function frame(now){
   solarG.visible=solarCable.visible=v.solar>.01;solarG.scale.set(1,Math.max(.01,v.solar),1);
   rig.position.z=-v.rigGo*150;rig.position.y=v.rigGo>0&&v.rigGo<1?Math.sin(clock*18)*.06:0;rig.visible=v.rigGo<.999;
   if(v.rigGo>0&&v.rigGo<.95&&!reduce)dust.emit(28,dt,(j,p,vl)=>{p[j]=(Math.random()<.5?-1:1)*2.9;p[j+1]=.6;p[j+2]=FZ-2+rig.position.z;vl[j]=Rn()*2;vl[j+1]=.8+Math.random();vl[j+2]=2+Math.random()*2;});
-  hemi.intensity=.42+day*.55;const fh=Math.max(.01,4.7*v.tank);tankWater.scale.y=fh;tankWater.position.y=7.6+fh/2;
+  hemi.intensity=.72+day*.5;const fh=Math.max(.01,4.7*v.tank);tankWater.scale.y=fh;tankWater.position.y=7.6+fh/2;
   trough.visible=troughW.visible=t>6.6;troughW.position.y=.2+.6*sm((t-6.7)/.4);
   greenU.uR.value=v.green*85;applyGreen(v.green*85,v.green);greenHeroTrees(v.green*85,v.green);
 
