@@ -906,6 +906,23 @@ footer.site-foot{background:linear-gradient(160deg,#1F6F95,#164E69);color:rgba(2
 @keyframes iPop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
 @keyframes iWord{to{opacity:1;transform:none}}
 .intro-pending .descent.intro .d-hero .d-wi,.intro-pending .descent.intro .d-hero .d-fx{animation-play-state:paused}
+
+/* Featured before/after project */
+.ba{display:grid;gap:18px;align-items:center;margin-bottom:clamp(20px,4vw,32px)}
+.ba-view{position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;background:#EAF0F3;touch-action:pan-y;user-select:none}
+.ba-view img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ba-after{object-position:50% 45%}
+.ba-before{object-position:50% 60%;clip-path:inset(0 calc(100% - var(--x)) 0 0)}
+.ba-tag{position:absolute;top:12px;font-family:var(--font-m);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;background:rgba(255,255,255,.92);color:#14212A;padding:.4rem .65rem;border-radius:999px;pointer-events:none}
+.ba-tag.b{left:12px}.ba-tag.a{right:12px;color:#1F6F95}
+.ba-handle{position:absolute;top:0;bottom:0;left:var(--x);width:3px;margin-left:-1.5px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.08);pointer-events:none}
+.ba-handle b{position:absolute;top:50%;left:50%;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.25);display:grid;place-items:center}
+.ba-handle svg{width:22px;height:22px;fill:none;stroke:#1F6F95;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.ba-view input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize}
+.ba-eye{margin:0;font-family:var(--font-m);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#1F6F95}
+.ba-txt h3{margin:.35rem 0 .4rem;font-family:var(--font-d);font-weight:700;text-transform:uppercase;font-size:clamp(1.5rem,5vw,2.2rem);line-height:1.02;color:#14212A}
+.ba-txt p:last-child{margin:0;color:#56636B}
+@media (min-width:760px){.ba{grid-template-columns:minmax(0,420px) 1fr;gap:36px}.ba-view{aspect-ratio:3/4}}
 /* Soft, organic bottom edge on the 3D stage instead of a hard straight line */
 @media (max-width:899px){.d-cards{bottom:calc(env(safe-area-inset-bottom,0px) + 40px)!important}}
 .d-stage{-webkit-mask-image:linear-gradient(#000,#000),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='40' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cfilter id='b' x='-5%25' y='-50%25' width='110%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='3.5'/%3E%3C/filter%3E%3Cpath filter='url%28%23b%29' d='M-50 -30H1250V16C1150 22 1100 12 1040 18S930 26 870 17 760 10 700 18 590 25 530 16 420 11 360 19 250 24 190 15 80 12 0 17Z'/%3E%3C/svg%3E");mask-image:linear-gradient(#000,#000),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='40' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cfilter id='b' x='-5%25' y='-50%25' width='110%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='3.5'/%3E%3C/filter%3E%3Cpath filter='url%28%23b%29' d='M-50 -30H1250V16C1150 22 1100 12 1040 18S930 26 870 17 760 10 700 18 590 25 530 16 420 11 360 19 250 24 190 15 80 12 0 17Z'/%3E%3C/svg%3E");
@@ -1151,6 +1168,20 @@ html.qd-lock{overflow:hidden}
       <p class="sx-eye">Projects</p>
       <h2 class="sx-h">Recent work</h2>
     </header>
+    <article class="ba rv">
+      <div class="ba-view" id="baView" style="--x:50%">
+        <img class="ba-after" src="images/keyo-water.jpg" alt="Water bursting out of the new borehole at Keyo Village" loading="lazy" decoding="async">
+        <img class="ba-before" src="images/keyo-drilling.jpg" alt="Deep Core Wells rig drilling at Keyo Village" loading="lazy" decoding="async">
+        <span class="ba-tag b">Before</span><span class="ba-tag a">After</span>
+        <i class="ba-handle" aria-hidden="true"><b><svg viewBox="0 0 24 24"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg></b></i>
+        <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after" id="baRange">
+      </div>
+      <div class="ba-txt">
+        <p class="ba-eye">Keyo Village</p>
+        <h3>Muhoroni, Kisumu County</h3>
+        <p>From drilling to water. Drag to compare.</p>
+      </div>
+    </article>
     <div class="shots rv-kids">
       <figure><img src="images/mutwot-drilling-rig.jpg" alt="Drilling rig on site" loading="lazy" decoding="async"><figcaption>Drilling</figcaption></figure>
       <figure><img src="images/mutwot-water-strike.jpg" alt="Water strike" loading="lazy" decoding="async"><figcaption>Water strike</figcaption></figure>
@@ -2222,6 +2253,14 @@ requestAnimationFrame(frame);
   o.addEventListener('click',function(){t0=performance.now()-1620;tap();});
   requestAnimationFrame(step);
   setTimeout(finish,4500);
+})();
+</script>
+<script>
+(function(){var v=document.getElementById('baView'),r=document.getElementById('baRange');if(!v||!r)return;
+  var set=function(){v.style.setProperty('--x',r.value+'%');};r.addEventListener('input',set);set();
+  /* a gentle hint swipe the first time it scrolls into view */
+  if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){var io=new IntersectionObserver(function(e){if(!e[0].isIntersecting)return;io.disconnect();
+    var t0=null;function st(ts){if(t0===null)t0=ts;var k=(ts-t0)/1400;if(k>1)return;var x=50+Math.sin(k*Math.PI*2)*18;r.value=x;set();requestAnimationFrame(st);}requestAnimationFrame(st);},{threshold:.6});io.observe(v);}
 })();
 </script>
 </body>
