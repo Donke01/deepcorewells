@@ -182,8 +182,8 @@
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && box.classList.contains('open')) close(); });
   box.querySelector('form').addEventListener('submit', function (e) { e.preventDefault(); var v = input.value; input.value = ''; ask(v); });
   (function fabs() {
-    var root = document.documentElement, foot = document.querySelector('.site-foot'), q = false;
-    function upd() { q = false; var near = !foot || foot.getBoundingClientRect().top < innerHeight * 1.6;
+    var root = document.documentElement, foot = document.getElementById('why-us') || document.querySelector('.site-foot'), q = false;
+    function upd() { q = false; var near = !foot || foot.getBoundingClientRect().top < innerHeight * 0.85;
       root.classList.toggle('fabs-on', near || box.classList.contains('open')); }
     addEventListener('scroll', function () { if (!q) { q = true; requestAnimationFrame(upd); } }, { passive: true });
     addEventListener('resize', upd); upd();
