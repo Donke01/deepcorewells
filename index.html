@@ -961,6 +961,47 @@ footer.site-foot{background:linear-gradient(160deg,#1F6F95,#164E69);color:rgba(2
 .d-shot{position:relative;margin:.8rem 0 .2rem;width:min(100%,300px);aspect-ratio:16/10;max-height:calc(var(--k,1)*24vh);border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.45);border:2px solid rgba(255,255,255,.85)}
 .d-shot img{width:100%;height:100%;object-fit:cover;object-position:50% 52%;display:block}
 .d-shot figcaption{position:absolute;left:8px;bottom:8px;font-family:var(--font-m);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;background:rgba(255,255,255,.9);color:#14212A;padding:.3rem .5rem;border-radius:999px}
+
+/* ===== Project cards ===== */
+.proj-list{display:grid;gap:16px;margin-bottom:16px}
+@media (min-width:760px){.proj-list{grid-template-columns:1fr 1fr;gap:20px}}
+.pc{background:#fff;border:1px solid #E3EAEE;border-radius:18px;overflow:hidden;box-shadow:0 1px 2px rgba(20,30,40,.04),0 10px 28px rgba(20,30,40,.06);display:flex;flex-direction:column}
+.pc-media{display:grid;gap:4px;height:clamp(260px,62vw,340px);background:#EAF0F3}
+@media (min-width:760px){.pc-media{height:300px}}
+.pc-media.two{grid-template-columns:1fr 1fr}
+.pc-media.three{grid-template-columns:1.4fr 1fr;grid-template-rows:1fr 1fr}
+.pc-media.three .main{grid-row:1 / span 2}
+.pc-media figure{margin:0;overflow:hidden;min-height:0}
+.pc-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--d-ease)}
+.pc:hover .pc-media figure img{transform:scale(1.04)}
+.pc-media .ba-view{height:100%;aspect-ratio:auto;border-radius:0}
+.pc-txt{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:14px 16px 16px}
+.pc-txt h3{margin:0;font-family:var(--font-d);font-weight:600;text-transform:uppercase;letter-spacing:.03em;font-size:1.05rem;line-height:1.2;color:#14212A}
+.pc-place{margin:.25rem 0 0;font-size:.86rem;color:#56636B}
+.pc-note{margin:.35rem 0 0;font-size:.8rem;color:#1F6F95}
+.pc-depth{flex:none;display:inline-flex;align-items:baseline;gap:5px;background:#E3EEF3;color:#1F6F95;border-radius:999px;padding:.35rem .7rem;font-family:var(--font-m);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase}
+.pc-depth b{font-family:var(--font-d);font-size:.95rem;letter-spacing:.02em;color:#14212A}
+img[src*="narok-rig"]{object-position:50% 58%}
+img[src*="mutwot-drilling"]{object-position:42% 60%}
+img[src*="mwingi"]{object-position:50% 45%}
+/* smaller, calmer titles across the lower sections */
+.sx-h{font-size:clamp(1.7rem,5.6vw,2.6rem)}
+.svc h3{font-size:.95rem}
+.svc-feature h3{font-size:1.2rem}
+.why-grid b{font-size:.92rem}
+.cta h3{font-size:clamp(1.25rem,3.6vw,1.7rem)}
+/* survey photo tile in What we do */
+.svc-photo{position:relative;padding:0;overflow:hidden;justify-content:flex-end;min-height:220px;background:#1b1611;border:0}
+.svc-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.svc-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,18,0) 35%,rgba(10,14,18,.82))}
+.svc-photo .svc-feature-txt{position:relative;z-index:1;padding:18px 16px;display:grid;gap:6px;justify-items:start}
+.svc-photo .ic{background:rgba(255,255,255,.16)}.svc-photo .ic svg{stroke:#fff}
+.svc-photo h3{color:#fff;font-size:1.05rem}.svc-photo p{color:rgba(255,255,255,.85)}
+@media (max-width:859px){.svc-photo{grid-column:1/-1}}
+@media (min-width:860px){.svc-photo{grid-column:2 / span 2}}
+
+@media (min-width:760px){.proj-list > .pc:last-child:nth-child(odd){grid-column:1/-1}.proj-list > .pc:last-child:nth-child(odd) .pc-media{height:380px}}
+@media (min-width:860px){.svc-grid > :nth-child(6){grid-column:span 2}}
 /* Soft, organic bottom edge on the 3D stage instead of a hard straight line */
 @media (max-width:899px){.d-cards{bottom:calc(env(safe-area-inset-bottom,0px) + 40px)!important}}
 .d-stage{-webkit-mask-image:linear-gradient(#000,#000),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='40' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cfilter id='b' x='-5%25' y='-50%25' width='110%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='3.5'/%3E%3C/filter%3E%3Cpath filter='url%28%23b%29' d='M-50 -30H1250V16C1150 22 1100 12 1040 18S930 26 870 17 760 10 700 18 590 25 530 16 420 11 360 19 250 24 190 15 80 12 0 17Z'/%3E%3C/svg%3E");mask-image:linear-gradient(#000,#000),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='40' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cfilter id='b' x='-5%25' y='-50%25' width='110%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='3.5'/%3E%3C/filter%3E%3Cpath filter='url%28%23b%29' d='M-50 -30H1250V16C1150 22 1100 12 1040 18S930 26 870 17 760 10 700 18 590 25 530 16 420 11 360 19 250 24 190 15 80 12 0 17Z'/%3E%3C/svg%3E");
@@ -1102,7 +1143,6 @@ html.qd-lock{overflow:hidden}
         <p class="d-tag d-fx">Before we drill</p>
         <h2 class="d-split">Geological survey</h2>
         <p class="d-fx">We find the water before we drill.</p>
-        <figure class="d-shot d-fx d2"><img src="images/survey-team.jpg" alt="Deep Core Wells team reading a resistivity survey meter on site" loading="lazy" decoding="async"><figcaption>Survey on site</figcaption></figure>
         <div class="d-spec d-fx d2">Survey report before any drilling</div>
       </article>
       <article class="d-card">
@@ -1175,6 +1215,10 @@ html.qd-lock{overflow:hidden}
         <img src="images/mutwot-drilling-rig.jpg" alt="Deep Core Wells drilling rig on site" loading="lazy" decoding="async">
         <div class="svc-feature-txt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21l4-18 4 18M9.4 15h5.2M10.6 9.5h2.8M4 21h16"/></svg></span><h3>Borehole drilling</h3><p>Homes, farms, schools and businesses.</p></div>
       </article>
+      <article class="svc svc-photo">
+        <img src="images/survey-team.jpg" alt="Deep Core Wells team reading a survey meter on site" loading="lazy" decoding="async">
+        <div class="svc-feature-txt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><h3>Geological survey</h3><p>We find the water before we drill.</p></div>
+      </article>
       <article class="svc"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V8h7v13M5 12h7M12 10h3.5a2.5 2.5 0 0 1 2.5 2.5V14"/><path d="M18 17.2c0 1-.8 1.8-1.5 1.8s-1.5-.8-1.5-1.8.9-2.2 1.5-2.7c.6.5 1.5 1.7 1.5 2.7z"/></svg></span><h3>Pump installation</h3><p>Sized to your yield.</p></article>
       <article class="svc"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/><path d="M9.3 14.3l1.9 1.9 3.6-3.9"/></svg></span><h3>Water treatment</h3><p>Safe drinking water.</p></article>
       <article class="svc"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6.5L5.2 18a2 2 0 0 0 1.8 3h10a2 2 0 0 0 1.8-3L14 9.5V3M7.6 15h8.8"/></svg></span><h3>Borehole testing</h3><p>Yield and quality reports.</p></article>
@@ -1207,71 +1251,43 @@ html.qd-lock{overflow:hidden}
       <p class="sx-eye">Projects</p>
       <h2 class="sx-h">Recent work</h2>
     </header>
-    <article class="ba rv">
-      <div class="ba-view" id="baView" style="--x:50%">
-        <img class="ba-after" src="images/keyo-water.jpg" alt="Water bursting out of the new borehole at Keyo Village" loading="lazy" decoding="async">
-        <img class="ba-before" src="images/keyo-drilling.jpg" alt="Deep Core Wells rig drilling at Keyo Village" loading="lazy" decoding="async">
-        <span class="ba-tag b">Before</span><span class="ba-tag a">After</span>
-        <i class="ba-handle" aria-hidden="true"><b><svg viewBox="0 0 24 24"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg></b></i>
-        <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after" id="baRange">
-      </div>
-      <div class="ba-txt">
-        <p class="ba-eye">Keyo Village</p>
-        <h3>Muhoroni, Kisumu County</h3>
-        <p>From drilling to water. Drag to compare.</p>
-      </div>
-    </article>
-    <article class="proj-feat rv">
-      <div class="pf-head">
-        <div><p class="ba-eye">Duka Moja</p><h3>Narok County</h3></div>
-        <span class="pf-depth"><b>300 m</b> deep</span>
-      </div>
-      <div class="pf-shots">
-        <figure class="pf-main"><img src="images/narok-rig.jpg" alt="Drilling rig mast against the sky at Duka Moja, Narok County" loading="lazy" decoding="async"></figure>
-        <figure><img src="images/narok-crew.jpg" alt="Drilling crew at work at Duka Moja" loading="lazy" decoding="async"></figure>
-        <figure><img src="images/narok-mud.jpg" alt="Crew clearing drilling mud at the Duka Moja borehole" loading="lazy" decoding="async"></figure>
-      </div>
-    </article>
-    <article class="proj-feat rv">
-      <div class="pf-head">
-        <div><p class="ba-eye">Bishop Muge Memorial</p><h3>Nandi County</h3></div>
-        <span class="pf-depth"><b>150 m</b> deep</span>
-      </div>
-      <div class="pf-shots pf-two">
-        <figure><img src="images/nandi-crew.jpg" alt="Deep Core Wells crew working the drill string at Bishop Muge Memorial, Nandi County" loading="lazy" decoding="async"></figure>
-        <figure><img src="images/nandi-cuttings.jpg" alt="Red soil cuttings rising from the borehole at Bishop Muge Memorial" loading="lazy" decoding="async"></figure>
-      </div>
-    </article>
-    <article class="proj-feat rv">
-      <div class="pf-head">
-        <div><p class="ba-eye">Tapsagoi Secondary School</p><h3>Turbo, Uasin Gishu</h3></div>
-        <span class="pf-depth"><b>150 m</b> deep</span>
-      </div>
-      <div class="pf-shots pf-two">
-        <figure><img src="images/tapsagoi-crew.jpg" alt="Crew watching cuttings rise as the rig drills at Tapsagoi Secondary School, Turbo" loading="lazy" decoding="async"></figure>
-        <figure><img src="images/tapsagoi-rig.jpg" alt="Drilling rig at work at Tapsagoi Secondary School, Uasin Gishu County" loading="lazy" decoding="async"></figure>
-      </div>
-    </article>
-    <article class="ba pf-solo rv">
-      <figure class="ba-view"><img src="images/mwingi-lifewater.jpg" alt="Deep Core Wells crew drilling with Life Water Canada in Mwingi" loading="lazy" decoding="async"></figure>
-      <div class="ba-txt">
-        <p class="ba-eye">With Life Water Canada</p>
-        <h3>Mwingi, Kitui County</h3>
-        <p>Drilling in partnership with Life Water Canada.</p>
-      </div>
-    </article>
-    <article class="proj-feat rv">
-      <div class="pf-head">
-        <div><p class="ba-eye">Kaptebee High School</p><h3>Turbo, Uasin Gishu</h3></div>
-      </div>
-      <div class="pf-shots pf-two">
-        <figure><img src="images/kaptebee-rig.jpg" alt="Drilling rig on the grounds of Kaptebee High School, Turbo" loading="lazy" decoding="async"></figure>
-        <figure><img src="images/kaptebee-drilling.jpg" alt="Water and cuttings spraying from the drill string at Kaptebee High School" loading="lazy" decoding="async"></figure>
-      </div>
-    </article>
+    <div class="proj-list rv-kids">
+      <article class="pc">
+        <div class="pc-media one"><div class="ba-view" id="baView" style="--x:50%">
+          <img class="ba-after" src="images/keyo-water.jpg" alt="Water bursting out of the new borehole at Keyo Village" loading="lazy" decoding="async">
+          <img class="ba-before" src="images/keyo-drilling.jpg" alt="Deep Core Wells rig drilling at Keyo Village" loading="lazy" decoding="async">
+          <span class="ba-tag b">Before</span><span class="ba-tag a">After</span>
+          <i class="ba-handle" aria-hidden="true"><b><svg viewBox="0 0 24 24"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg></b></i>
+          <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after" id="baRange">
+        </div></div>
+        <div class="pc-txt"><div><h3>Keyo Village</h3><p class="pc-place">Muhoroni, Kisumu County</p><p class="pc-note">Before and after. Drag to compare.</p></div></div>
+      </article>
+      <article class="pc">
+        <div class="pc-media three"><figure class="main"><img src="images/narok-rig.jpg" alt="Drilling rig mast at Duka Moja, Narok County" loading="lazy" decoding="async"></figure><figure><img src="images/narok-crew.jpg" alt="Drilling crew at work at Duka Moja" loading="lazy" decoding="async"></figure><figure><img src="images/narok-mud.jpg" alt="Crew clearing drilling mud at Duka Moja" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-txt"><div><h3>Duka Moja</h3><p class="pc-place">Narok County</p></div><span class="pc-depth"><b>300 m</b> deep</span></div>
+      </article>
+      <article class="pc">
+        <div class="pc-media two"><figure><img src="images/mutwot-drilling-rig.jpg" alt="Drilling rig at Mutwot Comprehensive School, Simat" loading="lazy" decoding="async"></figure><figure><img src="images/mutwot-water-strike.jpg" alt="Water strike at Mutwot Comprehensive School" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-txt"><div><h3>Mutwot Comprehensive School</h3><p class="pc-place">Simat, Eldoret</p></div></div>
+      </article>
+      <article class="pc">
+        <div class="pc-media two"><figure><img src="images/nandi-crew.jpg" alt="Crew working the drill string at Bishop Muge Memorial, Nandi County" loading="lazy" decoding="async"></figure><figure><img src="images/nandi-cuttings.jpg" alt="Red soil cuttings rising from the borehole at Bishop Muge Memorial" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-txt"><div><h3>Bishop Muge Memorial</h3><p class="pc-place">Nandi County</p></div><span class="pc-depth"><b>150 m</b> deep</span></div>
+      </article>
+      <article class="pc">
+        <div class="pc-media two"><figure><img src="images/tapsagoi-crew.jpg" alt="Crew watching cuttings rise at Tapsagoi Secondary School" loading="lazy" decoding="async"></figure><figure><img src="images/tapsagoi-rig.jpg" alt="Drilling rig at Tapsagoi Secondary School" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-txt"><div><h3>Tapsagoi Secondary School</h3><p class="pc-place">Turbo, Uasin Gishu County</p></div><span class="pc-depth"><b>150 m</b> deep</span></div>
+      </article>
+      <article class="pc">
+        <div class="pc-media two"><figure><img src="images/kaptebee-rig.jpg" alt="Drilling rig on the grounds of Kaptebee High School, Turbo" loading="lazy" decoding="async"></figure><figure><img src="images/kaptebee-drilling.jpg" alt="Water and cuttings spraying from the drill string at Kaptebee High School" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-txt"><div><h3>Kaptebee High School</h3><p class="pc-place">Turbo, Uasin Gishu County</p></div></div>
+      </article>
+      <article class="pc">
+        <div class="pc-media one"><figure><img src="images/mwingi-lifewater.jpg" alt="Deep Core Wells crew drilling with Life Water Canada in Mwingi" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-txt"><div><h3>Mwingi</h3><p class="pc-place">Kitui County</p><p class="pc-note">In partnership with Life Water Canada.</p></div></div>
+      </article>
+    </div>
     <div class="shots rv-kids">
-      <figure><img src="images/mutwot-drilling-rig.jpg" alt="Drilling rig on site" loading="lazy" decoding="async"><figcaption>Drilling</figcaption></figure>
-      <figure><img src="images/mutwot-water-strike.jpg" alt="Water strike" loading="lazy" decoding="async"><figcaption>Water strike</figcaption></figure>
       <figure><img src="images/water-strike-airlift.jpg" alt="Water bursting from a new borehole during air-lift" loading="lazy" decoding="async"><figcaption>Air-lift</figcaption></figure>
       <figure><img src="images/kakuma-drilling.jpg" alt="Deep Core Wells rig drilling in Kakuma, Turkana County" loading="lazy" decoding="async"><figcaption>Kakuma, Turkana</figcaption></figure>
       <figure><img src="images/ndalat-mosop.jpg" alt="New borehole at Ndalat Job's School for the Physically Challenged, Mosop" loading="lazy" decoding="async"><figcaption>Ndalat, Mosop</figcaption></figure>
