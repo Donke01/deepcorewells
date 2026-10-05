@@ -956,6 +956,11 @@ footer.site-foot{background:linear-gradient(160deg,#1F6F95,#164E69);color:rgba(2
 @media (min-width:860px){.shots{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}}
 @media (max-width:859px){.shots figure:nth-child(odd):last-child{grid-column:1/-1;aspect-ratio:4/3}}
 .shots img[src*="ndalat"]{object-position:40% 40%}
+
+/* photo inside a story card */
+.d-shot{position:relative;margin:.8rem 0 .2rem;width:min(100%,300px);aspect-ratio:16/10;max-height:calc(var(--k,1)*24vh);border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.45);border:2px solid rgba(255,255,255,.85)}
+.d-shot img{width:100%;height:100%;object-fit:cover;object-position:50% 52%;display:block}
+.d-shot figcaption{position:absolute;left:8px;bottom:8px;font-family:var(--font-m);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;background:rgba(255,255,255,.9);color:#14212A;padding:.3rem .5rem;border-radius:999px}
 /* Soft, organic bottom edge on the 3D stage instead of a hard straight line */
 @media (max-width:899px){.d-cards{bottom:calc(env(safe-area-inset-bottom,0px) + 40px)!important}}
 .d-stage{-webkit-mask-image:linear-gradient(#000,#000),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='40' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cfilter id='b' x='-5%25' y='-50%25' width='110%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='3.5'/%3E%3C/filter%3E%3Cpath filter='url%28%23b%29' d='M-50 -30H1250V16C1150 22 1100 12 1040 18S930 26 870 17 760 10 700 18 590 25 530 16 420 11 360 19 250 24 190 15 80 12 0 17Z'/%3E%3C/svg%3E");mask-image:linear-gradient(#000,#000),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='40' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cfilter id='b' x='-5%25' y='-50%25' width='110%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='3.5'/%3E%3C/filter%3E%3Cpath filter='url%28%23b%29' d='M-50 -30H1250V16C1150 22 1100 12 1040 18S930 26 870 17 760 10 700 18 590 25 530 16 420 11 360 19 250 24 190 15 80 12 0 17Z'/%3E%3C/svg%3E");
@@ -1097,6 +1102,7 @@ html.qd-lock{overflow:hidden}
         <p class="d-tag d-fx">Before we drill</p>
         <h2 class="d-split">Geological survey</h2>
         <p class="d-fx">We find the water before we drill.</p>
+        <figure class="d-shot d-fx d2"><img src="images/survey-team.jpg" alt="Deep Core Wells team reading a resistivity survey meter on site" loading="lazy" decoding="async"><figcaption>Survey on site</figcaption></figure>
         <div class="d-spec d-fx d2">Survey report before any drilling</div>
       </article>
       <article class="d-card">
