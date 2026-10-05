@@ -1000,19 +1000,25 @@ img[src*="mwingi"]{object-position:50% 45%}
 @media (max-width:859px){.svc-photo{grid-column:1/-1}}
 @media (min-width:860px){.svc-photo{grid-column:2 / span 2}}
 @media (min-width:860px){.svc-photo-test{grid-column:auto}}
-@media (max-width:859px){.svc-grid > :nth-child(6){grid-column:1/-1}}
 /* photo tiles shaped to their photos: survey is portrait, so it gets a tall column */
 @media (min-width:860px){
-  .svc-grid > .svc-photo:not(.svc-photo-test){grid-column:2;grid-row:1 / span 2;min-height:440px}
+  .svc-grid > .svc-survey{grid-column:2;grid-row:1 / span 2;min-height:440px}
   .svc-grid > .svc-feature{min-height:440px}
   .svc-photo-test{min-height:280px}
 }
 @media (max-width:859px){
-  .svc-grid > .svc-photo:not(.svc-photo-test){aspect-ratio:4/5;min-height:0}
+  .svc-grid > .svc-survey{aspect-ratio:4/5;min-height:0}
   .svc-photo-test{aspect-ratio:4/3;min-height:0}
   .svc-grid > .svc-feature{aspect-ratio:1/1;min-height:0}
 }
-.svc-photo:not(.svc-photo-test) img{object-position:50% 45%}
+.svc-survey img{object-position:50% 45%}
+@media (min-width:860px){
+  .svc-grid > .svc-photo-pump{grid-column:3;grid-row:1 / span 2;min-height:440px}
+  .svc-grid > .svc-photo-test{grid-column:1;grid-row:3;min-height:300px}
+  .svc-grid > .svc-product{grid-column:2 / -1;grid-row:3;min-height:300px}
+}
+@media (max-width:859px){.svc-photo-pump{aspect-ratio:1/1;min-height:0}}
+.svc-photo-pump img{object-position:50% 30%}
 /* water treatment tile: cut-out unit on the right, text on the left */
 .svc-product{position:relative;overflow:hidden;background:linear-gradient(160deg,#fff 45%,#E6F1F6)}
 .svc-product > :not(img){position:relative;z-index:1}
@@ -1025,7 +1031,6 @@ img[src*="mwingi"]{object-position:50% 45%}
 .svc-photo-test img{object-position:40% 45%}
 
 @media (min-width:760px){.proj-list > .pc:last-child:nth-child(odd){grid-column:1/-1}.proj-list > .pc:last-child:nth-child(odd) .pc-media{height:380px}}
-@media (min-width:860px){.svc-grid > :nth-child(6){grid-column:span 2}}
 
 .pc-media.one figure{height:100%}
 /* phones: show every project photo whole (no cropping); multi-photo cards become a swipe row */
@@ -1270,17 +1275,19 @@ html.qd-lock{overflow:hidden}
         <img src="images/mutwot-drilling-rig.jpg" alt="Deep Core Wells drilling rig on site" loading="lazy" decoding="async">
         <div class="svc-feature-txt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21l4-18 4 18M9.4 15h5.2M10.6 9.5h2.8M4 21h16"/></svg></span><h3>Borehole drilling</h3><p>Homes, farms, schools and businesses.</p></div>
       </article>
-      <article class="svc svc-photo">
+      <article class="svc svc-photo svc-survey">
         <img src="images/survey-team.jpg" alt="Deep Core Wells team reading a survey meter on site" loading="lazy" decoding="async">
         <div class="svc-feature-txt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><h3>Geological survey</h3><p>We find the water before we drill.</p></div>
       </article>
-      <article class="svc"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V8h7v13M5 12h7M12 10h3.5a2.5 2.5 0 0 1 2.5 2.5V14"/><path d="M18 17.2c0 1-.8 1.8-1.5 1.8s-1.5-.8-1.5-1.8.9-2.2 1.5-2.7c.6.5 1.5 1.7 1.5 2.7z"/></svg></span><h3>Pump installation</h3><p>Sized to your yield.</p></article>
+      <article class="svc svc-photo svc-photo-pump">
+        <img src="images/pump-installation.jpg" alt="Young men drawing clean water from a hand pump in rural Africa" loading="lazy" decoding="async">
+        <div class="svc-feature-txt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V8h7v13M5 12h7M12 10h3.5a2.5 2.5 0 0 1 2.5 2.5V14"/><path d="M18 17.2c0 1-.8 1.8-1.5 1.8s-1.5-.8-1.5-1.8.9-2.2 1.5-2.7c.6.5 1.5 1.7 1.5 2.7z"/></svg></span><h3>Pump installation</h3><p>Sized to your yield.</p></div>
+      </article>
       <article class="svc svc-product"><img src="images/water-treatment-unit.webp" alt="Reverse osmosis water treatment unit with softener, sand and carbon filters" loading="lazy" decoding="async"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/><path d="M9.3 14.3l1.9 1.9 3.6-3.9"/></svg></span><h3>Water treatment</h3><p>Safe drinking water.</p></article>
       <article class="svc svc-photo svc-photo-test">
         <img src="images/borehole-testing.jpg" alt="Test pumping a new borehole, water pouring from the discharge pipe" loading="lazy" decoding="async">
         <div class="svc-feature-txt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6.5L5.2 18a2 2 0 0 0 1.8 3h10a2 2 0 0 0 1.8-3L14 9.5V3M7.6 15h8.8"/></svg></span><h3>Borehole testing</h3><p>Yield and quality reports.</p></div>
       </article>
-      <article class="svc"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3.5 17.5l3 3 5.8-5.8a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.5-.5-2.6z"/></svg></span><h3>Maintenance &amp; repair</h3><p>Keep it running.</p></article>
       <article class="svc svc-urgent"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h3.5l2 5-2.4 1.5a11 11 0 0 0 5.4 5.4L15 13.5l5 2V19a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span><div><h3>Emergency call-outs</h3><p>24 hours a day, 7 days a week.</p></div><a class="svc-call" href="tel:+254706716310">0706 716 310</a></article>
     </div>
   </div>
@@ -1427,7 +1434,7 @@ html.qd-lock{overflow:hidden}
     <label>Site location<input name="location" required placeholder="Town or county"></label>
     <label>Service<select name="service">
       <option>Borehole drilling</option><option>Pump installation</option><option>Water treatment</option>
-      <option>Borehole testing</option><option>Maintenance &amp; repair</option><option>Emergency call-out</option>
+      <option>Borehole testing</option><option>Emergency call-out</option>
     </select></label>
     <label><span>Details <i>(optional)</i></span><textarea name="details" rows="3" placeholder="e.g. water for home and livestock"></textarea></label>
     <p class="qd-err" id="qdErr" role="alert"></p>
