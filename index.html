@@ -1002,6 +1002,10 @@ img[src*="mwingi"]{object-position:50% 45%}
 
 @media (min-width:760px){.proj-list > .pc:last-child:nth-child(odd){grid-column:1/-1}.proj-list > .pc:last-child:nth-child(odd) .pc-media{height:380px}}
 @media (min-width:860px){.svc-grid > :nth-child(6){grid-column:span 2}}
+
+.pc-media.one figure{height:100%}
+img[src*="ndalat"]{object-position:40% 40%}
+img[src*="kakuma"]{object-position:40% 55%}
 /* Soft, organic bottom edge on the 3D stage instead of a hard straight line */
 @media (max-width:899px){.d-cards{bottom:calc(env(safe-area-inset-bottom,0px) + 40px)!important}}
 .d-stage{-webkit-mask-image:linear-gradient(#000,#000),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='40' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cfilter id='b' x='-5%25' y='-50%25' width='110%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='3.5'/%3E%3C/filter%3E%3Cpath filter='url%28%23b%29' d='M-50 -30H1250V16C1150 22 1100 12 1040 18S930 26 870 17 760 10 700 18 590 25 530 16 420 11 360 19 250 24 190 15 80 12 0 17Z'/%3E%3C/svg%3E");mask-image:linear-gradient(#000,#000),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='40' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cfilter id='b' x='-5%25' y='-50%25' width='110%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='3.5'/%3E%3C/filter%3E%3Cpath filter='url%28%23b%29' d='M-50 -30H1250V16C1150 22 1100 12 1040 18S930 26 870 17 760 10 700 18 590 25 530 16 420 11 360 19 250 24 190 15 80 12 0 17Z'/%3E%3C/svg%3E");
@@ -1260,7 +1264,7 @@ html.qd-lock{overflow:hidden}
           <i class="ba-handle" aria-hidden="true"><b><svg viewBox="0 0 24 24"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg></b></i>
           <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after" id="baRange">
         </div></div>
-        <div class="pc-txt"><div><h3>Keyo Village</h3><p class="pc-place">Muhoroni, Kisumu County</p><p class="pc-note">Before and after. Drag to compare.</p></div></div>
+        <div class="pc-txt"><div><h3>Keyo Village</h3><p class="pc-place">Muhoroni, Kisumu County</p><p class="pc-note">Before and after. Drag to compare.</p></div><span class="pc-depth"><b>100 m</b> deep</span></div>
       </article>
       <article class="pc">
         <div class="pc-media three"><figure class="main"><img src="images/narok-rig.jpg" alt="Drilling rig mast at Duka Moja, Narok County" loading="lazy" decoding="async"></figure><figure><img src="images/narok-crew.jpg" alt="Drilling crew at work at Duka Moja" loading="lazy" decoding="async"></figure><figure><img src="images/narok-mud.jpg" alt="Crew clearing drilling mud at Duka Moja" loading="lazy" decoding="async"></figure></div>
@@ -1268,7 +1272,7 @@ html.qd-lock{overflow:hidden}
       </article>
       <article class="pc">
         <div class="pc-media two"><figure><img src="images/mutwot-drilling-rig.jpg" alt="Drilling rig at Mutwot Comprehensive School, Simat" loading="lazy" decoding="async"></figure><figure><img src="images/mutwot-water-strike.jpg" alt="Water strike at Mutwot Comprehensive School" loading="lazy" decoding="async"></figure></div>
-        <div class="pc-txt"><div><h3>Mutwot Comprehensive School</h3><p class="pc-place">Simat, Eldoret</p></div></div>
+        <div class="pc-txt"><div><h3>Mutwot Comprehensive School</h3><p class="pc-place">Simat, Eldoret</p></div><span class="pc-depth"><b>140 m</b> deep</span></div>
       </article>
       <article class="pc">
         <div class="pc-media two"><figure><img src="images/nandi-crew.jpg" alt="Crew working the drill string at Bishop Muge Memorial, Nandi County" loading="lazy" decoding="async"></figure><figure><img src="images/nandi-cuttings.jpg" alt="Red soil cuttings rising from the borehole at Bishop Muge Memorial" loading="lazy" decoding="async"></figure></div>
@@ -1280,17 +1284,20 @@ html.qd-lock{overflow:hidden}
       </article>
       <article class="pc">
         <div class="pc-media two"><figure><img src="images/kaptebee-rig.jpg" alt="Drilling rig on the grounds of Kaptebee High School, Turbo" loading="lazy" decoding="async"></figure><figure><img src="images/kaptebee-drilling.jpg" alt="Water and cuttings spraying from the drill string at Kaptebee High School" loading="lazy" decoding="async"></figure></div>
-        <div class="pc-txt"><div><h3>Kaptebee High School</h3><p class="pc-place">Turbo, Uasin Gishu County</p></div></div>
+        <div class="pc-txt"><div><h3>Kaptebee High School</h3><p class="pc-place">Turbo, Uasin Gishu County</p></div><span class="pc-depth"><b>140 m</b> deep</span></div>
+      </article>
+      <article class="pc">
+        <div class="pc-media one"><figure><img src="images/kakuma-drilling.jpg" alt="Deep Core Wells rig drilling in Kakuma, Turkana County" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-txt"><div><h3>Kakuma</h3><p class="pc-place">Turkana County</p></div><span class="pc-depth"><b>150 m</b> deep</span></div>
+      </article>
+      <article class="pc">
+        <div class="pc-media one"><figure><img src="images/ndalat-mosop.jpg" alt="New borehole at Ndalat Job's School for the Physically Challenged, Mosop" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-txt"><div><h3>Ndalat Job's School for the Physically Challenged</h3><p class="pc-place">Mosop</p></div><span class="pc-depth"><b>150 m</b> deep</span></div>
       </article>
       <article class="pc">
         <div class="pc-media one"><figure><img src="images/mwingi-lifewater.jpg" alt="Deep Core Wells crew drilling with Life Water Canada in Mwingi" loading="lazy" decoding="async"></figure></div>
-        <div class="pc-txt"><div><h3>Mwingi</h3><p class="pc-place">Kitui County</p><p class="pc-note">In partnership with Life Water Canada.</p></div></div>
+        <div class="pc-txt"><div><h3>Drilling with Life Water Canada</h3><p class="pc-place">Mwingi, Kitui County</p></div></div>
       </article>
-    </div>
-    <div class="shots rv-kids">
-      <figure><img src="images/water-strike-airlift.jpg" alt="Water bursting from a new borehole during air-lift" loading="lazy" decoding="async"><figcaption>Air-lift</figcaption></figure>
-      <figure><img src="images/kakuma-drilling.jpg" alt="Deep Core Wells rig drilling in Kakuma, Turkana County" loading="lazy" decoding="async"><figcaption>Kakuma, Turkana</figcaption></figure>
-      <figure><img src="images/ndalat-mosop.jpg" alt="New borehole at Ndalat Job's School for the Physically Challenged, Mosop" loading="lazy" decoding="async"><figcaption>Ndalat, Mosop</figcaption></figure>
     </div>
     <div class="proj-grid rv-kids" id="galleryGrid"></div>
     <div class="cta rv">
