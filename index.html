@@ -846,10 +846,10 @@ footer.site-foot{background:#090705;border-top:0;padding:0;color:var(--dust)}
       </article>
       <article class="d-card">
         <div class="d-num">06</div>
-        <p class="d-tag wet d-fx">Proof</p>
+        <p class="d-tag wet d-fx">Government lab</p>
         <h2 class="d-split">Test</h2>
-        <p class="d-fx">We prove your yield before handover.</p>
-        <div class="d-spec d-fx d2">Yield and water-quality report</div>
+        <p class="d-fx">Your water analysed by government labs.</p>
+        <div class="d-spec d-fx d2">Official water analysis report</div>
       </article>
       <article class="d-card">
         <div class="d-num">07</div>
@@ -1811,7 +1811,7 @@ function frame(now){
   else if(t>3.15&&t<3.62){anchor=[-14,-127,FZ+.2];ttl='Water strike';sub='Flowing in';wet=true;}
   else if(t>3.7&&t<3.98){anchor=[-10,-REST,FZ+.2];ttl='Rises on its own';sub='Up to 35 m';wet=true;}
   else if(t>4.08&&t<4.55){anchor=[1.5,24,FZ];ttl='Yield test';sub='Measured on site';wet=true;}
-  else if(t>5.62&&t<5.97){const x=12,dd=REST+(PUMPLVL-REST)*v.draw*Math.exp(-(x-RH)/14);anchor=[x,-dd,FZ+.25];ttl='Pump test';sub='Yield proven';wet=true;}
+  else if(t>5.62&&t<5.97){const x=12,dd=REST+(PUMPLVL-REST)*v.draw*Math.exp(-(x-RH)/14);anchor=[x,-dd,FZ+.25];ttl='Water sample';sub='Sent to government lab';wet=true;}
   else if(t>6.2&&t<6.9){anchor=[TANK.x,13.4,TANK.y];ttl='Tank · '+Math.round(v.tank*100)+'%';sub='Ready to use';wet=true;}
   if(anchor){
     proj.set(anchor[0],anchor[1],anchor[2]).project(camera);
