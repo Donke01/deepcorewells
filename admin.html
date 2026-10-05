@@ -111,16 +111,23 @@
 
     <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
     <script>
-        var ACCESS_CODE = "deepcore2020"; // change this to your own code
-
+        /* Only a SHA-256 fingerprint of the access code is stored here, never the code itself. */
+        var CODE_HASH = "1e03a17bd7017b24b73a74a60251bd2b0e575e697131bca546a558ebb242a230";
+        function sha256(t) {
+            return crypto.subtle.digest('SHA-256', new TextEncoder().encode(t)).then(function (b) {
+                return Array.prototype.map.call(new Uint8Array(b), function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
+            });
+        }
         function checkCode() {
-            var v = document.getElementById('accessCode').value;
-            if (v === ACCESS_CODE) {
-                document.getElementById('gate').style.display = 'none';
-                document.getElementById('panel').style.display = 'block';
-            } else {
-                alert('Wrong access code');
-            }
+            var v = document.getElementById('accessCode').value.trim();
+            sha256(v).then(function (h) {
+                if (h === CODE_HASH) {
+                    document.getElementById('gate').style.display = 'none';
+                    document.getElementById('panel').style.display = 'block';
+                } else {
+                    alert('Wrong access code');
+                }
+            });
         }
 
         function openWidget() {

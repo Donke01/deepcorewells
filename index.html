@@ -15,11 +15,11 @@
 <meta property="og:title" content="Deep Core Wells | Borehole Drilling Across Kenya">
 <meta property="og:description" content="Borehole drilling, pump installation and water treatment across Kenya. From the ground to your tap.">
 <meta property="og:url" content="https://deepcorewells.com/">
-<meta property="og:image" content="https://deepcorewells.com/images/brand/og-image.png">
+<meta property="og:image" content="https://deepcorewells.com/images/brand/og-share.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://deepcorewells.com/images/brand/og-image.png">
+<meta name="twitter:image" content="https://deepcorewells.com/images/brand/og-share.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -1072,6 +1072,27 @@ img[src*="longonot"]{object-position:40% 55%}
 @keyframes waPulse{0%{opacity:.6;transform:scale(1)}100%{opacity:0;transform:scale(1.6)}}
 html.qd-lock .wa-fab{display:none}
 @media (prefers-reduced-motion:reduce){.wa-fab,.wa-fab::after{animation:none}}
+
+/* ===== Polish pass ===== */
+.proof{list-style:none;margin:0 0 20px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.proof li{background:#E3EEF3;border-radius:14px;padding:14px 8px;text-align:center;display:grid;gap:2px}
+.proof b{font-family:var(--font-d);font-weight:700;font-size:clamp(1.4rem,5vw,2rem);line-height:1;color:#14212A}
+.proof span{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:#56636B}
+#projList:not(.all) > .pc:nth-child(n+7){display:none}
+.proj-more{display:flex;justify-content:center;margin:4px 0 8px}
+.proj-more button{font:600 .85rem Inter,system-ui,sans-serif;letter-spacing:.04em;color:#1F6F95;background:#fff;border:1.5px solid #1F6F95;border-radius:999px;padding:.8rem 1.5rem;cursor:pointer}
+.proj-more button:hover{background:#1F6F95;color:#fff}
+.why-wrap{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
+@media (max-width:859px){.why-pic{aspect-ratio:16/10!important;max-height:260px;width:100%}}
+.why-pic{margin:0;border-radius:18px;overflow:hidden;aspect-ratio:16/10}
+.why-pic img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block}
+@media (min-width:860px){.why-wrap{grid-template-columns:1.1fr 1fr;align-items:stretch;max-width:1040px;margin:0 auto}.why-pic{aspect-ratio:auto;position:relative;min-height:320px}.why-pic img{position:absolute;inset:0}.why-wrap .why-grid li{justify-content:center;align-content:center}.why-wrap .why-grid{grid-template-columns:1fr 1fr!important}.why-wrap .why-grid li{padding:28px 18px}}
+.why-grid b{font-size:1rem}
+.why-grid span{font-size:.88rem}
+footer.site-foot{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+.ft-map{color:inherit;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.35)}
+.ft-hours{display:inline-block;margin-top:4px;opacity:.85}
+.ft-meta a,.ft-mail{display:inline-block;padding:6px 0}
 /* Soft, organic bottom edge on the 3D stage instead of a hard straight line */
 @media (max-width:899px){.d-cards{bottom:calc(env(safe-area-inset-bottom,0px) + 40px)!important}}
 .d-stage{-webkit-mask-image:linear-gradient(#000,#000),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='40' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cfilter id='b' x='-5%25' y='-50%25' width='110%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='3.5'/%3E%3C/filter%3E%3Cpath filter='url%28%23b%29' d='M-50 -30H1250V16C1150 22 1100 12 1040 18S930 26 870 17 760 10 700 18 590 25 530 16 420 11 360 19 250 24 190 15 80 12 0 17Z'/%3E%3C/svg%3E");mask-image:linear-gradient(#000,#000),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='40' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cfilter id='b' x='-5%25' y='-50%25' width='110%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='3.5'/%3E%3C/filter%3E%3Cpath filter='url%28%23b%29' d='M-50 -30H1250V16C1150 22 1100 12 1040 18S930 26 870 17 760 10 700 18 590 25 530 16 420 11 360 19 250 24 190 15 80 12 0 17Z'/%3E%3C/svg%3E");
@@ -1119,6 +1140,7 @@ html.qd-lock{overflow:hidden}
 .qd-x{color:#56636B}
 .qd-x:hover{color:#14212A}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","additionalType":"https://en.wikipedia.org/wiki/Borehole","name":"Deep Core Wells","description":"Borehole drilling, geological survey, pump installation, water treatment, borehole testing and water tower fabrication across Kenya.","url":"https://deepcorewells.com/","telephone":"+254706716310","email":"info@deepcorewells.com","image":"https://deepcorewells.com/images/brand/og-share.jpg","logo":"https://deepcorewells.com/images/brand/icon-512.png","address":{"@type":"PostalAddress","streetAddress":"Mega Centre, 3rd Floor, Makasembo Road","addressLocality":"Kitale","addressCountry":"KE"},"areaServed":{"@type":"Country","name":"Kenya"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"08:00","closes":"16:00"}]}</script>
 </head>
 <body>
 <!-- Opening animation: the logo draws itself, a drop falls and its splash opens the page -->
@@ -1177,8 +1199,8 @@ html.qd-lock{overflow:hidden}
   <div class="d-stage">
     <div class="d-fallback" id="d-fallback" hidden></div>
     <canvas id="d-scene" aria-hidden="true"></canvas>
-    <div class="d-photo" id="d-phStrike"><img src="images/mutwot-water-strike.jpg" alt="Water blasting out of a new borehole during air-lift" loading="lazy"></div>
-    <div class="d-photo" id="d-phRig"><img src="images/water-strike-airlift.jpg" alt="Water bursting from a new borehole beside a Deep Core Wells rig" fetchpriority="high"><span class="d-edge"></span></div>
+    <div class="d-photo" id="d-phStrike"><img src="images/mutwot-water-strike.webp" alt="Water blasting out of a new borehole during air-lift" loading="lazy"></div>
+    <div class="d-photo" id="d-phRig"><img src="images/water-strike-airlift.webp" alt="Water bursting from a new borehole beside a Deep Core Wells rig" fetchpriority="high"><span class="d-edge"></span></div>
 
     <div class="d-prog" aria-hidden="true">
       <div class="d-steps" id="d-steps"><i></i><i></i><i class="wet"></i><i class="wet"></i><i class="wet"></i><i class="wet"></i><i class="wet"></i></div>
@@ -1277,32 +1299,31 @@ html.qd-lock{overflow:hidden}
 <section class="sx sx-services" id="services">
   <div class="wrap">
     <header class="sx-head rv">
-      <p class="sx-eye">Services</p>
       <h2 class="sx-h">What we do</h2>
     </header>
     <div class="svc-grid rv-kids">
       <article class="svc svc-feature">
-        <img src="images/mutwot-drilling-rig.jpg" alt="Deep Core Wells drilling rig on site" loading="lazy" decoding="async">
+        <img src="images/mutwot-drilling-rig.webp" alt="Deep Core Wells drilling rig on site" loading="lazy" decoding="async">
         <div class="svc-feature-txt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21l4-18 4 18M9.4 15h5.2M10.6 9.5h2.8M4 21h16"/></svg></span><h3>Borehole drilling</h3><p>Homes, farms, schools and businesses.</p></div>
       </article>
       <article class="svc svc-photo svc-survey">
-        <img src="images/survey-team.jpg" alt="Deep Core Wells team reading a survey meter on site" loading="lazy" decoding="async">
+        <img src="images/survey-team.webp" alt="Deep Core Wells team reading a survey meter on site" loading="lazy" decoding="async">
         <div class="svc-feature-txt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><h3>Geological survey</h3><p>We find the water before we drill.</p></div>
       </article>
       <article class="svc svc-photo svc-photo-pump">
-        <img src="images/pump-installation-meter.jpg" alt="Water gushing from a newly installed borehole pump through the water meter" loading="lazy" decoding="async">
+        <img src="images/pump-installation-meter.webp" alt="Water gushing from a newly installed borehole pump through the water meter" loading="lazy" decoding="async">
         <div class="svc-feature-txt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V8h7v13M5 12h7M12 10h3.5a2.5 2.5 0 0 1 2.5 2.5V14"/><path d="M18 17.2c0 1-.8 1.8-1.5 1.8s-1.5-.8-1.5-1.8.9-2.2 1.5-2.7c.6.5 1.5 1.7 1.5 2.7z"/></svg></span><h3>Pump installation</h3><p>Sized to your yield.</p></div>
       </article>
       <article class="svc svc-photo svc-photo-treat">
-        <img src="images/water-treatment.jpg" alt="Stainless steel reverse osmosis water treatment unit with three filter vessels" loading="lazy" decoding="async">
+        <img src="images/water-treatment.webp" alt="Stainless steel reverse osmosis water treatment unit with three filter vessels" loading="lazy" decoding="async">
         <div class="svc-feature-txt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/><path d="M9.3 14.3l1.9 1.9 3.6-3.9"/></svg></span><h3>Water treatment</h3><p>Safe drinking water.</p></div>
       </article>
       <article class="svc svc-photo svc-photo-test">
-        <img class="svc-bg" src="images/borehole-testing-full.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"><img class="svc-fit" src="images/borehole-testing-full.jpg" alt="Test pumping a new borehole, water pouring from the discharge pipe into a bucket" loading="lazy" decoding="async">
+        <img class="svc-bg" src="images/borehole-testing-full.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><img class="svc-fit" src="images/borehole-testing-full.webp" alt="Test pumping a new borehole, water pouring from the discharge pipe into a bucket" loading="lazy" decoding="async">
         <div class="svc-feature-txt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6.5L5.2 18a2 2 0 0 0 1.8 3h10a2 2 0 0 0 1.8-3L14 9.5V3M7.6 15h8.8"/></svg></span><h3>Borehole testing</h3><p>Yield and quality reports.</p></div>
       </article>
       <article class="svc svc-photo svc-photo-tower">
-        <img src="images/water-tower-galvanised.jpg" alt="Galvanised steel water tower with ladder and tank on top" loading="lazy" decoding="async">
+        <img src="images/water-tower-galvanised.webp" alt="Galvanised steel water tower with ladder and tank on top" loading="lazy" decoding="async">
         <div class="svc-feature-txt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v5H5z"/><path d="M7 9l-2 12M17 9l2 12M8 14h8M6.5 9l11 12M17.5 9l-11 12"/></svg></span><h3>Water tower fabrication</h3><p>Steel tank stands, built and installed.</p></div>
       </article>
     </div>
@@ -1317,15 +1338,17 @@ html.qd-lock{overflow:hidden}
 <section class="sx sx-why" id="why-us">
   <div class="wrap">
     <header class="sx-head rv">
-      <p class="sx-eye">Why us</p>
       <h2 class="sx-h">Why Deep Core Wells</h2>
     </header>
+    <div class="why-wrap">
+    <figure class="why-pic rv"><img src="images/narok-crew.webp" alt="Deep Core Wells drilling crew at work" loading="lazy" decoding="async"></figure>
     <ul class="why-grid rv-kids">
       <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.6 12l2.4 2.4 4.4-4.6"/></svg></span><b>Licensed</b><span>WRA and NEMA compliant</span></li>
       <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><b>Survey first</b><span>Before we drill</span></li>
       <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3h7.5l4 4v14H6.5z"/><path d="M14 3v4h4M9.5 12h5.5M9.5 16h5.5"/></svg></span><b>Clear quotes</b><span>In writing, up front</span></li>
       <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9.5L4 20z"/><path d="M8.5 10.5h7"/></svg></span><b>Free consultation</b><span>And water testing</span></li>
     </ul>
+    </div>
   </div>
 </section>
 
@@ -1333,14 +1356,18 @@ html.qd-lock{overflow:hidden}
 <section class="sx sx-projects" id="projects">
   <div class="wrap">
     <header class="sx-head rv">
-      <p class="sx-eye">Projects</p>
       <h2 class="sx-h">Recent work</h2>
     </header>
-    <div class="proj-list rv-kids">
+    <ul class="proof rv">
+      <li><b>19</b><span>Recent projects</span></li>
+      <li><b>300 m</b><span>Deepest borehole</span></li>
+      <li><b>7</b><span>Counties</span></li>
+    </ul>
+    <div class="proj-list rv-kids" id="projList">
       <article class="pc">
         <div class="pc-media one"><div class="ba-view" id="baView" style="--x:50%">
-          <img class="ba-after" src="images/keyo-water.jpg" alt="Water bursting out of the new borehole at Keyo Village" loading="lazy" decoding="async">
-          <img class="ba-before" src="images/keyo-drilling.jpg" alt="Deep Core Wells rig drilling at Keyo Village" loading="lazy" decoding="async">
+          <img class="ba-after" src="images/keyo-water.webp" alt="Water bursting out of the new borehole at Keyo Village" loading="lazy" decoding="async">
+          <img class="ba-before" src="images/keyo-drilling.webp" alt="Deep Core Wells rig drilling at Keyo Village" loading="lazy" decoding="async">
           <span class="ba-tag b">Before</span><span class="ba-tag a">After</span>
           <i class="ba-handle" aria-hidden="true"><b><svg viewBox="0 0 24 24"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg></b></i>
           <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after" id="baRange">
@@ -1348,78 +1375,79 @@ html.qd-lock{overflow:hidden}
         <div class="pc-txt"><div><h3>Keyo Village</h3><p class="pc-place">Muhoroni, Kisumu County</p><p class="pc-note">Before and after. Drag to compare.</p></div><span class="pc-depth"><b>100 m</b> deep</span></div>
       </article>
       <article class="pc">
-        <div class="pc-media three"><figure class="main"><img src="images/narok-rig.jpg" alt="Drilling rig mast at Duka Moja, Narok County" loading="lazy" decoding="async"></figure><figure><img src="images/narok-crew.jpg" alt="Drilling crew at work at Duka Moja" loading="lazy" decoding="async"></figure><figure><img src="images/narok-mud.jpg" alt="Crew clearing drilling mud at Duka Moja" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-media three"><figure class="main"><img src="images/narok-rig.webp" alt="Drilling rig mast at Duka Moja, Narok County" loading="lazy" decoding="async"></figure><figure><img src="images/narok-crew.webp" alt="Drilling crew at work at Duka Moja" loading="lazy" decoding="async"></figure><figure><img src="images/narok-mud.webp" alt="Crew clearing drilling mud at Duka Moja" loading="lazy" decoding="async"></figure></div>
         <div class="pc-txt"><div><h3>Duka Moja</h3><p class="pc-place">Narok County</p></div><span class="pc-depth"><b>300 m</b> deep</span></div>
       </article>
       <article class="pc">
-        <div class="pc-media two"><figure><img src="images/mutwot-drilling-rig.jpg" alt="Drilling rig at Mutwot Comprehensive School, Simat" loading="lazy" decoding="async"></figure><figure><img src="images/mutwot-airlift.jpg" alt="Water and cuttings blasting up through the rig during air-lift at Mutwot Comprehensive School" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-media two"><figure><img src="images/mutwot-drilling-rig.webp" alt="Drilling rig at Mutwot Comprehensive School, Simat" loading="lazy" decoding="async"></figure><figure><img src="images/mutwot-airlift.webp" alt="Water and cuttings blasting up through the rig during air-lift at Mutwot Comprehensive School" loading="lazy" decoding="async"></figure></div>
         <div class="pc-txt"><div><h3>Mutwot Comprehensive School</h3><p class="pc-place">Simat, Eldoret</p></div><span class="pc-depth"><b>140 m</b> deep</span></div>
       </article>
       <article class="pc">
-        <div class="pc-media two"><figure><img src="images/nandi-crew.jpg" alt="Crew working the drill string at Bishop Muge Memorial, Nandi County" loading="lazy" decoding="async"></figure><figure><img src="images/nandi-cuttings.jpg" alt="Red soil cuttings rising from the borehole at Bishop Muge Memorial" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-media two"><figure><img src="images/nandi-crew.webp" alt="Crew working the drill string at Bishop Muge Memorial, Nandi County" loading="lazy" decoding="async"></figure><figure><img src="images/nandi-cuttings.webp" alt="Red soil cuttings rising from the borehole at Bishop Muge Memorial" loading="lazy" decoding="async"></figure></div>
         <div class="pc-txt"><div><h3>Bishop Muge Memorial</h3><p class="pc-place">Nandi County</p></div><span class="pc-depth"><b>150 m</b> deep</span></div>
       </article>
       <article class="pc">
-        <div class="pc-media two"><figure><img src="images/tapsagoi-crew.jpg" alt="Crew watching cuttings rise at Tapsagoi Secondary School" loading="lazy" decoding="async"></figure><figure><img src="images/tapsagoi-rig.jpg" alt="Drilling rig at Tapsagoi Secondary School" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-media two"><figure><img src="images/tapsagoi-crew.webp" alt="Crew watching cuttings rise at Tapsagoi Secondary School" loading="lazy" decoding="async"></figure><figure><img src="images/tapsagoi-rig.webp" alt="Drilling rig at Tapsagoi Secondary School" loading="lazy" decoding="async"></figure></div>
         <div class="pc-txt"><div><h3>Tapsagoi Secondary School</h3><p class="pc-place">Turbo, Uasin Gishu County</p></div><span class="pc-depth"><b>150 m</b> deep</span></div>
       </article>
       <article class="pc">
-        <div class="pc-media two"><figure><img src="images/kaptebee-rig.jpg" alt="Drilling rig on the grounds of Kaptebee High School, Turbo" loading="lazy" decoding="async"></figure><figure><img src="images/kaptebee-drilling.jpg" alt="Water and cuttings spraying from the drill string at Kaptebee High School" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-media two"><figure><img src="images/kaptebee-rig.webp" alt="Drilling rig on the grounds of Kaptebee High School, Turbo" loading="lazy" decoding="async"></figure><figure><img src="images/kaptebee-drilling.webp" alt="Water and cuttings spraying from the drill string at Kaptebee High School" loading="lazy" decoding="async"></figure></div>
         <div class="pc-txt"><div><h3>Kaptebee High School</h3><p class="pc-place">Turbo, Uasin Gishu County</p></div><span class="pc-depth"><b>140 m</b> deep</span></div>
       </article>
       <article class="pc">
-        <div class="pc-media one"><figure><img src="images/kakuma-drilling.jpg" alt="Deep Core Wells rig drilling in Kakuma, Turkana County" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-media one"><figure><img src="images/kakuma-drilling.webp" alt="Deep Core Wells rig drilling in Kakuma, Turkana County" loading="lazy" decoding="async"></figure></div>
         <div class="pc-txt"><div><h3>Kakuma</h3><p class="pc-place">Turkana County</p></div><span class="pc-depth"><b>150 m</b> deep</span></div>
       </article>
       <article class="pc">
-        <div class="pc-media one"><figure><img src="images/ndalat-mosop.jpg" alt="New borehole at Ndalat Job's School for the Physically Challenged, Mosop" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-media one"><figure><img src="images/ndalat-mosop.webp" alt="New borehole at Ndalat Job's School for the Physically Challenged, Mosop" loading="lazy" decoding="async"></figure></div>
         <div class="pc-txt"><div><h3>Ndalat Job's School for the Physically Challenged</h3><p class="pc-place">Mosop</p></div><span class="pc-depth"><b>150 m</b> deep</span></div>
       </article>
       <article class="pc">
-        <div class="pc-media two"><figure><img src="images/urudi-rig.jpg" alt="Drilling rig and compressor truck on the field at Urudi, Kisumu County" loading="lazy" decoding="async"></figure><figure><img src="images/urudi-drilling.jpg" alt="Deep Core Wells rig drilling under a tree at Urudi, Kisumu County" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-media two"><figure><img src="images/urudi-rig.webp" alt="Drilling rig and compressor truck on the field at Urudi, Kisumu County" loading="lazy" decoding="async"></figure><figure><img src="images/urudi-drilling.webp" alt="Deep Core Wells rig drilling under a tree at Urudi, Kisumu County" loading="lazy" decoding="async"></figure></div>
         <div class="pc-txt"><div><h3>Urudi</h3><p class="pc-place">Kisumu County</p></div><span class="pc-depth"><b>180 m</b> deep</span></div>
       </article>
       <article class="pc">
-        <div class="pc-media one"><figure><img src="images/sigowet-crew.jpg" alt="Deep Core Wells crew working the drill string at Sigowet" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-media one"><figure><img src="images/sigowet-crew.webp" alt="Deep Core Wells crew working the drill string at Sigowet" loading="lazy" decoding="async"></figure></div>
         <div class="pc-txt"><div><h3>Sigowet</h3><p class="pc-place">Eldoret</p></div><span class="pc-depth"><b>160 m</b> deep</span></div>
       </article>
       <article class="pc">
-        <div class="pc-media two"><figure><img src="images/tartar-crew.jpg" alt="Crew in hard hats at the drilling rig at TarTar, Simat" loading="lazy" decoding="async"></figure><figure><img src="images/tartar-rig.jpg" alt="Drilling rig and pipe truck with blue casing at TarTar, Simat" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-media two"><figure><img src="images/tartar-crew.webp" alt="Crew in hard hats at the drilling rig at TarTar, Simat" loading="lazy" decoding="async"></figure><figure><img src="images/tartar-rig.webp" alt="Drilling rig and pipe truck with blue casing at TarTar, Simat" loading="lazy" decoding="async"></figure></div>
         <div class="pc-txt"><div><h3>TarTar</h3><p class="pc-place">Simat, Eldoret</p></div><span class="pc-depth"><b>150 m</b> deep</span></div>
       </article>
       <article class="pc">
-        <div class="pc-media two"><figure><img src="images/kaptinga-rig.jpg" alt="Drilling rig mast over the new borehole at Kaptinga Milk Plant" loading="lazy" decoding="async"></figure><figure><img src="images/kaptinga-borehole.jpg" alt="Drill string and wet cuttings at the borehole, Kaptinga Milk Plant" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-media two"><figure><img src="images/kaptinga-rig.webp" alt="Drilling rig mast over the new borehole at Kaptinga Milk Plant" loading="lazy" decoding="async"></figure><figure><img src="images/kaptinga-borehole.webp" alt="Drill string and wet cuttings at the borehole, Kaptinga Milk Plant" loading="lazy" decoding="async"></figure></div>
         <div class="pc-txt"><div><h3>Kaptinga Milk Plant</h3></div><span class="pc-depth"><b>140 m</b> deep</span></div>
       </article>
       <article class="pc">
-        <div class="pc-media three"><figure class="main"><img src="images/kaigat-rig.jpg" alt="Drilling rig mast with water and cuttings at the borehole, Kaigat" loading="lazy" decoding="async"></figure><figure><img src="images/kaigat-site.jpg" alt="Rig, crew and casing pipes on the school grounds at Kaigat" loading="lazy" decoding="async"></figure><figure><img src="images/kaigat-casing.jpg" alt="Casing set in the finished borehole with gravel pack, Kaigat" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-media three"><figure class="main"><img src="images/kaigat-rig.webp" alt="Drilling rig mast with water and cuttings at the borehole, Kaigat" loading="lazy" decoding="async"></figure><figure><img src="images/kaigat-site.webp" alt="Rig, crew and casing pipes on the school grounds at Kaigat" loading="lazy" decoding="async"></figure><figure><img src="images/kaigat-casing.webp" alt="Casing set in the finished borehole with gravel pack, Kaigat" loading="lazy" decoding="async"></figure></div>
         <div class="pc-txt"><div><h3>Kaigat</h3><p class="pc-place">Eldoret</p></div><span class="pc-depth"><b>150 m</b> deep</span></div>
       </article>
       <article class="pc">
-        <div class="pc-media two"><figure><img src="images/murgor-rig.jpg" alt="Drilling rig and compressor truck with crew at Murgor School, Turbo" loading="lazy" decoding="async"></figure><figure><img src="images/murgor-drilling.jpg" alt="Rig drilling with spray rising from the borehole at Murgor School" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-media two"><figure><img src="images/murgor-rig.webp" alt="Drilling rig and compressor truck with crew at Murgor School, Turbo" loading="lazy" decoding="async"></figure><figure><img src="images/murgor-drilling.webp" alt="Rig drilling with spray rising from the borehole at Murgor School" loading="lazy" decoding="async"></figure></div>
         <div class="pc-txt"><div><h3>Murgor School</h3><p class="pc-place">Turbo, Uasin Gishu County</p></div><span class="pc-depth"><b>160 m</b> deep</span></div>
       </article>
       <article class="pc">
-        <div class="pc-media one"><figure><img src="images/elgon-estate.jpg" alt="Operator at the controls of the drilling rig at Elgon Estate, Turbo" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-media one"><figure><img src="images/elgon-estate.webp" alt="Operator at the controls of the drilling rig at Elgon Estate, Turbo" loading="lazy" decoding="async"></figure></div>
         <div class="pc-txt"><div><h3>Elgon Estate</h3><p class="pc-place">Turbo, Uasin Gishu County</p></div><span class="pc-depth"><b>135 m</b> deep</span></div>
       </article>
       <article class="pc">
-        <div class="pc-media one"><figure><img src="images/chepkongi-dispensary.jpg" alt="Drilling rig, compressor truck and crew beside Chepkongi Dispensary, Eldoret" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-media one"><figure><img src="images/chepkongi-dispensary.webp" alt="Drilling rig, compressor truck and crew beside Chepkongi Dispensary, Eldoret" loading="lazy" decoding="async"></figure></div>
         <div class="pc-txt"><div><h3>Chepkongi Dispensary</h3><p class="pc-place">Eldoret</p></div><span class="pc-depth"><b>155 m</b> deep</span></div>
       </article>
       <article class="pc">
-        <div class="pc-media one"><figure><img src="images/chepkongi-primary.jpg" alt="Drilling rig among tall trees beside Chepkongi Primary School, Eldoret" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-media one"><figure><img src="images/chepkongi-primary.webp" alt="Drilling rig among tall trees beside Chepkongi Primary School, Eldoret" loading="lazy" decoding="async"></figure></div>
         <div class="pc-txt"><div><h3>Chepkongi Primary School</h3><p class="pc-place">Eldoret</p></div><span class="pc-depth"><b>150 m</b> deep</span></div>
       </article>
       <article class="pc">
-        <div class="pc-media one"><figure><img src="images/longonot-deb.jpg" alt="Crew on the drilling rig mast at Longonot DEB, Naivasha" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-media one"><figure><img src="images/longonot-deb.webp" alt="Crew on the drilling rig mast at Longonot DEB, Naivasha" loading="lazy" decoding="async"></figure></div>
         <div class="pc-txt"><div><h3>Longonot DEB</h3><p class="pc-place">Naivasha, Nakuru County</p></div><span class="pc-depth"><b>100 m</b> deep</span></div>
       </article>
       <article class="pc">
-        <div class="pc-media one"><figure><img src="images/mwingi-lifewater.jpg" alt="Deep Core Wells crew drilling with Life Water Canada in Mwingi" loading="lazy" decoding="async"></figure></div>
+        <div class="pc-media one"><figure><img src="images/mwingi-lifewater.webp" alt="Deep Core Wells crew drilling with Life Water Canada in Mwingi" loading="lazy" decoding="async"></figure></div>
         <div class="pc-txt"><div><h3>Drilling with Life Water Canada</h3><p class="pc-place">Mwingi, Kitui County</p></div></div>
       </article>
     </div>
+    <div class="proj-more"><button type="button" id="projMore" aria-controls="projList" aria-expanded="false">See all 19 projects</button></div>
     <div class="proj-grid rv-kids" id="galleryGrid"></div>
     <div class="cta rv">
       <div><h3>Ready for your own water?</h3><p>Free consultation, anywhere in Kenya.</p></div>
@@ -1439,7 +1467,7 @@ html.qd-lock{overflow:hidden}
   </div>
   <div class="wrap ft-meta">
     <nav aria-label="Footer"><a href="#services">Services</a><a href="#why-us">Why us</a><a href="#projects">Projects</a></nav>
-    <p>Mega Centre, 3rd Floor, Makasembo Road, Kitale</p>
+    <p><a class="ft-map" href="https://www.google.com/maps/search/?api=1&amp;query=Mega+Centre+Makasembo+Road+Kitale" target="_blank" rel="noopener">Mega Centre, 3rd Floor, Makasembo Road, Kitale</a><br><span class="ft-hours">Open Monday to Saturday, 8 am to 4 pm</span></p>
     <p>&copy; 2026 Deep Core Wells</p>
   </div>
 </footer>
@@ -2498,5 +2526,10 @@ requestAnimationFrame(frame);
 </script>
 <a class="wa-fab" href="https://wa.me/254706716310?text=Hello%20Deep%20Core%20Wells%2C%20I%27d%20like%20to%20ask%20about%20a%20borehole." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#fff" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.6l-.4-.3-3.8 1.2 1.2-3.7-.3-.4a10.5 10.5 0 0 1-1.7-5.8C5.1 10 10 5.2 16 5.2S26.9 10 26.9 15.8 22 26.4 16 26.4zm6-7.9c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2l-1 1.3c-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6.4-.6c.1-.2 0-.4 0-.6l-1.1-2.6c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8 0 1.6 1.2 3.2 1.4 3.4.2.2 2.4 3.6 5.8 5 .8.4 1.4.6 1.9.7.8.3 1.6.2 2.2.1.7-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.1-.3-.2-.6-.4z"/></svg></a>
 <script src="js/assistant.js" defer></script>
+<script>
+(function(){var b=document.getElementById('projMore'),l=document.getElementById('projList');if(!b||!l)return;
+  b.addEventListener('click',function(){var on=l.classList.toggle('all');b.setAttribute('aria-expanded',on);b.textContent=on?'Show fewer projects':'See all 19 projects';
+    if(!on)document.getElementById('projects').scrollIntoView({behavior:'smooth'});});})();
+</script>
 </body>
 </html>
