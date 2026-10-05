@@ -2082,10 +2082,12 @@ requestAnimationFrame(frame);
   var ov=document.createElement('div');ov.className='d-exit';ov.setAttribute('aria-hidden','true');st.appendChild(ov);
   var q=false;
   var sv=document.getElementById('services');
-  function upd(){q=false;var H=innerHeight,sT=sv?sv.getBoundingClientRect().top:H,l=Math.min(1,Math.max(0,(H-sT)/(H*.5))),p=l*l*(3-2*l);
-    var x=(l*120-15).toFixed(1);
-    ov.style.background='linear-gradient(to top,#fff '+x+'%,rgba(255,255,255,'+p.toFixed(3)+') '+(+x+35)+'%)';
-    ov.style.opacity=Math.min(1,l*12).toFixed(3);}
+  function upd(){q=false;var H=innerHeight,r=st.getBoundingClientRect(),sT=sv?sv.getBoundingClientRect().top:H;
+    if(sT>=H){ov.style.opacity='0';return;}
+    /* keep the 3D visible; only a soft white fade just above the rising What we do panel */
+    var y=sT-r.top,f=Math.min(180,H*.25);
+    ov.style.background='linear-gradient(to bottom,rgba(255,255,255,0) '+(y-f).toFixed(0)+'px,#fff '+(y-8).toFixed(0)+'px)';
+    ov.style.opacity='1';}
   addEventListener('scroll',function(){if(!q){q=true;requestAnimationFrame(upd);}},{passive:true});
   addEventListener('resize',upd);upd();
 })();
