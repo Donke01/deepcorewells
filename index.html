@@ -763,7 +763,14 @@ footer.site-foot{background:#090705;border-top:0;padding:0;color:var(--dust)}
 @media (min-width:760px){:root{--gut:22px;--frame-r:22px}}
 .sx{width:calc(100% - var(--gut)*2);max-width:1280px;margin:var(--gut) auto 0;border:1px solid var(--line);border-radius:var(--frame-r);overflow:hidden}
 .sx + .sx{border-top:1px solid var(--line)}
-.site-foot{width:calc(100% - var(--gut)*2);max-width:1280px;margin:var(--gut) auto var(--gut);border:1px solid var(--strata);border-radius:var(--frame-r);overflow:hidden}
+/* Footer: full width, no border, light */
+footer.site-foot{margin-top:var(--gut);border:0;border-radius:0;background:#E3EEF3;color:#3E4A52}
+.site-foot .ft-brand b{color:#14212A}
+.site-foot .ft-brand span{color:#9A5B0F}
+.site-foot .f-call{color:#1F6F95!important}
+.site-foot .ft-mail,.site-foot .ft-meta a{color:#3E4A52}
+.site-foot .ft-mail:hover,.site-foot .ft-meta a:hover{color:#1F6F95}
+.site-foot .ft-meta{border-top-color:#C7D8E0;color:#56636B}
 @media (min-width:900px){.d-stage::before{content:"";position:absolute;inset:var(--gut);top:calc(var(--head-h,64px) + 4px);border:1px solid rgba(242,237,228,.16);border-radius:var(--frame-r);pointer-events:none;z-index:4}}
 @media (min-width:900px){.d-prog{right:calc(var(--gut) + 18px);top:calc(var(--head-h) + 20px)}}
 /* Quote form dialog */
