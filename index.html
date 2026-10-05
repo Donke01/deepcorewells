@@ -1024,12 +1024,6 @@ html.qd-lock{overflow:hidden}
         <h2 class="d-split">Before and after</h2>
         <p class="d-fx">Gardens, crops and livestock, all year round.</p>
         <div class="d-row d-fx d2"><a class="d-btn" href="#contact" data-quote>Get a free quote</a><a class="d-call" href="tel:+254706716310">or call 0706 716 310</a></div>
-        <div class="d-compare d-fx d2" id="d-cmp">
-          <div class="d-ph before"><b>Before</b><em>Your dry site photo</em></div>
-          <div class="d-ph after"><b>After</b><em>Same spot, one season on</em></div>
-          <input type="range" id="d-cmpR" min="0" max="100" value="50" aria-label="Compare before and after">
-          <i class="d-handle"></i>
-        </div>
       </article>
     </div>
   </div>
@@ -1263,7 +1257,7 @@ document.querySelectorAll('.d-split').forEach(el=>{
 
 /* compare slider */
 const cmp=document.getElementById('d-cmp'),cmpR=document.getElementById('d-cmpR');
-const setCmp=()=>cmp.style.setProperty('--x',cmpR.value+'%');cmpR.addEventListener('input',setCmp);setCmp();
+if(cmp&&cmpR){const setCmp=()=>cmp.style.setProperty('--x',cmpR.value+'%');cmpR.addEventListener('input',setCmp);setCmp();}
 
 /* gauge + HUD */
 const col=document.getElementById('d-col'),pin=document.getElementById('d-pin'),ticks=document.getElementById('d-ticks'),gauge=document.getElementById('d-gauge');
