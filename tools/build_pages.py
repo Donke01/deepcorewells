@@ -4,7 +4,7 @@ Everything is taken from index.html and js/assistant.js, so the pages stay in st
   python3 tools/extract_css.py && python3 tools/build_pages.py
 Run both again after adding a project or changing the header/footer on the homepage.
 """
-import re, json, html, datetime
+import re, json, html, datetime, urllib.parse
 from collections import OrderedDict
 
 SITE = 'https://deepcorewells.com'
@@ -258,6 +258,91 @@ add('/contact', 'Contact Deep Core Wells | Free Borehole Quote',
     'Call or WhatsApp 0706 716 310, email info@deepcorewells.com, or request a free borehole quote. Office at Mega Centre, Kitale.',
     'Contact us', 'Call, WhatsApp or email us, or send a quote request and we will get back to you within 24 hours.',
     contact_body, [('/contact', 'Contact')])
+
+# ---------- before you drill (checklist) ----------
+BD_STEPS = [
+    ('Survey the ground first',
+     'A hydrogeological survey reads the rock layers under your land and picks the point where water is most likely. '
+     'If the borehole will have a motorised pump, the Water Resources Authority (WRA) wants the survey report with your application, '
+     'and it must be prepared by a qualified, licensed water professional.',
+     'Who prepares the survey report, and can I see it before you drill?'),
+    ('Get WRA authorisation before the rig arrives',
+     'Drilling needs WRA approval first. The application goes in with the survey report and proof that you own or may use the land. '
+     'WRA also decides how far your borehole must be from others nearby.',
+     'Who files the application, and will I get a copy of the authorisation?'),
+    ('Check the other approvals your site needs',
+     'Depending on the project and where it is, you may also need an environmental assessment licence from NEMA, county clearance, '
+     'and a letter of no objection from the local water service provider.',
+     'Which other approvals (NEMA, county, water provider) does my site need, and who gets them?'),
+    ('Agree the scope in writing',
+     'A clear quote lists every stage: survey, approvals, drilling, casing, flushing, test pumping, water testing, the pump and its installation. '
+     'Anything not on the quote is a cost you will meet later.',
+     'What is included, and what happens if the hole does not give enough water?'),
+    ('Drill under a qualified professional',
+     'A borehole that will run a motorised pump has to be built under the supervision of a qualified, licensed water professional.',
+     'Who supervises the drilling on site?'),
+    ('Test, record, then get your water permit',
+     'Before you rely on it, the borehole is test pumped (for a motorised pump, at least 24 hours of pumping, then at least 20 hours of recovery) '
+     'and the water is analysed. A completion record goes to WRA within 28 days of finishing. WRA then reviews the results and issues '
+     'the permit to use the water.',
+     'Will I get the test pumping results, the water analysis and a copy of the completion record?'),
+]
+BD_SOURCES = [
+    ('Water Resources Regulations, 2021 (Legal Notice 170), regulations 16, 51 to 56 and 75 (FAOLEX copy)', 'https://faolex.fao.org/docs/pdf/KEN207236.pdf'),
+    ('Water Resources Authority: regulations, guidelines and permits', 'https://wra.go.ke/regulatory-tools/'),
+    ('The Kenya Times: approvals needed before drilling a borehole (June 2026)', 'https://thekenyatimes.com/explainers/borehole-drilling-nema/'),
+]
+bd_steps = ''.join(f'''
+    <li class="bd-step"><div>
+      <h2>{html.escape(t)}</h2>
+      <p>{html.escape(p)}</p>
+      <p class="bd-ask"><b>Ask:</b> {html.escape(q)}</p>
+    </div></li>''' for t, p, q in BD_STEPS)
+bd_checks = ''.join(f'<li><label><input type="checkbox"> {html.escape(q)}</label></li>' for _, _, q in BD_STEPS)
+bd_src = ''.join(f'<li><a href="{u}" target="_blank" rel="noopener">{html.escape(n)}</a></li>' for n, u in BD_SOURCES)
+bd_share = 'https://wa.me/?text=' + urllib.parse.quote('Before you drill a borehole in Kenya, check these six things: ' + SITE + '/before-you-drill')
+bd_body = f'''<style>
+.bd{{max-width:820px}}
+.bd-steps{{list-style:none;margin:0;padding:0;counter-reset:bd;display:grid;gap:14px}}
+.bd-step{{counter-increment:bd;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;padding:18px;border:1px solid var(--line);border-radius:16px;background:#fff}}
+.bd-step::before{{content:counter(bd);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;font:600 1.1rem var(--font-d)}}
+.bd-step h2{{margin:.2rem 0 .35rem;font-family:var(--font-d);text-transform:uppercase;font-size:1.2rem;line-height:1.15}}
+.bd-step p{{margin:0;color:var(--ink2)}}
+.bd-step p.bd-ask{{margin-top:.6rem;color:var(--ink)}}
+.bd-box{{margin-top:26px;padding:20px;border-radius:16px;background:var(--sky)}}
+.bd-box h2{{margin:0 0 10px;font-family:var(--font-d);text-transform:uppercase;font-size:1.15rem}}
+.bd-box ul{{margin:0;padding:0;list-style:none;display:grid;gap:8px}}
+.bd-box label{{display:flex;gap:10px;align-items:flex-start;cursor:pointer}}
+.bd-box input{{width:20px;height:20px;margin:.15rem 0 0;accent-color:var(--blue);flex:none}}
+.bd-act{{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}}
+.bd-act a,.bd-act button{{font:500 .92rem var(--font-b);color:var(--blue);background:#fff;border:1px solid #C7D8E0;border-radius:999px;padding:.55rem 1rem;text-decoration:none;cursor:pointer}}
+.bd-src{{margin-top:26px;font-size:.88rem;color:var(--ink2)}}
+.bd-src h2{{font-family:var(--font-d);text-transform:uppercase;font-size:1rem;margin:0 0 .4rem;color:var(--ink)}}
+.bd-src ul{{margin:0;padding-left:1.1rem}}
+.bd-src a{{color:var(--blue)}}
+@media print{{.site-head,.site-foot,.wa-fab,.pg-cta,.bd-act,#dcw-assistant,[class^="dcw"]{{display:none!important}}body.inner main{{padding-top:0}}.bd-step{{break-inside:avoid}}}}
+</style>
+<section class="pg"><div class="wrap bd">
+  <ol class="bd-steps">{bd_steps}
+  </ol>
+  <div class="bd-box">
+    <h2>Questions to ask any driller</h2>
+    <ul>{bd_checks}</ul>
+    <div class="bd-act">
+      <a href="{bd_share}" target="_blank" rel="noopener">Share on WhatsApp</a>
+      <button type="button" onclick="window.print()">Print this checklist</button>
+    </div>
+  </div>
+  <div class="bd-src">
+    <h2>Where this comes from</h2>
+    <p>Rules can change and WRA has the final word for your site. Checked against these sources in October 2026:</p>
+    <ul>{bd_src}</ul>
+  </div>
+</div></section>'''
+add('/before-you-drill', 'Before You Drill a Borehole in Kenya: Checklist | Deep Core Wells',
+    'Six things to sort out before drilling a borehole in Kenya: survey, WRA authorisation, other approvals, a written scope, supervision, and testing and permits.',
+    'Before you drill', 'Six things to sort out before the rig arrives, so your money goes into water and not into a dry hole or a stopped site.',
+    bd_body, [('/before-you-drill', 'Before you drill')])
 
 # ---------- privacy ----------
 privacy_body = '''<section class="pg"><div class="wrap prose">
