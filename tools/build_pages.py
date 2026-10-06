@@ -119,8 +119,8 @@ def page(path, title, desc, h1, lead, body, crumbs, extra_ld=None, img='/images/
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 {fonts}
-<link rel="stylesheet" href="/css/pages.css">
-<link rel="stylesheet" href="/css/inner.css">
+<link rel="stylesheet" href="/css/pages.css?v=20261006">
+<link rel="stylesheet" href="/css/inner.css?v=20261006">
 {ld_business}
 {''.join(f'<script type="application/ld+json">{json.dumps(x, separators=(",", ":"))}</script>' for x in lds)}
 </head>
@@ -147,7 +147,7 @@ t.addEventListener('click',function(){{var o=l.classList.toggle('open');t.setAtt
 (function(){{var v=document.getElementById('baView'),r=document.getElementById('baRange');if(!v||!r)return;var s=function(){{v.style.setProperty('--x',r.value+'%');}};r.addEventListener('input',s);s();}})();
 document.querySelectorAll('.soc[href="#"]').forEach(function(a){{a.addEventListener('click',function(e){{e.preventDefault();}});}});
 </script>
-<script src="/js/assistant.js" defer></script>
+<script src="/js/assistant.js?v=20261006" defer></script>
 </body>
 </html>
 '''

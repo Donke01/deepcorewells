@@ -337,4 +337,5 @@ footer.site-foot{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
 .ft-brand .wm{height:38px;--wm-ink:#fff;--wm-water:#7FD0F2}
 .ft-brand span{margin-top:10px}
 .ft-meta nav{flex-wrap:wrap;justify-content:center;gap:6px 18px}
+html:not(.fabs-on) .wa-fab,html:not(.fabs-on) .dcw-chat-btn{opacity:0!important;transform:translateY(18px) scale(.85);pointer-events:none}
 @keyframes qdIn{from{opacity:0;transform:translateY(14px)}}
