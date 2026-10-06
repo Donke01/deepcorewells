@@ -183,7 +183,7 @@
   box.querySelector('form').addEventListener('submit', function (e) { e.preventDefault(); var v = input.value; input.value = ''; ask(v); });
   (function fabs() {
     var root = document.documentElement, foot = document.getElementById('why-us') || document.querySelector('.site-foot'), q = false;
-    function upd() { q = false; var near = !foot || foot.getBoundingClientRect().top < innerHeight * 0.85;
+    function upd() { q = false; var near = !document.getElementById('why-us') || foot.getBoundingClientRect().top < innerHeight * 0.85; /* inner pages: always shown */
       root.classList.toggle('fabs-on', near || box.classList.contains('open')); }
     addEventListener('scroll', function () { if (!q) { q = true; requestAnimationFrame(upd); } }, { passive: true });
     addEventListener('resize', upd); upd();
